@@ -1,0 +1,18 @@
+{{ template "chrome/head.html" . }}
+<body>
+
+{{ template "chrome/sidebar.html" . }}
+
+<div class="content container">
+<div class="posts">
+
+{{ range first 100 .Data.Pages }}
+  {{ if eq .Type "post" }}
+    {{ .Render "summary" }}
+  {{ end }}
+{{ end }}
+</div>
+</div>
+
+</body>
+</html>

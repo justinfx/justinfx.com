@@ -1,0 +1,648 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module swfcharts</title>
+</head><body bgcolor="#f0f0f8">
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>swfcharts</strong></big></big></font></td><td align=right valign=bottom><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/Users/justin/Downloads/swfcharts.py">/Users/justin/Downloads/swfcharts.py</a></font></td></tr></table>
+<p><tt>swfcharts.py&nbsp;<br>
+Version:&nbsp;1.0<br>
+&nbsp;<br>
+Wrapper&nbsp;class&nbsp;for&nbsp;XML/SWF&nbsp;Charts<br>
+<a href="http://www.maani.us/xml_charts/index.php">http://www.maani.us/xml_charts/index.php</a><br>
+&nbsp;<br>
+Written&nbsp;by:&nbsp;Justin&nbsp;Israel&nbsp;(<a class="__cf_email__" href="http://www.cloudflare.com/email-protection" data-cfemail="3d57484e495453544e4f5c58517d5a505c5451135e5250">[email&nbsp;protected]</a><script type="text/javascript">
+/* <![CDATA[ */
+(function(){try{var s,a,i,j,r,c,l,b=document.getElementsByTagName("script");l=b[b.length-1].previousSibling;a=l.getAttribute('data-cfemail');if(a){s='';r=parseInt(a.substr(0,2),16);for(j=2;a.length-j;j+=2){c=parseInt(a.substr(j,2),16)^r;s+=String.fromCharCode(c);}s=document.createTextNode(s);l.parentNode.replaceChild(s,l);}}catch(e){}})();
+/* ]]> */
+</script>)<br>
+&nbsp;<br>
+June&nbsp;2009</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="re.html">re</a><br>
+</td><td width="25%" valign=top></td><td width="25%" valign=top></td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="__builtin__.html#object">__builtin__.object</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="swfcharts.html#SwfChart">SwfChart</a>
+</font></dt></dl>
+</dd>
+<dt><font face="helvetica, arial"><a href="exceptions.html#Exception">exceptions.Exception</a>(<a href="exceptions.html#BaseException">exceptions.BaseException</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="swfcharts.html#SwfChartException">SwfChartException</a>
+</font></dt></dl>
+</dd>
+</dl>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="SwfChart">class <strong>SwfChart</strong></a>(<a href="__builtin__.html#object">__builtin__.object</a>)</font></td></tr>
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>SUMMARY:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+A&nbsp;wrapper&nbsp;class&nbsp;around&nbsp;the&nbsp;XML/SWF&nbsp;Charts&nbsp;XML&nbsp;api.<br>
+Represents&nbsp;the&nbsp;attributes&nbsp;and&nbsp;data&nbsp;model&nbsp;for&nbsp;a&nbsp;graph<br>
+and&nbsp;will&nbsp;output&nbsp;the&nbsp;proper&nbsp;XML&nbsp;data&nbsp;to&nbsp;pass&nbsp;into&nbsp;the<br>
+flash&nbsp;SWF&nbsp;Charts&nbsp;application.&nbsp;&nbsp;&nbsp;<br>
+&nbsp;<br>
+All&nbsp;class&nbsp;properties&nbsp;correspond&nbsp;to&nbsp;the&nbsp;existing&nbsp;properties<br>
+from&nbsp;the&nbsp;XML&nbsp;api,&nbsp;and&nbsp;return&nbsp;the&nbsp;formatted&nbsp;XML&nbsp;code&nbsp;based<br>
+on&nbsp;the&nbsp;attributes&nbsp;that&nbsp;were&nbsp;set&nbsp;with&nbsp;the&nbsp;methods.&nbsp;Once&nbsp;you<br>
+set&nbsp;all&nbsp;your&nbsp;desired&nbsp;settings&nbsp;using&nbsp;the&nbsp;methods,&nbsp;the&nbsp;class<br>
+can&nbsp;be&nbsp;printed&nbsp;or&nbsp;treated&nbsp;like&nbsp;a&nbsp;string&nbsp;to&nbsp;represent&nbsp;the<br>
+entire&nbsp;XML&nbsp;document,&nbsp;or&nbsp;you&nbsp;can&nbsp;call&nbsp;<a href="#SwfChart-getXML">getXML</a>()<br>
+&nbsp;<br>
+Some&nbsp;of&nbsp;the&nbsp;methods&nbsp;take&nbsp;a&nbsp;very&nbsp;large&nbsp;list&nbsp;of&nbsp;optional<br>
+key/value&nbsp;arguments.&nbsp;The&nbsp;available&nbsp;args&nbsp;are&nbsp;listed<br>
+in&nbsp;each&nbsp;method,&nbsp;but&nbsp;for&nbsp;detailed&nbsp;descriptions&nbsp;of&nbsp;the<br>
+attributes,&nbsp;please&nbsp;refer&nbsp;to&nbsp;the&nbsp;XML&nbsp;Charts&nbsp;documentation:<br>
+<a href="http://www.maani.us/xml_charts/index.php?menu=Reference">http://www.maani.us/xml_charts/index.php?menu=Reference</a><br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="SwfChart-__init__"><strong>__init__</strong></a>(self)</dt><dd><tt><a href="#SwfChart-__init__">__init__</a>()</tt></dd></dl>
+<dl><dt><a name="SwfChart-__str__"><strong>__str__</strong></a>(self)</dt><dd><tt>The&nbsp;class&nbsp;instance&nbsp;string&nbsp;representation&nbsp;is&nbsp;the&nbsp;complete<br>
+XML&nbsp;output,&nbsp;from&nbsp;all&nbsp;currently&nbsp;set&nbsp;attributes.</tt></dd></dl>
+<dl><dt><a name="SwfChart-addColumnLabel"><strong>addColumnLabel</strong></a>(self, *labels)</dt><dd><tt>ACTION:&nbsp;<br>
+Add&nbsp;one&nbsp;or&nbsp;more&nbsp;string&nbsp;labels&nbsp;for&nbsp;the&nbsp;columns&nbsp;in&nbsp;the&nbsp;graph.&nbsp;There<br>
+needs&nbsp;to&nbsp;be&nbsp;enough&nbsp;column&nbsp;labels&nbsp;to&nbsp;correspond&nbsp;to&nbsp;the&nbsp;length&nbsp;of&nbsp;the&nbsp;data<br>
+in&nbsp;the&nbsp;rows.&nbsp;Otherwise,&nbsp;they&nbsp;will&nbsp;be&nbsp;labeled&nbsp;"Undef".&nbsp;<br>
+&nbsp;<br>
+INPUT:&nbsp;&nbsp;&nbsp;&nbsp;str&nbsp;label,&nbsp;[str&nbsp;label],&nbsp;[...]<br>
+&nbsp;<br>
+OUTPUT:&nbsp;&nbsp;&nbsp;&nbsp;NONE</tt></dd></dl>
+<dl><dt><a name="SwfChart-addDrawElement"><strong>addDrawElement</strong></a>(self, element, **kwargs)</dt><dd><tt>ACTION:&nbsp;<br>
+Creates&nbsp;a&nbsp;new&nbsp;draw&nbsp;element&nbsp;in&nbsp;the&nbsp;graph.&nbsp;Draw&nbsp;elements&nbsp;are&nbsp;<br>
+a&nbsp;few&nbsp;defined&nbsp;graphic&nbsp;objects&nbsp;that&nbsp;can&nbsp;be&nbsp;inserted&nbsp;into&nbsp;either<br>
+the&nbsp;background&nbsp;or&nbsp;foreground&nbsp;of&nbsp;the&nbsp;graph.&nbsp;The&nbsp;draw&nbsp;elements<br>
+each&nbsp;have&nbsp;their&nbsp;own&nbsp;respective&nbsp;attributes&nbsp;for&nbsp;controlling&nbsp;how<br>
+and&nbsp;where&nbsp;they&nbsp;are&nbsp;displayed.<br>
+&nbsp;<br>
+For&nbsp;element&nbsp;type&nbsp;'text',&nbsp;specify&nbsp;the&nbsp;text&nbsp;with&nbsp;the&nbsp;key&nbsp;'value'.<br>
+So,&nbsp;value='some&nbsp;text'<br>
+&nbsp;<br>
+Reference&nbsp;the&nbsp;API&nbsp;doc&nbsp;for&nbsp;details&nbsp;on&nbsp;each&nbsp;elements&nbsp;types<br>
+attributes.<br>
+&nbsp;<br>
+INPUT:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;str&nbsp;element&nbsp;-&nbsp;(circle,&nbsp;image,&nbsp;line,&nbsp;rect,&nbsp;text,&nbsp;button)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Key=Value&nbsp;-&nbsp;attributes&nbsp;for&nbsp;the&nbsp;draw&nbsp;element&nbsp;type<br>
+&nbsp;<br>
+OUTPUT:&nbsp;&nbsp;&nbsp;&nbsp;NONE</tt></dd></dl>
+<dl><dt><a name="SwfChart-addFilter"><strong>addFilter</strong></a>(self, filterType, id, **kwargs)</dt><dd><tt>ACTION:&nbsp;<br>
+Adds&nbsp;a&nbsp;new&nbsp;filter&nbsp;to&nbsp;the&nbsp;list&nbsp;of&nbsp;defined&nbsp;filters.&nbsp;<br>
+Valid&nbsp;filter&nbsp;types&nbsp;are&nbsp;shadow,&nbsp;bevel,&nbsp;glow,&nbsp;and&nbsp;blur.<br>
+You&nbsp;can&nbsp;defined&nbsp;multiple&nbsp;types&nbsp;of&nbsp;each,&nbsp;and&nbsp;give&nbsp;them<br>
+unique&nbsp;ids,&nbsp;to&nbsp;be&nbsp;referenced&nbsp;in&nbsp;other&nbsp;methods.<br>
+Each&nbsp;filter&nbsp;type&nbsp;has&nbsp;its&nbsp;own&nbsp;set&nbsp;of&nbsp;key/value&nbsp;attributes,<br>
+so&nbsp;refer&nbsp;to&nbsp;the&nbsp;API&nbsp;doc&nbsp;for&nbsp;specifics.<br>
+&nbsp;<br>
+INPUT:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;str&nbsp;filterType&nbsp;-&nbsp;'shadow',&nbsp;'bevel',&nbsp;'glow',&nbsp;or&nbsp;'blur'<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;str&nbsp;id&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;a&nbsp;unique&nbsp;string&nbsp;id&nbsp;to&nbsp;be&nbsp;known&nbsp;as&nbsp;('shadow1')<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;key&nbsp;=&nbsp;value&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;attributes&nbsp;for&nbsp;the&nbsp;specific&nbsp;filter&nbsp;type<br>
+&nbsp;<br>
+OUTPUT:&nbsp;&nbsp;&nbsp;&nbsp;NONE</tt></dd></dl>
+<dl><dt><a name="SwfChart-addLink"><strong>addLink</strong></a>(self, **kwargs)</dt><dd><tt>ACTION:&nbsp;<br>
+holds&nbsp;any&nbsp;number&nbsp;of&nbsp;areas,&nbsp;each&nbsp;defining&nbsp;a&nbsp;rectangle&nbsp;and&nbsp;a&nbsp;<br>
+URL&nbsp;to&nbsp;go&nbsp;to&nbsp;when&nbsp;the&nbsp;user&nbsp;clicks&nbsp;inside&nbsp;the&nbsp;rectangle.&nbsp;<br>
+This&nbsp;can&nbsp;also&nbsp;be&nbsp;used&nbsp;to&nbsp;assign&nbsp;functions&nbsp;to&nbsp;mouse&nbsp;clicks,&nbsp;<br>
+including&nbsp;chart&nbsp;updates,&nbsp;printing,&nbsp;etc<br>
+&nbsp;<br>
+INPUT:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;x&nbsp;-&nbsp;x&nbsp;position&nbsp;of&nbsp;upper&nbsp;left&nbsp;corner&nbsp;of&nbsp;rectangle&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;y&nbsp;-&nbsp;y&nbsp;position&nbsp;of&nbsp;upper&nbsp;left&nbsp;corner&nbsp;of&nbsp;rectange<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;width&nbsp;-&nbsp;width&nbsp;of&nbsp;rectangle<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;height&nbsp;-&nbsp;height&nbsp;of&nbsp;rectable<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;str&nbsp;url&nbsp;-&nbsp;relative&nbsp;or&nbsp;absolute&nbsp;URL&nbsp;to&nbsp;go&nbsp;to&nbsp;when&nbsp;clicked<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;priority&nbsp;-&nbsp;determined&nbsp;how&nbsp;to&nbsp;handle&nbsp;links&nbsp;that&nbsp;overlap<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;0,&nbsp;priority&nbsp;is&nbsp;determined&nbsp;by&nbsp;order&nbsp;of&nbsp;links<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;1,&nbsp;link&nbsp;will&nbsp;be&nbsp;activated&nbsp;during&nbsp;overlap<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;str&nbsp;target&nbsp;-&nbsp;where&nbsp;to&nbsp;open&nbsp;the&nbsp;URL&nbsp;when&nbsp;clicked<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Window&nbsp;options:&nbsp;(_self,&nbsp;_blank,&nbsp;_parent,&nbsp;_top)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Other&nbsp;options:&nbsp;(update,&nbsp;print,&nbsp;toggle_fullscreen,&nbsp;scroll)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;If&nbsp;any&nbsp;other&nbsp;&lt;string&gt;&nbsp;value&nbsp;is&nbsp;specified,&nbsp;the&nbsp;URL&nbsp;will<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;be&nbsp;opened&nbsp;in&nbsp;a&nbsp;window&nbsp;named&nbsp;&lt;string&gt;.&nbsp;If&nbsp;it&nbsp;does&nbsp;not<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;exist,&nbsp;it&nbsp;will&nbsp;be&nbsp;created&nbsp;first.&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;str&nbsp;tooltip&nbsp;-&nbsp;tooltip&nbsp;text&nbsp;to&nbsp;display&nbsp;over&nbsp;link<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Valid&nbsp;if&nbsp;target&nbsp;=&nbsp;'update'<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;timeout&nbsp;-&nbsp;time&nbsp;to&nbsp;wait&nbsp;for&nbsp;update&nbsp;before&nbsp;failing;&nbsp;seconds<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;retry&nbsp;-&nbsp;number&nbsp;of&nbsp;times&nbsp;to&nbsp;retry&nbsp;when&nbsp;failing<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bool&nbsp;spinning_wheel&nbsp;-&nbsp;if&nbsp;True,&nbsp;show&nbsp;a&nbsp;spinning&nbsp;wheel&nbsp;while&nbsp;updating<br>
+&nbsp;<br>
+OUTPUT:&nbsp;&nbsp;&nbsp;&nbsp;NONE</tt></dd></dl>
+<dl><dt><a name="SwfChart-addRow"><strong>addRow</strong></a>(self, label, *data)</dt><dd><tt>ACTION:<br>
+Sets&nbsp;a&nbsp;row&nbsp;of&nbsp;data&nbsp;in&nbsp;the&nbsp;xml&nbsp;chart_data&nbsp;section.<br>
+label&nbsp;is&nbsp;a&nbsp;string&nbsp;name&nbsp;of&nbsp;the&nbsp;data&nbsp;set,&nbsp;followed&nbsp;by&nbsp;any&nbsp;amount<br>
+of&nbsp;numeric&nbsp;data&nbsp;items.&nbsp;<br>
+&nbsp;<br>
+Each&nbsp;data&nbsp;<a href="__builtin__.html#object">object</a>&nbsp;can&nbsp;either&nbsp;be&nbsp;a&nbsp;float/int&nbsp;value,&nbsp;OR,&nbsp;it&nbsp;can&nbsp;be<br>
+a&nbsp;dictionary.&nbsp;Providing&nbsp;a&nbsp;dictionary&nbsp;lets&nbsp;you&nbsp;add&nbsp;special&nbsp;effects<br>
+and&nbsp;options&nbsp;to&nbsp;each&nbsp;value&nbsp;to&nbsp;be&nbsp;used&nbsp;in&nbsp;the&nbsp;graph&nbsp;display.<br>
+The&nbsp;dictionary&nbsp;must&nbsp;AT&nbsp;LEAST&nbsp;have&nbsp;a&nbsp;'value'&nbsp;key,&nbsp;which&nbsp;is&nbsp;the&nbsp;data<br>
+value.&nbsp;Other&nbsp;options&nbsp;are&nbsp;as&nbsp;follows:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;label&nbsp;&nbsp;&nbsp;-&nbsp;string&nbsp;label&nbsp;for&nbsp;the&nbsp;individual&nbsp;data<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;note&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;string&nbsp;note&nbsp;to&nbsp;be&nbsp;attached&nbsp;to&nbsp;the&nbsp;data&nbsp;in&nbsp;the&nbsp;chart<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tooltip&nbsp;-&nbsp;string&nbsp;tooltip&nbsp;message&nbsp;that&nbsp;will&nbsp;appear&nbsp;during&nbsp;mouseOver<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;shadow&nbsp;&nbsp;-&nbsp;string&nbsp;id&nbsp;of&nbsp;a&nbsp;shadow&nbsp;filter&nbsp;to&nbsp;apply&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bevel&nbsp;&nbsp;&nbsp;-&nbsp;string&nbsp;id&nbsp;of&nbsp;a&nbsp;bevel&nbsp;filter&nbsp;to&nbsp;apply&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;glow&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;string&nbsp;id&nbsp;of&nbsp;a&nbsp;glow&nbsp;filter&nbsp;to&nbsp;apply&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;blur&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;string&nbsp;id&nbsp;of&nbsp;a&nbsp;blur&nbsp;filter&nbsp;to&nbsp;apply&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alpha&nbsp;&nbsp;&nbsp;-&nbsp;transparency&nbsp;value&nbsp;from&nbsp;0-100&nbsp;(transparent-opaque)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;line_color&nbsp;-&nbsp;border&nbsp;line&nbsp;color,&nbsp;string&nbsp;hex&nbsp;value&nbsp;('000000')<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;line_alpha&nbsp;-&nbsp;transparency&nbsp;value&nbsp;of&nbsp;border&nbsp;from&nbsp;0-100&nbsp;(transparent-opaque)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;line_thickness&nbsp;-&nbsp;int&nbsp;pixel&nbsp;thickness&nbsp;of&nbsp;border&nbsp;(default&nbsp;1&nbsp;pixel)<br>
+&nbsp;<br>
+For&nbsp;options&nbsp;that&nbsp;take&nbsp;a&nbsp;filter&nbsp;id&nbsp;(shadow,&nbsp;bevel,&nbsp;glow,&nbsp;blur),&nbsp;you&nbsp;must<br>
+have&nbsp;defined&nbsp;this&nbsp;filter&nbsp;name&nbsp;using&nbsp;the&nbsp;addFilter_&nbsp;methods.&nbsp;<br>
+&nbsp;<br>
+Keep&nbsp;in&nbsp;mind&nbsp;that&nbsp;rows&nbsp;must&nbsp;all&nbsp;contain&nbsp;the&nbsp;same&nbsp;number&nbsp;of&nbsp;data<br>
+elements&nbsp;to&nbsp;maintain&nbsp;consistency&nbsp;with&nbsp;their&nbsp;column&nbsp;labels.<br>
+&nbsp;<br>
+INPUT:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;str&nbsp;label&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;name&nbsp;of&nbsp;the&nbsp;data&nbsp;set<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;float/int/dict&nbsp;*data&nbsp;-&nbsp;data1,&nbsp;[data2],&nbsp;[...]&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+OUTPUT:&nbsp;&nbsp;NONE</tt></dd></dl>
+<dl><dt><a name="SwfChart-clearDrawElements"><strong>clearDrawElements</strong></a>(self)</dt><dd><tt>ACTION:&nbsp;Clear&nbsp;the&nbsp;current&nbsp;draw&nbsp;elements<br>
+&nbsp;<br>
+INPUT:&nbsp;NONE<br>
+&nbsp;<br>
+OUTPUT:&nbsp;NONE</tt></dd></dl>
+<dl><dt><a name="SwfChart-clearFilters"><strong>clearFilters</strong></a>(self)</dt><dd><tt>ACTION:&nbsp;Clear&nbsp;the&nbsp;current&nbsp;filters<br>
+&nbsp;<br>
+INPUT:&nbsp;NONE<br>
+&nbsp;<br>
+OUTPUT:&nbsp;NONE</tt></dd></dl>
+<dl><dt><a name="SwfChart-clearLinks"><strong>clearLinks</strong></a>(self)</dt><dd><tt>ACTION:&nbsp;Clear&nbsp;the&nbsp;current&nbsp;links<br>
+&nbsp;<br>
+INPUT:&nbsp;NONE<br>
+&nbsp;<br>
+OUTPUT:&nbsp;NONE</tt></dd></dl>
+<dl><dt><a name="SwfChart-clearRows"><strong>clearRows</strong></a>(self)</dt><dd><tt>ACTION:&nbsp;Clear&nbsp;the&nbsp;current&nbsp;rows&nbsp;data<br>
+&nbsp;<br>
+INPUT:&nbsp;NONE<br>
+&nbsp;<br>
+OUTPUT:&nbsp;NONE</tt></dd></dl>
+<dl><dt><a name="SwfChart-getXML"><strong>getXML</strong></a>(self)</dt><dd><tt>ACTION:&nbsp;<br>
+Return&nbsp;the&nbsp;final&nbsp;formatted&nbsp;XML&nbsp;of&nbsp;all&nbsp;attributes,&nbsp;as&nbsp;a&nbsp;string<br>
+Same&nbsp;as&nbsp;treating&nbsp;the&nbsp;class&nbsp;instance&nbsp;as&nbsp;a&nbsp;string.<br>
+&nbsp;<br>
+INPUT:&nbsp;NONE<br>
+&nbsp;<br>
+OUTPUT:&nbsp;NONE</tt></dd></dl>
+<dl><dt><a name="SwfChart-setAxisCategory"><strong>setAxisCategory</strong></a>(self, **kwargs)</dt><dd><tt>ACTION:&nbsp;sets&nbsp;the&nbsp;label&nbsp;attributes&nbsp;for&nbsp;the&nbsp;category-axis<br>
+&nbsp;<br>
+INPUT:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Valid&nbsp;Key/Value&nbsp;pairs:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Review&nbsp;API&nbsp;docs<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+OUTPUT&nbsp;:&nbsp;&nbsp;&nbsp;NONE</tt></dd></dl>
+<dl><dt><a name="SwfChart-setAxisCategoryLabel"><strong>setAxisCategoryLabel</strong></a>(self, *labels)</dt><dd><tt>ACTION:&nbsp;<br>
+&nbsp;Overrides&nbsp;axis&nbsp;labels<br>
+&nbsp;<br>
+INPUT:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;string&nbsp;label1,&nbsp;[label2],&nbsp;[...]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+OUTPUT&nbsp;:&nbsp;&nbsp;&nbsp;NONE</tt></dd></dl>
+<dl><dt><a name="SwfChart-setAxisTicks"><strong>setAxisTicks</strong></a>(self, **kwargs)</dt><dd><tt>ACTION:&nbsp;sets&nbsp;the&nbsp;tick&nbsp;marks&nbsp;on&nbsp;the&nbsp;chart&nbsp;axes<br>
+&nbsp;<br>
+INPUT:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Valid&nbsp;Key/Value&nbsp;pairs:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Review&nbsp;API&nbsp;docs<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+OUTPUT&nbsp;:&nbsp;&nbsp;&nbsp;NONE</tt></dd></dl>
+<dl><dt><a name="SwfChart-setAxisValue"><strong>setAxisValue</strong></a>(self, **kwargs)</dt><dd><tt>ACTION:&nbsp;sets&nbsp;the&nbsp;label&nbsp;attributes&nbsp;for&nbsp;the&nbsp;value-axis<br>
+&nbsp;<br>
+INPUT:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Valid&nbsp;Key/Value&nbsp;pairs:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Review&nbsp;API&nbsp;docs<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+OUTPUT&nbsp;:&nbsp;&nbsp;&nbsp;NONE</tt></dd></dl>
+<dl><dt><a name="SwfChart-setAxisValueLabel"><strong>setAxisValueLabel</strong></a>(self, *labels)</dt><dd><tt>ACTION:&nbsp;<br>
+&nbsp;Overrides&nbsp;axis&nbsp;labels<br>
+&nbsp;<br>
+INPUT:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;string&nbsp;label1,&nbsp;[label2],&nbsp;[...]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+OUTPUT&nbsp;:&nbsp;&nbsp;&nbsp;NONE</tt></dd></dl>
+<dl><dt><a name="SwfChart-setChartBorder"><strong>setChartBorder</strong></a>(self, top<font color="#909090">=0</font>, bottom<font color="#909090">=0</font>, left<font color="#909090">=0</font>, right<font color="#909090">=0</font>, color<font color="#909090">='000000'</font>)</dt><dd><tt>ACTION:&nbsp;Set&nbsp;the&nbsp;border&nbsp;thickness&nbsp;and&nbsp;color&nbsp;for&nbsp;the&nbsp;chart<br>
+&nbsp;<br>
+INPUT:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;top&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;thickness&nbsp;of&nbsp;top<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;bottom&nbsp;-&nbsp;thickness&nbsp;of&nbsp;bottom<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;left&nbsp;&nbsp;&nbsp;-&nbsp;thickness&nbsp;of&nbsp;left<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;right&nbsp;&nbsp;-&nbsp;thickness&nbsp;of&nbsp;right<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;str&nbsp;color&nbsp;&nbsp;-&nbsp;hex&nbsp;color&nbsp;('000000',&nbsp;or&nbsp;'FFFFFF'&nbsp;format)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+OUTPUT&nbsp;:&nbsp;&nbsp;&nbsp;NONE</tt></dd></dl>
+<dl><dt><a name="SwfChart-setChartGrid"><strong>setChartGrid</strong></a>(self, direction, thickness<font color="#909090">=1</font>, color<font color="#909090">='000000'</font>, alpha<font color="#909090">=20</font>, type<font color="#909090">='solid'</font>)</dt><dd><tt>ACTION:&nbsp;sets&nbsp;the&nbsp;chart's&nbsp;vertical&nbsp;or&nbsp;horizontal&nbsp;grid&nbsp;attributes.<br>
+&nbsp;<br>
+INPUT:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;str&nbsp;direction&nbsp;&nbsp;-&nbsp;'vertical'&nbsp;or&nbsp;'horizontal'&nbsp;grid&nbsp;lines<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;thickness&nbsp;&nbsp;-&nbsp;thickness&nbsp;of&nbsp;grid&nbsp;(default&nbsp;1)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;str&nbsp;color&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;hex&nbsp;color&nbsp;(default&nbsp;'000000')<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alpha&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;transparency&nbsp;from&nbsp;0-100&nbsp;(default&nbsp;20)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;line&nbsp;type&nbsp;('solid',&nbsp;'dotted',&nbsp;'dashed')<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+OUTPUT&nbsp;:&nbsp;&nbsp;&nbsp;NONE</tt></dd></dl>
+<dl><dt><a name="SwfChart-setChartGuide"><strong>setChartGuide</strong></a>(self, **kwargs)</dt><dd><tt>ACTION:&nbsp;<br>
+sets&nbsp;one&nbsp;or&nbsp;two&nbsp;guide&nbsp;lines&nbsp;to&nbsp;connect&nbsp;the&nbsp;cursor&nbsp;position&nbsp;<br>
+with&nbsp;the&nbsp;axes&nbsp;and&nbsp;simplify&nbsp;reading&nbsp;their&nbsp;values.&nbsp;The&nbsp;guides&nbsp;<br>
+are&nbsp;the&nbsp;two&nbsp;red&nbsp;lines&nbsp;that&nbsp;move&nbsp;with&nbsp;the&nbsp;cursor&nbsp;when&nbsp;the&nbsp;mouse&nbsp;<br>
+is&nbsp;over&nbsp;this&nbsp;chart<br>
+&nbsp;<br>
+INPUT:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Valid&nbsp;Key/Value&nbsp;args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bool&nbsp;horizontal,&nbsp;bool&nbsp;vertical,&nbsp;int&nbsp;thickness,&nbsp;str&nbsp;color&nbsp;('000000'),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;alpha&nbsp;(0-100),&nbsp;str&nbsp;type&nbsp;('solid',&nbsp;'dotted',&nbsp;'dashed'),&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bool&nbsp;snap_h,&nbsp;bool&nbsp;snap_v,&nbsp;bool&nbsp;connect<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;radius,&nbsp;str&nbsp;fill_color&nbsp;('000000'),&nbsp;int&nbsp;fill_alpha&nbsp;(0-100),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;str&nbsp;line_color&nbsp;('000000'),&nbsp;int&nbsp;line_alpha&nbsp;(0-100),&nbsp;int&nbsp;line_thickness<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;text_alpha&nbsp;(0-100),&nbsp;int&nbsp;text_v_alpha&nbsp;(0-100),&nbsp;str&nbsp;prefix_h,&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;str&nbsp;suffix_h,&nbsp;str&nbsp;prefix_v,&nbsp;str&nbsp;suffix_v,&nbsp;int&nbsp;decimals,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;str&nbsp;decimal_chars,&nbsp;str&nbsp;separator,&nbsp;str&nbsp;font,&nbsp;bool&nbsp;bold,&nbsp;int&nbsp;size,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;str&nbsp;text_color&nbsp;('000000'),&nbsp;str&nbsp;background_color&nbsp;('000000')<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+OUTPUT&nbsp;:&nbsp;&nbsp;&nbsp;NONE</tt></dd></dl>
+<dl><dt><a name="SwfChart-setChartLabel"><strong>setChartLabel</strong></a>(self, **kwargs)</dt><dd><tt>ACTION:&nbsp;sets&nbsp;the&nbsp;attributes&nbsp;of&nbsp;the&nbsp;labels&nbsp;that&nbsp;appear&nbsp;over&nbsp;the&nbsp;graphs<br>
+&nbsp;<br>
+INPUT:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Valid&nbsp;Key/Value&nbsp;args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;str&nbsp;prefix,&nbsp;str&nbsp;suffix,&nbsp;int&nbsp;decimals,&nbsp;str&nbsp;decimal_char,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;str&nbsp;separator,&nbsp;str&nbsp;position,&nbsp;bool&nbsp;hide_zero,&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bool&nbsp;as_percentage,&nbsp;str&nbsp;font,&nbsp;bool&nbsp;bold,&nbsp;int&nbsp;size,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;str&nbsp;color&nbsp;('000000'),&nbsp;str&nbsp;background_color&nbsp;('000000'),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;alpha&nbsp;(0-100)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Filter&nbsp;IDs:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;str&nbsp;shadow,&nbsp;str&nbsp;bevel,&nbsp;str&nbsp;glow,&nbsp;str&nbsp;blur<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+OUTPUT&nbsp;:&nbsp;&nbsp;&nbsp;NONE</tt></dd></dl>
+<dl><dt><a name="SwfChart-setChartNote"><strong>setChartNote</strong></a>(self, **kwargs)</dt><dd><tt>ACTION:&nbsp;defines&nbsp;the&nbsp;look&nbsp;of&nbsp;comments&nbsp;that&nbsp;can&nbsp;be&nbsp;attached&nbsp;to&nbsp;data&nbsp;or&nbsp;category&nbsp;points<br>
+&nbsp;<br>
+INPUT:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Valid&nbsp;Key/Value&nbsp;args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;str&nbsp;type,&nbsp;int&nbsp;x,&nbsp;int&nbsp;y,&nbsp;int&nbsp;offset_x,&nbsp;int&nbsp;offset_y,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;str&nbsp;font,&nbsp;bool&nbsp;bold,&nbsp;int&nbsp;size,&nbsp;str&nbsp;color&nbsp;('000000'),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;alpha&nbsp;(0-100),&nbsp;str&nbsp;background_color&nbsp;('000000'),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;background_alpha&nbsp;(0-100)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Filter&nbsp;IDs:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;str&nbsp;shadow,&nbsp;str&nbsp;bevel,&nbsp;str&nbsp;glow,&nbsp;str&nbsp;blur<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+OUTPUT&nbsp;:&nbsp;&nbsp;&nbsp;NONE</tt></dd></dl>
+<dl><dt><a name="SwfChart-setChartPref"><strong>setChartPref</strong></a>(self, **kwargs)</dt><dd><tt>ACTION:&nbsp;<br>
+sets&nbsp;the&nbsp;preferences&nbsp;for&nbsp;some&nbsp;charts<br>
+Groups&nbsp;of&nbsp;key/value&nbsp;attributes&nbsp;are&nbsp;only&nbsp;valid&nbsp;for&nbsp;certain&nbsp;charts<br>
+&nbsp;<br>
+INPUT:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;general:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bool&nbsp;zero_line<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;line&nbsp;chart:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;line_thickness,&nbsp;str&nbsp;point_shape,&nbsp;int&nbsp;point_size,&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bool&nbsp;fill_shape,&nbsp;bool&nbsp;connect,&nbsp;str&nbsp;tip<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;candlestick&nbsp;chart:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;str&nbsp;type,&nbsp;int&nbsp;line_thickness,&nbsp;str&nbsp;bull_color,&nbsp;str&nbsp;bear_color<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;scatter&nbsp;chart:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;point_size,&nbsp;str&nbsp;point_shape,&nbsp;int&nbsp;trend_thickness,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;trend_alpha,&nbsp;int&nbsp;line_thickness<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3d&nbsp;chart:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;rotation_x,&nbsp;int&nbsp;rotation_y,&nbsp;bool&nbsp;drag,&nbsp;int&nbsp;min_x,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;max_x,&nbsp;int&nbsp;min_y,&nbsp;int&nbsp;max_y<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;polar&nbsp;chart:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;str&nbsp;type,&nbsp;str&nbsp;grid,&nbsp;int&nbsp;line_thickness,&nbsp;str&nbsp;point_shape,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;point_size,&nbsp;bool&nbsp;fill_shape<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pie&nbsp;chart:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bool&nbsp;select<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;image&nbsp;chart:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bool&nbsp;stretch<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;donut&nbsp;chart:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bool&nbsp;empty_center,&nbsp;bool&nbsp;select<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+OUTPUT&nbsp;:&nbsp;&nbsp;&nbsp;NONE</tt></dd></dl>
+<dl><dt><a name="SwfChart-setChartRect"><strong>setChartRect</strong></a>(self, **kwargs)</dt><dd><tt>ACTION:&nbsp;<br>
+sets&nbsp;the&nbsp;chart's&nbsp;rectangle.&nbsp;This&nbsp;is&nbsp;the&nbsp;area&nbsp;in&nbsp;which&nbsp;the&nbsp;graphing<br>
+is&nbsp;drawn.&nbsp;Not&nbsp;including&nbsp;the&nbsp;legend&nbsp;or&nbsp;the&nbsp;axis&nbsp;labels<br>
+&nbsp;<br>
+INPUT:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Valid&nbsp;Key/Value&nbsp;args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;x,&nbsp;int&nbsp;y,&nbsp;int&nbsp;width,&nbsp;int&nbsp;height,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;str&nbsp;positive_color,&nbsp;str&nbsp;negative_color,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;positive_alpha,&nbsp;int&nbsp;negative_alpha,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;corner_tl,&nbsp;int&nbsp;corner_tr,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;corner_br,&nbsp;int&nbsp;corner_bl,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bool&nbsp;hide<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Filter&nbsp;IDs:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;str&nbsp;shadow,&nbsp;str&nbsp;bevel,&nbsp;str&nbsp;glow,&nbsp;str&nbsp;blur<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+OUTPUT&nbsp;:&nbsp;&nbsp;&nbsp;NONE</tt></dd></dl>
+<dl><dt><a name="SwfChart-setChartTransition"><strong>setChartTransition</strong></a>(self, type<font color="#909090">='none'</font>, delay<font color="#909090">=0</font>, duration<font color="#909090">=1</font>, order<font color="#909090">='all'</font>)</dt><dd><tt>ACTION:&nbsp;<br>
+sets&nbsp;the&nbsp;chart's&nbsp;transition&nbsp;attributes<br>
+&nbsp;<br>
+INPUT:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;str&nbsp;type&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;(dissolve,&nbsp;drop,&nbsp;spin,&nbsp;scale,&nbsp;zoom,&nbsp;blink,&nbsp;slide_right,&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;slide_left,&nbsp;slide_up,&nbsp;slide_down,&nbsp;and&nbsp;none)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;float&nbsp;delay&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;delay&nbsp;in&nbsp;seconds&nbsp;(default&nbsp;0)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;float&nbsp;duration&nbsp;-&nbsp;duration&nbsp;in&nbsp;seconds&nbsp;(default&nbsp;1)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;str&nbsp;order&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;order&nbsp;in&nbsp;which&nbsp;to&nbsp;transition&nbsp;the&nbsp;charts&nbsp;parts<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(series,&nbsp;category,&nbsp;all)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+OUTPUT&nbsp;:&nbsp;&nbsp;&nbsp;NONE</tt></dd></dl>
+<dl><dt><a name="SwfChart-setChartType"><strong>setChartType</strong></a>(self, *types)</dt><dd><tt>ACTION:&nbsp;<br>
+sets&nbsp;the&nbsp;type&nbsp;of&nbsp;chart&nbsp;to&nbsp;draw<br>
+&nbsp;<br>
+You&nbsp;may&nbsp;specify&nbsp;one&nbsp;or&nbsp;more&nbsp;chart&nbsp;types&nbsp;as&nbsp;args.&nbsp;Note&nbsp;that<br>
+the&nbsp;number&nbsp;of&nbsp;mixed&nbsp;chart&nbsp;types&nbsp;must&nbsp;correspond&nbsp;to&nbsp;the<br>
+number&nbsp;of&nbsp;rows&nbsp;that&nbsp;were&nbsp;added.&nbsp;Each&nbsp;row&nbsp;will&nbsp;be<br>
+represented&nbsp;with&nbsp;the&nbsp;matching&nbsp;chart&nbsp;type.&nbsp;<br>
+Only&nbsp;area,&nbsp;column,&nbsp;and&nbsp;line&nbsp;chart&nbsp;types&nbsp;are&nbsp;valid&nbsp;for<br>
+mixed&nbsp;charts<br>
+&nbsp;<br>
+INPUT:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;str&nbsp;type&nbsp;-&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;column&nbsp;(default)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;stacked&nbsp;column<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;floating&nbsp;column<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3d&nbsp;column<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;image&nbsp;column<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;stacked&nbsp;3d&nbsp;column<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;parallel&nbsp;3d&nbsp;column<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pie<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3d&nbsp;pie<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;image&nbsp;pie<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;donut<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bar<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;stacked&nbsp;bar<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;floating&nbsp;bar<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;area<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;stacked&nbsp;area<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3d&nbsp;area<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;stacked&nbsp;3d&nbsp;area<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;candlestick<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;scatter<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;polar<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bubble<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vline<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+OUTPUT&nbsp;:&nbsp;&nbsp;&nbsp;NONE</tt></dd></dl>
+<dl><dt><a name="SwfChart-setContextMenu"><strong>setContextMenu</strong></a>(self, about<font color="#909090">=True</font>, printOpt<font color="#909090">=True</font>, full_screen<font color="#909090">=True</font>, quality<font color="#909090">=True</font>, jpeg_url<font color="#909090">=None</font>)</dt><dd><tt>ACTION:&nbsp;<br>
+&nbsp;sets&nbsp;the&nbsp;options&nbsp;for&nbsp;the&nbsp;right&nbsp;click&nbsp;context&nbsp;menu&nbsp;of&nbsp;the&nbsp;graph<br>
+&nbsp;<br>
+INPUT:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bool&nbsp;about&nbsp;-&nbsp;show&nbsp;the&nbsp;About&nbsp;SWF&nbsp;Charts&nbsp;option<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bool&nbsp;printOpt&nbsp;-&nbsp;option&nbsp;to&nbsp;print&nbsp;graph<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bool&nbsp;full_screen&nbsp;-&nbsp;show&nbsp;graph&nbsp;in&nbsp;full&nbsp;screen&nbsp;mode<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bool&nbsp;quality&nbsp;-&nbsp;Include&nbsp;quality&nbsp;options&nbsp;in&nbsp;context<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;str&nbsp;jpeg_url&nbsp;-&nbsp;url&nbsp;of&nbsp;a&nbsp;the&nbsp;php&nbsp;script&nbsp;that&nbsp;enables&nbsp;Export&nbsp;to&nbsp;JPEG&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(must&nbsp;be&nbsp;server-side)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+OUTPUT&nbsp;:&nbsp;&nbsp;&nbsp;NONE</tt></dd></dl>
+<dl><dt><a name="SwfChart-setLegend"><strong>setLegend</strong></a>(self, **kwargs)</dt><dd><tt>ACTION:<br>
+sets&nbsp;the&nbsp;legend's&nbsp;attributes.&nbsp;The&nbsp;legend&nbsp;is&nbsp;the&nbsp;area&nbsp;that&nbsp;<br>
+identifies&nbsp;the&nbsp;colors&nbsp;assigned&nbsp;to&nbsp;the&nbsp;graphs<br>
+&nbsp;<br>
+INPUT:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Valid&nbsp;Key/Value&nbsp;pairs:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Review&nbsp;API&nbsp;docs<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+OUTPUT&nbsp;:&nbsp;&nbsp;&nbsp;NONE</tt></dd></dl>
+<dl><dt><a name="SwfChart-setLicense"><strong>setLicense</strong></a>(self, lic)</dt><dd><tt>ACTION:&nbsp;<br>
+set&nbsp;the&nbsp;license&nbsp;code&nbsp;for&nbsp;the&nbsp;chart,&nbsp;if&nbsp;you&nbsp;have&nbsp;one<br>
+&nbsp;<br>
+INPUT:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;str&nbsp;lic&nbsp;-&nbsp;license&nbsp;reg&nbsp;code<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+OUTPUT&nbsp;:&nbsp;&nbsp;&nbsp;NONE</tt></dd></dl>
+<dl><dt><a name="SwfChart-setLinkData"><strong>setLinkData</strong></a>(self, url, target<font color="#909090">='_self'</font>, timeout<font color="#909090">=30</font>, retry<font color="#909090">=2</font>, spinning_wheel<font color="#909090">=False</font>)</dt><dd><tt>ACTION:&nbsp;<br>
+&nbsp;sets&nbsp;the&nbsp;overall&nbsp;link&nbsp;action&nbsp;for&nbsp;clicking&nbsp;on&nbsp;any&nbsp;chart&nbsp;element<br>
+&nbsp;<br>
+INPUT:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;str&nbsp;url&nbsp;-&nbsp;relative&nbsp;or&nbsp;absolute&nbsp;URL&nbsp;to&nbsp;process<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;str&nbsp;target&nbsp;-&nbsp;window&nbsp;to&nbsp;open&nbsp;or&nbsp;action&nbsp;to&nbsp;take<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Valid&nbsp;if&nbsp;target&nbsp;==&nbsp;'update'<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;timeout&nbsp;-&nbsp;time&nbsp;in&nbsp;seconds&nbsp;to&nbsp;wait&nbsp;for&nbsp;update&nbsp;to&nbsp;complete&nbsp;before&nbsp;fail<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;retry&nbsp;-&nbsp;how&nbsp;many&nbsp;times&nbsp;to&nbsp;retry&nbsp;the&nbsp;update<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bool&nbsp;spinning_wheel&nbsp;-&nbsp;show&nbsp;a&nbsp;spinning&nbsp;wheel&nbsp;while&nbsp;updating<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+OUTPUT&nbsp;:&nbsp;&nbsp;&nbsp;NONE</tt></dd></dl>
+<dl><dt><a name="SwfChart-setScroll"><strong>setScroll</strong></a>(self, **kwargs)</dt><dd><tt>ACTION:<br>
+activates&nbsp;and&nbsp;sets&nbsp;the&nbsp;attributes&nbsp;of&nbsp;a&nbsp;slider&nbsp;that&nbsp;makes&nbsp;<br>
+the&nbsp;chart&nbsp;scrollable.&nbsp;Scrolling&nbsp;is&nbsp;supported&nbsp;by&nbsp;all&nbsp;chart&nbsp;<br>
+types&nbsp;except&nbsp;for&nbsp;3d,&nbsp;pie,&nbsp;donut,&nbsp;polar,&nbsp;scatter,&nbsp;bubble,&nbsp;<br>
+and&nbsp;image&nbsp;charts.<br>
+&nbsp;<br>
+INPUT:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Valid&nbsp;Key/Value&nbsp;pairs:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Review&nbsp;API&nbsp;docs<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+OUTPUT&nbsp;:&nbsp;&nbsp;&nbsp;NONE</tt></dd></dl>
+<dl><dt><a name="SwfChart-setSeries"><strong>setSeries</strong></a>(self, bar_gap<font color="#909090">=0</font>, set_gap<font color="#909090">=20</font>, transfer<font color="#909090">=False</font>)</dt><dd><tt>ACTION:&nbsp;<br>
+&nbsp;determines&nbsp;the&nbsp;look&nbsp;of&nbsp;the&nbsp;series&nbsp;graphs&nbsp;of&nbsp;some&nbsp;chart&nbsp;types<br>
+&nbsp;<br>
+INPUT:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;bar_gap&nbsp;&nbsp;&nbsp;-&nbsp;0&nbsp;to&nbsp;100<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;set_gap&nbsp;&nbsp;&nbsp;-&nbsp;0&nbsp;to&nbsp;100<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bool&nbsp;transfer&nbsp;-&nbsp;default&nbsp;False&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+OUTPUT&nbsp;:&nbsp;&nbsp;&nbsp;NONE</tt></dd></dl>
+<dl><dt><a name="SwfChart-setSeriesColor"><strong>setSeriesColor</strong></a>(self, *colors)</dt><dd><tt>ACTION:&nbsp;<br>
+&nbsp;sets&nbsp;the&nbsp;colors&nbsp;to&nbsp;use&nbsp;for&nbsp;the&nbsp;chart&nbsp;series<br>
+&nbsp;Color&nbsp;is&nbsp;a&nbsp;6&nbsp;character&nbsp;hex&nbsp;value,&nbsp;ie.&nbsp;'000000'<br>
+&nbsp;Each&nbsp;color&nbsp;arg&nbsp;corresponds&nbsp;to&nbsp;the&nbsp;order&nbsp;of&nbsp;rows&nbsp;(series)<br>
+&nbsp;in&nbsp;the&nbsp;graph<br>
+&nbsp;<br>
+INPUT:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;str&nbsp;color1,&nbsp;[color2],&nbsp;[...]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+OUTPUT&nbsp;:&nbsp;&nbsp;&nbsp;NONE</tt></dd></dl>
+<dl><dt><a name="SwfChart-setSeriesExplode"><strong>setSeriesExplode</strong></a>(self, *vals)</dt><dd><tt>ACTION:&nbsp;<br>
+&nbsp;Applies&nbsp;to&nbsp;pie,&nbsp;line,&nbsp;and&nbsp;scatter&nbsp;charts&nbsp;ONLY.<br>
+&nbsp;A&nbsp;percentage&nbsp;value&nbsp;determining&nbsp;how&nbsp;far&nbsp;to&nbsp;sepearate<br>
+&nbsp;a&nbsp;'slice'&nbsp;from&nbsp;its&nbsp;center.&nbsp;Each&nbsp;value&nbsp;in&nbsp;the&nbsp;args<br>
+&nbsp;corresponds&nbsp;to&nbsp;that&nbsp;'slice'&nbsp;in&nbsp;the&nbsp;graph.<br>
+&nbsp;If&nbsp;you&nbsp;just&nbsp;set&nbsp;one&nbsp;value&nbsp;to&nbsp;50,&nbsp;then&nbsp;only&nbsp;the&nbsp;first&nbsp;slice<br>
+&nbsp;is&nbsp;affected&nbsp;and&nbsp;set&nbsp;to&nbsp;50%&nbsp;explode,&nbsp;and&nbsp;so&nbsp;on.<br>
+&nbsp;<br>
+INPUT:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;val1,&nbsp;[val2],&nbsp;[...]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+OUTPUT&nbsp;:&nbsp;&nbsp;&nbsp;NONE</tt></dd></dl>
+<dl><dt><a name="SwfChart-setTooltip"><strong>setTooltip</strong></a>(self, **kwargs)</dt><dd><tt>ACTION:<br>
+defines&nbsp;the&nbsp;look&nbsp;of&nbsp;the&nbsp;cursor&nbsp;label&nbsp;that&nbsp;appears&nbsp;<br>
+when&nbsp;the&nbsp;mouse&nbsp;moves&nbsp;over&nbsp;some&nbsp;chart&nbsp;elements<br>
+&nbsp;<br>
+INPUT:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Valid&nbsp;Key/Value&nbsp;pairs:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Review&nbsp;API&nbsp;docs<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+OUTPUT&nbsp;:&nbsp;&nbsp;&nbsp;NONE</tt></dd></dl>
+<dl><dt><a name="SwfChart-setUpdate"><strong>setUpdate</strong></a>(self, url, delay<font color="#909090">=0</font>, timeout<font color="#909090">=30</font>, retry<font color="#909090">=2</font>, mode<font color="#909090">='normal'</font>, span<font color="#909090">=10</font>)</dt><dd><tt>ACTION:&nbsp;<br>
+&nbsp;updates&nbsp;the&nbsp;chart&nbsp;without&nbsp;reloading&nbsp;the&nbsp;web&nbsp;page.&nbsp;This&nbsp;makes&nbsp;<br>
+&nbsp;it&nbsp;possible&nbsp;to&nbsp;display&nbsp;charts&nbsp;with&nbsp;live&nbsp;data,&nbsp;change&nbsp;the&nbsp;chart's&nbsp;<br>
+&nbsp;look&nbsp;over&nbsp;time&nbsp;for&nbsp;emphasis,&nbsp;or&nbsp;create&nbsp;a&nbsp;slideshow&nbsp;from&nbsp;different&nbsp;charts.<br>
+&nbsp;<br>
+INPUT:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;str&nbsp;url&nbsp;-&nbsp;relative&nbsp;or&nbsp;absolute&nbsp;url&nbsp;to&nbsp;get&nbsp;XML&nbsp;source<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;delay&nbsp;-&nbsp;interval&nbsp;between&nbsp;updates,&nbsp;in&nbsp;seconds<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;timeout&nbsp;-&nbsp;time&nbsp;to&nbsp;wait&nbsp;for&nbsp;an&nbsp;update&nbsp;before&nbsp;timing&nbsp;out,&nbsp;in&nbsp;seconds<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;retry&nbsp;-&nbsp;number&nbsp;of&nbsp;times&nbsp;to&nbsp;retry&nbsp;before&nbsp;erroring&nbsp;out,&nbsp;default&nbsp;2<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;str&nbsp;mode&nbsp;-&nbsp;update&nbsp;mode&nbsp;applied&nbsp;to&nbsp;chart<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(normal,&nbsp;reset,&nbsp;data,&nbsp;stream_category,&nbsp;stream_series)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;span&nbsp;-&nbsp;applies&nbsp;only&nbsp;if&nbsp;mode&nbsp;is&nbsp;stream_category&nbsp;or&nbsp;stream_series.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;max&nbsp;number&nbsp;of&nbsp;rows&nbsp;or&nbsp;columns&nbsp;to&nbsp;maintain&nbsp;before&nbsp;deleting&nbsp;old<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+OUTPUT&nbsp;:&nbsp;&nbsp;&nbsp;NONE</tt></dd></dl>
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>axis_category</strong></dt>
+</dl>
+<dl><dt><strong>axis_category_label</strong></dt>
+</dl>
+<dl><dt><strong>axis_ticks</strong></dt>
+</dl>
+<dl><dt><strong>axis_value</strong></dt>
+</dl>
+<dl><dt><strong>axis_value_label</strong></dt>
+</dl>
+<dl><dt><strong>chart_border</strong></dt>
+</dl>
+<dl><dt><strong>chart_data</strong></dt>
+<dd><tt>Returns&nbsp;the&nbsp;formatted&nbsp;&lt;chart_data&gt;&nbsp;xml&nbsp;section</tt></dd>
+</dl>
+<dl><dt><strong>chart_grid_h</strong></dt>
+</dl>
+<dl><dt><strong>chart_grid_v</strong></dt>
+</dl>
+<dl><dt><strong>chart_guide</strong></dt>
+</dl>
+<dl><dt><strong>chart_label</strong></dt>
+</dl>
+<dl><dt><strong>chart_note</strong></dt>
+</dl>
+<dl><dt><strong>chart_pref</strong></dt>
+</dl>
+<dl><dt><strong>chart_rect</strong></dt>
+</dl>
+<dl><dt><strong>chart_transition</strong></dt>
+</dl>
+<dl><dt><strong>chart_type</strong></dt>
+</dl>
+<dl><dt><strong>context_menu</strong></dt>
+</dl>
+<dl><dt><strong>draw</strong></dt>
+<dd><tt>returns&nbsp;the&nbsp;formatted&nbsp;&lt;draw&gt;&nbsp;XML&nbsp;element</tt></dd>
+</dl>
+<dl><dt><strong>filter</strong></dt>
+<dd><tt>returns&nbsp;the&nbsp;formatted&nbsp;&lt;filter&gt;&nbsp;XML&nbsp;element</tt></dd>
+</dl>
+<dl><dt><strong>legend</strong></dt>
+</dl>
+<dl><dt><strong>license</strong></dt>
+</dl>
+<dl><dt><strong>link</strong></dt>
+<dd><tt>returns&nbsp;the&nbsp;formatted&nbsp;&lt;link&gt;&nbsp;XML&nbsp;element</tt></dd>
+</dl>
+<dl><dt><strong>link_data</strong></dt>
+</dl>
+<dl><dt><strong>scroll</strong></dt>
+</dl>
+<dl><dt><strong>series</strong></dt>
+</dl>
+<dl><dt><strong>series_color</strong></dt>
+</dl>
+<dl><dt><strong>series_explode</strong></dt>
+</dl>
+<dl><dt><strong>tooltip</strong></dt>
+</dl>
+<dl><dt><strong>update</strong></dt>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="SwfChartException">class <strong>SwfChartException</strong></a>(<a href="exceptions.html#Exception">exceptions.Exception</a>)</font></td></tr>
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="exceptions.html#Exception">Exception</a>&nbsp;for&nbsp;<a href="#SwfChart">SwfChart</a>&nbsp;class<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="swfcharts.html#SwfChartException">SwfChartException</a></dd>
+<dd><a href="exceptions.html#Exception">exceptions.Exception</a></dd>
+<dd><a href="exceptions.html#BaseException">exceptions.BaseException</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Methods inherited from <a href="exceptions.html#Exception">exceptions.Exception</a>:<br>
+<dl><dt><a name="SwfChartException-__init__"><strong>__init__</strong></a>(...)</dt><dd><tt>x.<a href="#SwfChartException-__init__">__init__</a>(...)&nbsp;initializes&nbsp;x;&nbsp;see&nbsp;help(type(x))&nbsp;for&nbsp;signature</tt></dd></dl>
+<hr>
+Data and other attributes inherited from <a href="exceptions.html#Exception">exceptions.Exception</a>:<br>
+<dl><dt><strong>__new__</strong> = &lt;built-in method __new__ of type object&gt;<dd><tt>T.<a href="#SwfChartException-__new__">__new__</a>(S,&nbsp;...)&nbsp;-&gt;&nbsp;a&nbsp;new&nbsp;<a href="__builtin__.html#object">object</a>&nbsp;with&nbsp;type&nbsp;S,&nbsp;a&nbsp;subtype&nbsp;of&nbsp;T</tt></dl>
+<hr>
+Methods inherited from <a href="exceptions.html#BaseException">exceptions.BaseException</a>:<br>
+<dl><dt><a name="SwfChartException-__delattr__"><strong>__delattr__</strong></a>(...)</dt><dd><tt>x.<a href="#SwfChartException-__delattr__">__delattr__</a>('name')&nbsp;&lt;==&gt;&nbsp;del&nbsp;x.name</tt></dd></dl>
+<dl><dt><a name="SwfChartException-__getattribute__"><strong>__getattribute__</strong></a>(...)</dt><dd><tt>x.<a href="#SwfChartException-__getattribute__">__getattribute__</a>('name')&nbsp;&lt;==&gt;&nbsp;x.name</tt></dd></dl>
+<dl><dt><a name="SwfChartException-__getitem__"><strong>__getitem__</strong></a>(...)</dt><dd><tt>x.<a href="#SwfChartException-__getitem__">__getitem__</a>(y)&nbsp;&lt;==&gt;&nbsp;x[y]</tt></dd></dl>
+<dl><dt><a name="SwfChartException-__getslice__"><strong>__getslice__</strong></a>(...)</dt><dd><tt>x.<a href="#SwfChartException-__getslice__">__getslice__</a>(i,&nbsp;j)&nbsp;&lt;==&gt;&nbsp;x[i:j]<br>
+&nbsp;<br>
+Use&nbsp;of&nbsp;negative&nbsp;indices&nbsp;is&nbsp;not&nbsp;supported.</tt></dd></dl>
+<dl><dt><a name="SwfChartException-__reduce__"><strong>__reduce__</strong></a>(...)</dt></dl>
+<dl><dt><a name="SwfChartException-__repr__"><strong>__repr__</strong></a>(...)</dt><dd><tt>x.<a href="#SwfChartException-__repr__">__repr__</a>()&nbsp;&lt;==&gt;&nbsp;repr(x)</tt></dd></dl>
+<dl><dt><a name="SwfChartException-__setattr__"><strong>__setattr__</strong></a>(...)</dt><dd><tt>x.<a href="#SwfChartException-__setattr__">__setattr__</a>('name',&nbsp;value)&nbsp;&lt;==&gt;&nbsp;x.name&nbsp;=&nbsp;value</tt></dd></dl>
+<dl><dt><a name="SwfChartException-__setstate__"><strong>__setstate__</strong></a>(...)</dt></dl>
+<dl><dt><a name="SwfChartException-__str__"><strong>__str__</strong></a>(...)</dt><dd><tt>x.<a href="#SwfChartException-__str__">__str__</a>()&nbsp;&lt;==&gt;&nbsp;str(x)</tt></dd></dl>
+<dl><dt><a name="SwfChartException-__unicode__"><strong>__unicode__</strong></a>(...)</dt></dl>
+<hr>
+Data descriptors inherited from <a href="exceptions.html#BaseException">exceptions.BaseException</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+</dl>
+<dl><dt><strong>args</strong></dt>
+</dl>
+<dl><dt><strong>message</strong></dt>
+</dl>
+</td></tr></table></td></tr></table>
+</body></html>

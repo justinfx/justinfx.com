@@ -1,0 +1,12 @@
+<article class="post">
+    <header>
+        <h2 class="post-title"><a href="{{ .Permalink }}">{{ .Title }} {{ if .Draft }}:: DRAFT{{end}}</a> </h2>
+        <div class="post-date text-success">{{ .Date.Format "Mon, Jan 2, 2006" }}</div>
+    </header>
+
+    {{ .Summary }}
+    
+    <footer>
+        <a href='{{ .Permalink }}'><nobr>Read more »</nobr></a>
+    </footer>
+</article>

@@ -6,8 +6,13 @@
 <div class="content container">
   <h1 class="title">Blog Posts</h1> 
   <ul class="posts">
-      {{ range .Data.Pages }}
-        {{ .Render "li" }}
+      {{ range .Data.Pages.GroupByDate "2006" }}
+	    <h2>{{ .Key }}</h2>
+	        <ul id="list">
+	            {{ range .Pages }}
+	                {{ .Render "li"}}
+	            {{ end }}
+	        </ul>
       {{ end }}
   </ul>
 </div>

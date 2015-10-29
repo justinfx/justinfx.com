@@ -1,6 +1,5 @@
 ---
-#baseurl: "http://justinfx.com"
-baseurl: "http://justinfx.github.io"
+baseurl: "http://justinfx.com"
 
 languageCode: "en-us"
 title: "JustinFX.com"

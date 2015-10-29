@@ -19,6 +19,7 @@ taxonomies:
     category: "categories"
 
 params:
+    canonicalurl: "http://justinfx.com"
     description: "Coding, FX, And Just Random Stuff"
     author: "Justin Israel"
     disqus: "justinfx"

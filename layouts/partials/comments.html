@@ -7,8 +7,19 @@
     if (window.location.hostname == "localhost") 
         return;
 
-    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
     var disqus_shortname = '{{ .Site.Params.disqus }}';
+    var disqus_title = '{{ .Title }}';
+    {{ if isset .Params "disqus_url" }} 
+    var disqus_identifier = '{{ .Params.disqus_url }}';
+    var disqus_url = '{{ .Params.disqus_url }}';
+    {{ else if isset .Site.Params "canonicalurl" }}
+    var disqus_identifier = '{{ .Site.Params.canonicalurl }}{{ .RelPermalink }}';
+    var disqus_url = '{{ .Site.Params.canonicalurl }}{{ .RelPermalink }}';
+    {{ else }}
+    return;
+    {{end}}
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
     dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
 })();

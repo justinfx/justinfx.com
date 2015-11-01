@@ -232,10 +232,9 @@ tbody tr:nth-child(odd) th {
  */
 
 .lead {
-  font-size: 1.1rem;
+  font-size: 0.9rem;
   font-weight: 300;
 }
-
 
 /*
  * Messages

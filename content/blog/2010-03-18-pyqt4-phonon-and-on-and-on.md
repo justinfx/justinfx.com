@@ -3,6 +3,7 @@ title: 'PyQt4: phonon… and on… and on'
 author: Justin Israel
 type: post
 date: 2010-03-19
+slug: pyqt4-phonon-and-on-and-on
 url: /2010/03/18/pyqt4-phonon-and-on-and-on/
 meta_keywords:
   - pyqt4, qt, phonon, plugin, pyqt, phonon_backend, macdeployqt, custom, dylib, application

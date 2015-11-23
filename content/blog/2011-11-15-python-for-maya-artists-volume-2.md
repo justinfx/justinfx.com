@@ -4,6 +4,7 @@ author: Justin Israel
 type: post
 date: 2011-11-15
 excerpt: "Second tutorial in the series released! If you watched the first video, you now have a good grasp on Python. Sweet. Let's plow through some more involved concepts like python juggernauts!"
+slug: python-for-maya-artists-volume-2
 url: /2011/11/15/python-for-maya-artists-volume-2/
 suf_meta_keywords:
   - python, pyqt, pyqt4, tutorial, maya2011, maya2012, api

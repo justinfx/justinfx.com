@@ -3,6 +3,7 @@ title: My fake grandmother…
 author: Justin Israel
 type: post
 date: 2009-11-18
+slug: my-fake-grandmother
 url: /2009/11/18/my-fake-grandmother/
 meta_keywords:
   - fake grandmother, fake grandma, funny email, wrong son

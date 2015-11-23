@@ -3,6 +3,7 @@ title: Installing PyQt4 for Maya 2012+ (osx)
 author: Justin Israel
 type: post
 date: 2011-11-10
+slug: installing-pyqt4-for-maya-2012-osx
 url: /2011/11/09/installing-pyqt4-for-maya-2012-osx/
 suf_meta_keywords:
   - maya, 2012, maya 2011, pyqt, pyqt4, qt, python, sip

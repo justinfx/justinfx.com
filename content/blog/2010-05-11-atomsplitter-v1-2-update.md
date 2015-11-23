@@ -6,6 +6,7 @@ date: 2010-05-11
 excerpt: |
   |
     AtomSplitter (chanToFbx) has been updated to v1.2, available through cmivfx.com
+slug: atomsplitter-v1-2-update
 url: /2010/05/11/atomsplitter-v1-2-update/
 meta_keywords:
   - AtomSplitter, pyqt, nuke, chan, fbx

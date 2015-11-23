@@ -3,6 +3,7 @@ title: 'SouthPark: A crazy little interface. The TaskMonster.'
 author: Justin Israel
 type: post
 date: 2010-03-16
+slug: southpark-a-crazy-little-interface-the-taskmonster
 url: /2010/03/16/southpark-a-crazy-little-interface-the-taskmonster/
 meta_keywords:
   - southpark, qt, pyqt, python, sqlalchemy, twisted, taskmonster, skinning, theme, stylesheet, application, css

@@ -6,6 +6,7 @@ date: 2012-04-14
 excerpt: |
   How do we respond to people who present questions that effectively translate to the statement: "Please write my code for me. Thanks!" ? 
   In the spirit of a very similar blog post, I decided to expand upon a specific area of that article...
+slug: write-my-code-for-me
 url: /2012/04/14/write-my-code-for-me/
 categories:
   - Code

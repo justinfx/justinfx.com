@@ -3,6 +3,7 @@ title: Comparing performance of Qt smart pointer options
 author: Justin Israel
 type: post
 date: 2015-06-07
+slug: comparing-performance-of-qt-smart-pointer-options
 url: /2015/06/07/comparing-performance-of-qt-smart-pointer-options/
 categories:
   - Code

@@ -4,6 +4,7 @@ author: Justin Israel
 type: post
 date: 2012-06-21
 excerpt: A recent project of mine involves research and development with an XBOX 360 Kinect Sensor. Being a python guy, I started searching for python bindings to some OSX-supported framework. When you just get started looking into this area it can be a little confusing. There are a number of layers to the software stack to enable one to accomplish anything meaningful. This is just a short and general blog post outlining the basics of what I have discovered thus far, to help anyone else that might also be getting started.
+slug: getting-started-with-xbox-360-kinect-on-osx
 url: /2012/06/21/getting-started-with-xbox-360-kinect-on-osx/
 categories:
   - Code

@@ -3,6 +3,7 @@ title: Failed… hard
 author: Justin Israel
 type: post
 date: 2010-01-12
+slug: failed-hard
 url: /2010/01/11/failed-hard/
 meta_keywords:
   - epic, fail, failed, failed hard, hard fail, osx, mac, drive failure, drive test

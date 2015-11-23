@@ -3,6 +3,7 @@ title: South Park “going-away” book gift
 author: Justin Israel
 type: post
 date: 2012-12-19
+slug: south-park-going-away-book-gift
 url: /2012/12/19/south-park-going-away-book-gift/
 categories:
   - Random Stuff

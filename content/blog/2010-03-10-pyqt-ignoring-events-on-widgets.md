@@ -3,6 +3,7 @@ title: 'PyQt: Overloading/Ignoring events on widgets'
 author: Justin Israel
 type: post
 date: 2010-03-10
+slug: pyqt-ignoring-events-on-widgets
 url: /2010/03/10/pyqt-ignoring-events-on-widgets/
 meta_keywords:
   - pyqt, qt, python, widgets, signals

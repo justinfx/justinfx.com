@@ -4,6 +4,7 @@ author: Justin Israel
 type: post
 date: 2010-10-08
 excerpt: "We finally decided to release the source code for AtomSplitter, since we were getting some feedback that the application builds weren't 100% working on every possible system."
+slug: atomsplitter-source-code-released
 url: /2010/10/08/atomsplitter-source-code-released/
 meta_keywords:
   - cmivfx, atomsplitter, pyqt, nuke, chan, python, flame, autodesk, maya

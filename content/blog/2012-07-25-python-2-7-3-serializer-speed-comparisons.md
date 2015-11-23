@@ -4,6 +4,7 @@ author: Justin Israel
 type: post
 date: 2012-07-25
 excerpt: In a recent python project where I was sending multiple messages per second of data over a basic socket, I had initially just grabbed the cPickle module to get the prototype proof-of-concept functioning properly. cPickle is awesome for easily serializing more complex python objects like custom classes, even though in my case I am only sending basic types. But I wanted to investigate the speed differences of different serializer modules.
+slug: python-2-7-3-serializer-speed-comparisons
 url: /2012/07/25/python-2-7-3-serializer-speed-comparisons/
 categories:
   - Code

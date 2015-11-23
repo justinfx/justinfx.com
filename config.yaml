@@ -10,7 +10,7 @@ author:
     name: "Justin Israel" 
 
 permalinks:
-    blog: :url
+    blog: /:year/:month/:day/:slug/
 
 taxonomies:
     tag: "tags"

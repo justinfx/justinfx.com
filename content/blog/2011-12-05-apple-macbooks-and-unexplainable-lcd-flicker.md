@@ -4,6 +4,7 @@ author: Justin Israel
 type: post
 date: 2011-12-05
 excerpt: I had just received my brand new MacBook Pro a few days ago. Amazing machine. Probably the best laptop I have ever laid my hands upon. It was the early Feb 2011 model so I got a crazy good deal. But something caught my eye that I just had to investigate...
+slug: apple-macbooks-and-unexplainable-lcd-flicker
 url: /2011/12/05/apple-macbooks-and-unexplainable-lcd-flicker/
 meta_keywords:
   - macbook pro, macbook air, flicker, lcd, display, artifact, inversion, text, osx, lion

@@ -3,6 +3,7 @@ title: Film Jam Podcast Interview
 author: Justin Israel
 type: post
 date: 2010-08-05
+slug: film-jam-podcast-interview
 url: /2010/08/04/film-jam-podcast-interview/
 meta_keywords:
   - film jam, podcast, visual effects

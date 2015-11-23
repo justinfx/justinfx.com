@@ -3,6 +3,7 @@ title: Python API for XML/SWF Charts (Flash Graphing)
 author: Justin Israel
 type: post
 date: 2010-01-15
+slug: python-api-for-xmlswf-charts-flash-graphing
 url: /2010/01/15/python-api-for-xmlswf-charts-flash-graphing/
 meta_keywords:
   - graph, flash, swfchart, python, xml, xml/swf charts, graphing api

@@ -3,6 +3,7 @@ title: Maya, and self-intersecting nurbsCurves
 author: Justin Israel
 type: post
 date: 2010-08-09
+slug: maya-and-self-intersecting-nurbscurves
 url: /2010/08/09/maya-and-self-intersecting-nurbscurves/
 meta_keywords:
   - maya, curves, self-intersection, loops, curve intersection, detection, bezier clipping, nurbs curve

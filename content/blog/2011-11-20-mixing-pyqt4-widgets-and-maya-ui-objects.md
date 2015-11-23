@@ -3,6 +3,7 @@ title: Mixing PyQt4 widgets and Maya UI objects
 author: Justin Israel
 type: post
 date: 2011-11-21
+slug: mixing-pyqt4-widgets-and-maya-ui-objects
 url: /2011/11/20/mixing-pyqt4-widgets-and-maya-ui-objects/
 meta_keywords:
   - maya, pyqt, UI, python, sip, api

@@ -4,6 +4,7 @@ author: Justin Israel
 type: post
 date: 2011-07-28
 excerpt: A review of the programming language, Go, from the perspective of a python programmer.
+slug: go-language-for-python-programmers
 url: /2011/07/28/go-language-for-python-programmers/
 meta_description:
   - A review of the programming language, Go, from the perspective of a python programmer.

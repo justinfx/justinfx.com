@@ -3,6 +3,7 @@ title: chanToFbx tool released through cmiVFX
 author: Justin Israel
 type: post
 date: 2009-12-07
+slug: chantofbx-tool-released-through-cmivfx
 url: /2009/12/06/chantofbx-tool-released-through-cmivfx/
 meta_keywords:
   - pyqt, qt, application, cmivfx, python, atom splitter, nuke, chan, fbx, flame, action, camera

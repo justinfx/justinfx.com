@@ -5,6 +5,7 @@ type: post
 date: 2012-10-12
 excerpt: |
   "cmiVFX just released the first of a series of training videos for PyQt4 UI Development for Maya, featuring Justin Israel. The base of this video is not just for Maya, but for ANY app structure that exists today. Maya is covered in the second half of the video to help people associate a stronger principal interfacing structure with one of today's most popular graphics packages. We would like to explicitly state that this video would be extremely helpful to a large range of VFX producers using different software pipelines. The goal of this video is to let the user interface their tools using PyQT4."
+slug: pyqt4-for-maya
 url: /2012/10/12/pyqt4-for-maya/
 categories:
   - Code

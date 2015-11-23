@@ -4,6 +4,7 @@ author: Justin Israel
 type: post
 date: 2011-10-08
 excerpt: This course brings the talented artist into the fold of the technical-side of Maya. Learn the basics of Python, and its place in your 3D workflow, with visual examples and real world problems. Get a kick-start on adding some automation into your life, and solving common problems in a fraction of the time. By the end of this video, you should have a deeper understanding of one of the languages Maya speaks under the hood...
+slug: intro-to-python-for-maya-artists-tutorial
 url: /2011/10/08/intro-to-python-for-maya-artists-tutorial/
 suf_thumbnail:
   - http://www.justinfx.com/blog/wp-content/uploads/2011/10/1318089294_Python_Background_master.jpg

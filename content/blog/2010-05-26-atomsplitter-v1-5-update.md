@@ -4,6 +4,7 @@ author: Justin Israel
 type: post
 date: 2010-05-26
 excerpt: AtomSplitter has been updated to v1.5, available through cmivfx.com
+slug: atomsplitter-v1-5-update
 url: /2010/05/26/atomsplitter-v1-5-update/
 meta_keywords:
   - pyqt, qt, application, cmivfx, python, atom splitter, nuke, chan, fbx, flame, action, camera

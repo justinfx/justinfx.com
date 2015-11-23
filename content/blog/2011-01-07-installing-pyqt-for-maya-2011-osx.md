@@ -4,6 +4,7 @@ author: Justin Israel
 type: post
 date: 2011-01-08
 excerpt: The solution I arrived at, for successfully installing PyQt4 in Maya 2011, after collecting info from multiple sites...
+slug: installing-pyqt-for-maya-2011-osx
 url: /2011/01/07/installing-pyqt-for-maya-2011-osx/
 meta_description:
   - Installing PyQt for maya 2011 (OSX)

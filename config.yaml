@@ -3,6 +3,7 @@ baseurl: "http://justinfx.com"
 languageCode: "en-us"
 title: "JustinFX.com"
 disqusShortname: "justinfx"
+GoogleAnalytics: "UA-6692856-1"
 copyright: "Justin Israel"
 pygmentsstyle: "friendly"
 
@@ -31,5 +32,4 @@ params:
     logo: "/wp-content/uploads/2009/11/photo1.jpeg"
     photo: "/wp-content/uploads/2009/11/photo1.jpeg"
     cover: "/wp-content/uploads/2014/09/tile2.png"
-    googleAnalyticsUserID: "UA-6692856-1"
 ...

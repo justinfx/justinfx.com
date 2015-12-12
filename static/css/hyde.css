@@ -60,8 +60,8 @@ pre {
   text-align: center;
   /*padding: 2rem 1rem;*/
   color: rgba(245,245,250,.5);
-  background: #392f27;
-  background-image: url(/wp-content/uploads/2014/09/tile2.png);
+  background: #2d2d2d;
+  background-image: url(/images/tile_50x50.gif);
   background-repeat: repeat; 
 }
 

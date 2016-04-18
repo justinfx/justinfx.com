@@ -124,3 +124,4 @@ It helps to store your uncrustify.cfg within your project repo. Also, there is a
 
 I don't do much debugging or building from within my editor (I am primarily an Editor+Terminal kind of developer), so I didn't go as far as to investigate Sublime options for debugging. But with a pretty minimal amount of configuration, I have a pretty lightweight and capable editor for working on C++ projects. And it is the same editor I use for working on Python and Go projects.
 
+Got any other recommendations for making SublimeText an even more capable solution for C++ projects? Let me know!

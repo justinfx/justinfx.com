@@ -120,6 +120,37 @@ If your uncrustify binary is in a non-standard location, you can set the user se
 It helps to store your uncrustify.cfg within your project repo. Also, there is a tool I used for visually editing the rules for setting up an uncrustify config: [universalindent](http://universalindent.sourceforge.net/).
 ```
 
+## Build System
+
+On a per-project basis, you can set up your build commands. Going into `Project -> Edit Project`, I added something like the following to work with my particular build system for the project:
+
+```json
+{
+  "build_systems": [
+    {
+      "file_regex": "(\\S*?):(\\d+):(\\d+): (error.*)",
+      "name": "Default 'Project' Build",
+      "shell": true,
+      "shell_cmd": "./\\$USER/scripts/build_cmd arg1 arg2",
+      "variants": [
+        {
+          "cmd": [
+            "./\\$USER/scripts/build_cmd arg3 arg4"
+          ],
+          "name": "'Project' Build Debug",
+          "shell": true
+        }
+      ],
+      "working_dir": "/path/to/project/root"
+    }
+  ]
+}
+```
+
+`file_regex` is a pattern specifying how to capture the filename, line number, column number, and error message from the output of the build command. This is useful to adapt to any kind of build system and have Sublime give you context about the errors in your view.
+
+You specify the default build command, and then optionally a number of variants for the build system, such as debug builds or different options. Once this is entered you can now set your build system selection and use your build hotkey.
+
 ## Wrapping up
 
 I don't do much debugging or building from within my editor (I am primarily an Editor+Terminal kind of developer), so I didn't go as far as to investigate Sublime options for debugging. But with a pretty minimal amount of configuration, I have a pretty lightweight and capable editor for working on C++ projects. And it is the same editor I use for working on Python and Go projects.

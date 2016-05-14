@@ -17,7 +17,7 @@ This is an overview describing my approach to creating C++ bindings around a Go 
 
 ## A bit about wrapping C/C++
 
-I've had a some past experience in writing cgo bindings on top of C and C++ libraries. 
+I've had some past experience in writing cgo bindings on top of C and C++ libraries. 
 
 **Author**
 

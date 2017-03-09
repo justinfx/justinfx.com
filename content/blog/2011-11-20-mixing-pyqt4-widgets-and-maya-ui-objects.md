@@ -24,6 +24,12 @@ Someone asked how you can create maya UI objects and embed them within your main
 
 <!--more-->
 
+---
+
+*Update*: Instructions for Maya 2017+, using PySide2 and Qt5, are available via this [blog post by Lidia Martínez](http://blog.virtualmethodstudio.com/2017/03/embed-maya-native-ui-objects-in-pyside2/)
+
+---
+
 Here is my example of how to achieve this&#8230;
 
 {{< highlight python >}}

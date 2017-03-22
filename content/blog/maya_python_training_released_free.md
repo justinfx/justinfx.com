@@ -18,6 +18,8 @@ tags:
 In 2011 and 2012 I had released 3 commercial Python training tutorials, using Maya as a target platform. 
 Now enjoy them free of charge!
 
+<!--more-->
+
 * [Python For Maya Artists - Volume 1](#python-for-maya-artists-volume-1)
 * [Python For Maya Artists - Volume 2](#python-for-maya-artists-volume-2)
 * [PyQt4 UI Development for Maya](#pyqt4-ui-development-for-maya)

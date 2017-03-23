@@ -40,6 +40,13 @@
   <script src="{{ .Site.BaseURL }}/js/imagesloaded.pkgd.min.js"></script>
   <script src="{{ .Site.BaseURL }}/js/jquery.fluidbox.min.js"></script>
 
+  <!-- Images -->
+  {{ with .Params.featured_image }}
+  <meta property="og:image" content="{{ . }}"/>
+  <link rel="image_src" href="{{ . }}"/>
+  {{ end }}
+
+
   <script src="//ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
   <script>
     WebFont.load({

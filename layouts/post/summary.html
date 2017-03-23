@@ -4,6 +4,8 @@
         <div class="post-date text-success">{{ .Date.Format "Mon, Jan 2, 2006" }}</div>
     </header>
 
+    {{ with .Params.featured_image }}<img src="{{ . }}" style="max-width:360px;max-height:240px">{{ end }}
+
     {{ .Summary }}
     
     <footer>

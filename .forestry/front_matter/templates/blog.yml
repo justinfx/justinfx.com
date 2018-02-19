@@ -1,0 +1,98 @@
+---
+hide_body: false
+fields:
+- name: title
+  label: Title
+  type: text
+  hidden: false
+  default: ''
+- name: author
+  label: Author
+  type: text
+  hidden: false
+  default: ''
+- name: type
+  label: Type
+  type: text
+  hidden: false
+  default: post
+- name: date
+  label: Date
+  type: datetime
+  hidden: false
+  default: ''
+- name: excerpt
+  label: Excerpt
+  type: textarea
+  hidden: false
+  default: ''
+- name: slug
+  label: Slug
+  type: text
+  hidden: false
+  default: ''
+- name: url
+  label: Url
+  type: text
+  hidden: false
+  default: ''
+- name: meta_keywords
+  label: Meta keywords
+  type: list
+  hidden: false
+  default: ''
+- name: thumbnail
+  label: Thumbnail
+  type: list
+  hidden: false
+  default: ''
+- name: categories
+  label: Categories
+  type: tag_list
+  hidden: false
+  default: ''
+- name: tags
+  label: Tags
+  type: tag_list
+  hidden: false
+  default: ''
+- name: meta_description
+  label: Meta description
+  type: list
+  hidden: false
+  default: ''
+- name: suf_meta_keywords
+  label: Suf meta keywords
+  type: list
+  hidden: false
+  default: ''
+- name: suf_thumbnail
+  label: Suf thumbnail
+  type: list
+  hidden: false
+  default: ''
+- name: suf_meta_description
+  label: Suf meta description
+  type: list
+  hidden: false
+  default: ''
+- name: featured_image
+  label: Featured image
+  type: list
+  hidden: false
+  default: ''
+- name: suf_featured_image
+  label: Suf featured image
+  type: list
+  hidden: false
+  default: ''
+- name: enclosure
+  label: Enclosure
+  type: list
+  hidden: false
+  default: ''
+- name: draft
+  label: Draft
+  type: boolean
+  hidden: false
+  default: true

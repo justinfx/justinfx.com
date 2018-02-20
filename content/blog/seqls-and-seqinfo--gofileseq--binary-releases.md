@@ -20,16 +20,74 @@ type = "post"
 url = "gofileseq-binary-release"
 
 +++
-[gofileseq](https://github.com/justinfx/gofileseq "gofileseq") is a Go language library for parsing file sequence strings commonly used in VFX and animation applications. Included with the library are two command line utilities:
+<img src="https://assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png" style="width:100px; float:left;">
 
-seqls - An ls style tool for searching and listing file sequences 
+[gofileseq](https://github.com/justinfx/gofileseq "gofileseq") is a Go language library for parsing file sequence strings commonly used in VFX and animation applications. 
 
-seqinfo - Parses one or more sequence pattern strings and list plain text or json info
+<p style="clear:both">
+
+Sequences of files follow a pattern similar to:
+
+    /path/to/some/file_foo.0100.exr
+    /path/to/some/file_foo.1-100#.jpg
+    /path/to/some/file_foo.1-100@@@.tif
+
+Support range formats:
+
+           Standard: 1-10
+        Comma Delim: 1-10,10-20
+            Chunked: 1-100x5
+             Filled: 1-100y5
+          Staggered: 1-100:3 (1-100x3, 1-100x2, 1-100)
+    Negative frames: -10-100
+            Padding: #=4 padded, @=single pad
+
+Included with the library are two command line utilities:
+
+[seqls](https://github.com/justinfx/gofileseq/tree/master/cmd/seqls) - An ls style tool for searching and listing file sequences
+
+    $ seqls -r 
+    
+    file_foo.0100.exr
+    subdir/file_foo.1-100#.jpg
+    subdir2/file_foo.1-100@@@.tif
+
+[seqinfo](https://github.com/justinfx/gofileseq/tree/master/cmd/seqinfo) - Parses one or more sequence pattern strings and list plain text or json info
+
+    $ seqinfo --json "/path/to/file.exr" "/path/to/seq.-10-200x2@@.exr"
+    {
+        "/path/to/file.exr": {
+            "error": "",
+            "string": "/path/to/file.exr",
+            "dir": "/path/to/",
+            "base": "file",
+            "range": "",
+            "pad": "",
+            "ext": ".exr",
+            "start": 0,
+            "end": 0,
+            "length": 1,
+            "zfill": 0,
+            "hasRange": false
+        },
+        "/path/to/seq.-10-200x2@@.exr": {
+            "error": "",
+            "string": "/path/to/seq.-10-200x2@@.exr",
+            "dir": "/path/to/",
+            "base": "seq.",
+            "range": "-10-200x2",
+            "pad": "@@",
+            "ext": ".exr",
+            "start": -10,
+            "end": 200,
+            "length": 106,
+            "zfill": 2,
+            "hasRange": true
+        }
+    }
+
+As of recent, the gofileseq project has adopted the use of the [goreleaser](https://goreleaser.com/) tool, which means that [tagged releases](https://github.com/justinfx/gofileseq/releases) now automatically include cross-compiled binaries of the tools for linux, osx, and windows.
+
+[![Latest Release](https://badge.fury.io/gh/justinfx%2Fgofileseq.svg)](https://github.com/justinfx/gofileseq/releases)
 
 There is also a [C++ port](https://github.com/justinfx/gofileseq/tree/master/cpp-port "C++ port") of gofileseq within the repository, for those C++ devs that need to work with VFX-style file sequence patterns.  Doxygen API docs are now automatically built from the master branch: [justinfx.com/gofileseq/cpp](http://justinfx.com/gofileseq/cpp)
-
-As of recent, the gofileseq project has adopted the use of the [goreleaser](https://goreleaser.com/) tool, which means that [tagged releases](https://github.com/justinfx/gofileseq/releases) now include cross-compiled binaries of the tools for linux, osx, and windows. 
-
-![](https://badge.fury.io/gh/justinfx%2Fgofileseq.svg)
-
-Hopefully this makes it easy for users on different platforms to easily list image file sequences!

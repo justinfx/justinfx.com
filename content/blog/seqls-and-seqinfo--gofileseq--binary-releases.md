@@ -43,7 +43,7 @@ Support range formats:
 
 Included with the library are two command line utilities:
 
-[seqls](https://github.com/justinfx/gofileseq/tree/master/cmd/seqls) - An ls style tool for searching and listing file sequences
+[seqls](https://github.com/justinfx/gofileseq/tree/master/cmd/seqls) - An `ls`-style tool for searching and listing file sequences
 
     $ seqls -r 
     

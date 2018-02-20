@@ -87,6 +87,6 @@ Included with the library are two command line utilities:
 
 As of recent, the gofileseq project has adopted the use of the [goreleaser](https://goreleaser.com/) tool, which means that [tagged releases](https://github.com/justinfx/gofileseq/releases) now automatically include cross-compiled binaries of the tools for linux, osx, and windows.
 
-[![Latest Release](https://badge.fury.io/gh/justinfx%2Fgofileseq.svg)](https://github.com/justinfx/gofileseq/releases)
+[![Latest Release](https://badge.fury.io/go/github.com%2Fjustinfx%2Fgofileseq.svg)](https://github.com/justinfx/gofileseq/releases)
 
 There is also a [C++ port](https://github.com/justinfx/gofileseq/tree/master/cpp-port "C++ port") of gofileseq within the repository, for those C++ devs that need to work with VFX-style file sequence patterns.  Doxygen API docs are now automatically built from the master branch: [justinfx.com/gofileseq/cpp](http://justinfx.com/gofileseq/cpp)

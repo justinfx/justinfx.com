@@ -25,13 +25,13 @@ url = ""
 
 <p style="clear:both">
 
-Sequences of files follow a pattern similar to:
+#### Sequences of files follow a pattern similar to
 
     /path/to/some/file_foo.0100.exr
     /path/to/some/file_foo.1-100#.jpg
     /path/to/some/file_foo.1-100@@@.tif
 
-Support range formats:
+#### Support range formats
 
            Standard: 1-10
         Comma Delim: 1-10,10-20
@@ -40,6 +40,8 @@ Support range formats:
           Staggered: 1-100:3 (1-100x3, 1-100x2, 1-100)
     Negative frames: -10-100
             Padding: #=4 padded, @=single pad
+
+#### Tools
 
 Included with the library are two command line utilities:
 
@@ -88,5 +90,7 @@ Included with the library are two command line utilities:
 As of recent, the gofileseq project has adopted the use of the [goreleaser](https://goreleaser.com/) tool, which means that [tagged releases](https://github.com/justinfx/gofileseq/releases) now automatically include cross-compiled binaries of the tools for linux, osx, and windows.
 
 [![Latest Release](https://badge.fury.io/go/github.com%2Fjustinfx%2Fgofileseq.svg)](https://github.com/justinfx/gofileseq/releases)
+
+#### C++
 
 There is also a [C++ port](https://github.com/justinfx/gofileseq/tree/master/cpp-port "C++ port") of gofileseq within the repository, for those C++ devs that need to work with VFX-style file sequence patterns.  Doxygen API docs are now automatically built from the master branch: [justinfx.com/gofileseq/cpp](http://justinfx.com/gofileseq/cpp)

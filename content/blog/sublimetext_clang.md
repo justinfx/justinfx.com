@@ -1,16 +1,30 @@
 ---
-date: 2016-04-17T15:22:33+12:00
+date: 2016-04-17 15:22:33 +1200
 title: SublimeText Editor and Clang (C++)
 type: post
 slug: sublimetext-editor-and-clang
 categories:
-  - Code
+- Code
 tags:
-  - c++
-  - sublimetext
----
+- c++
+- sublimetext
+author: ''
+excerpt: ''
+url: ''
+meta_keywords: []
+thumbnail: []
+meta_description: []
+suf_meta_keywords: []
+suf_thumbnail: []
+suf_meta_description: []
+featured_image: []
+suf_featured_image: []
+enclosure: []
 
-My code editor of choice has been [SublimeText](https://www.sublimetext.com) for a while now. It is blazing fast for searching and doing matching, replacements, and refactoring. I also love that it is very lightweight, so that I can use it as my default shell `$EDITOR`, and also have an alias `st` which can easily open files and folders in the current or new Sublime window: 
+---
+<!--more-->
+
+My code editor of choice has been [SublimeText](https://www.sublimetext.com) for a while now. It is blazing fast for searching and doing matching, replacements, and refactoring. I also love that it is very lightweight, so that I can use it as my default shell `$EDITOR`, and also have an alias `st` which can easily open files and folders in the current or new Sublime window:
 
 ```shell
 # Add directory to current sublime
@@ -19,7 +33,7 @@ $ st -a /path/to/src
 $ st -n .
 ```
 
-Sublime is cross-platform, which means I can have the same development environment across Linux and OSX. It also has an amazing python-based plugin framework, which is enriched by the plugin manager and plugin community, [PackageControl](https://packagecontrol.io/). While it is not a full-fledged IDE, because of the availability of so many plugin options, you can get it pretty close to being like an IDE for a number of different languages. Currently I use it for Python, Go, Markdown editing, and C++. This post outlines some simple steps for configuration a SublimeText3 project for use with C++. 
+Sublime is cross-platform, which means I can have the same development environment across Linux and OSX. It also has an amazing python-based plugin framework, which is enriched by the plugin manager and plugin community, [PackageControl](https://packagecontrol.io/). While it is not a full-fledged IDE, because of the availability of so many plugin options, you can get it pretty close to being like an IDE for a number of different languages. Currently I use it for Python, Go, Markdown editing, and C++. This post outlines some simple steps for configuration a SublimeText3 project for use with C++.
 
 Before we get into the specifics of C++ configuration, let me first give a quick overview of my SublimeText3 setup, across all of my language...
 
@@ -43,11 +57,11 @@ These steps were performed on an OSX laptop, so you will need to look at the spe
 
 ## <a name="clang-complete">Clang-Complete</a>
 
-OSX already comes with the clang compiler, and this plugin for SublimeText3 allows your source to be compiled on the fly and have diagnostic details made available. 
+OSX already comes with the clang compiler, and this plugin for SublimeText3 allows your source to be compiled on the fly and have diagnostic details made available.
 
 Install [Clang-Complete](https://packagecontrol.io/packages/Clang-Complete)
 
-There aren't any plugin settings to adjust, but you will want to set up either general clang settings, or project-specific clang settings. General settings may be include paths related to finding system libraries, however in my case I only set up project specific settings. 
+There aren't any plugin settings to adjust, but you will want to set up either general clang settings, or project-specific clang settings. General settings may be include paths related to finding system libraries, however in my case I only set up project specific settings.
 
 `Project -> Edit Project`
 
@@ -61,7 +75,7 @@ If you don't already have a `settings` key, create one, and then under that crea
 }
 ```
 
-The setting is called "cc_include_options", but it is a bit misleading. Really it seems to just be any compiler flags you want to pass to clang. I have put `-D` macro defines, as well as being able to disable warnings, etc, etc. 
+The setting is called "cc_include_options", but it is a bit misleading. Really it seems to just be any compiler flags you want to pass to clang. I have put `-D` macro defines, as well as being able to disable warnings, etc, etc.
 
 Once you have your basic includes entered for your given project, you should review your key mappings. There is only one I cared about:
 
@@ -78,7 +92,7 @@ At this point, you should have code completion, and the ability to navigate thro
 
 ## <a name="switch-file-deluxe">Switch File Deluxe</a>
 
-This is a pretty sweet and simple plugin that lets you switch between headers and source files. Before Sublime, I had been using Qt Creator for C++ Qt projects, and this functionality was built-in and mapped to the F4 key. 
+This is a pretty sweet and simple plugin that lets you switch between headers and source files. Before Sublime, I had been using Qt Creator for C++ Qt projects, and this functionality was built-in and mapped to the F4 key.
 
 Install [Switch File Deluxe](https://packagecontrol.io/packages/Switch%20File%20Deluxe)
 
@@ -97,11 +111,11 @@ Once installed, all I had to do was map a key sequence:
 }
 ```
 
-From any C++ header or source file, when you hit F4 you will switch to the corresponding header or source. If the matching file is ambiguous, you should be presented with a choice of files. Once you select the file, future uses of the key will immediately switch between the previously selected files. 
+From any C++ header or source file, when you hit F4 you will switch to the corresponding header or source. If the matching file is ambiguous, you should be presented with a choice of files. Once you select the file, future uses of the key will immediately switch between the previously selected files.
 
 ## <a name="uncrustify">Uncrustify</a>
 
-If you prefer your C++ source code to follow a particular style, then you can use the "uncrustify" tool to apply beautification based on a configuration file of rules. 
+If you prefer your C++ source code to follow a particular style, then you can use the "uncrustify" tool to apply beautification based on a configuration file of rules.
 
 First I installed uncrustify via homebrew:  `brew install uncrustify`
 

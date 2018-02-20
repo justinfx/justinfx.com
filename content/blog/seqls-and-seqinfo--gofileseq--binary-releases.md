@@ -16,7 +16,7 @@ tags = []
 thumbnail = []
 title = "seqls & seqinfo (gofileseq) binary releases"
 type = "post"
-url = "gofileseq-binary-release"
+url = ""
 
 +++
 <img src="https://assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png" style="width:100px; float:left;">

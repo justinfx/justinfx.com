@@ -2,7 +2,6 @@
 author = ""
 categories = []
 date = "2018-02-20T13:48:07+00:00"
-draft = true
 enclosure = []
 excerpt = "gofileseq is a Go language library for parsing file sequence strings commonly used in VFX and animation applications.\nAs of recent, the gofileseq project has adopted the use of the goreleaser tool, which means that tagged releases now include cross-compiled binaries of the tools for linux, osx, and windows."
 featured_image = []

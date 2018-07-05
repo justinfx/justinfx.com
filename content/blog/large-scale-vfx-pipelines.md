@@ -26,7 +26,9 @@ At the SIGGRAPH 2017 Convention, in Los Angeles, I had represented Weta Digital 
 
 [SIGGRAPH 2017 > Talks > Pipe Dreams](http://s2017.siggraph.org/talks/sessions/pipe-dreams.html)
 
-The talk was entitled [Large Scale VFX Pipelines](https://dl.acm.org/citation.cfm?id=3085021) and focused on Weta's migration from an older commercial render farm solution, to an in-house render farm called Plow. It detailed the problems, the challenged in switching, the methods used to make a successful migration, and the results of the change.
+The talk was entitled [Large Scale VFX Pipelines](https://dl.acm.org/citation.cfm?id=3085021) and focused on Weta's migration from an older commercial render farm solution, to an in-house render management system called Plow. It detailed the original scalability problems, the challenges in switching, the methods used to make a successful migration, and the production results of the change.
+
+_Abstract:_
 
 > To ensure peak utilization of hardware resources and handle the increasingly dynamic demands placed on its render farm infrastructure, Weta Digital developed custom queuing, scheduling, job description, and submission systems. This talk presents the scalability issues encountered and details the strategy, process, and results in solving these problems.
 

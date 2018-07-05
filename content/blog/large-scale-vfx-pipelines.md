@@ -2,7 +2,6 @@
 author = ""
 categories = ["FX"]
 date = "2018-07-05T14:19:25+12:00"
-draft = true
 enclosure = []
 excerpt = "The render farm is one of the most important, high traffic components of a modern VFX pipeline. Beyond the hardware itself a render farm requires careful management and maintenance to ensure it is operating at peak efficiency. In WETAs case this hardware consists of a mix of over 80,000 CPU cores and a number of GPU resources, and as this has grown it has introduced many interesting scalability challenges."
 featured_image = ["/uploads/2018/07/05/s2017-logo.png"]

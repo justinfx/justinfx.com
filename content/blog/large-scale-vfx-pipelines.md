@@ -20,6 +20,8 @@ type = "post"
 url = ""
 
 +++
+![](http://s2017.siggraph.org/sites/all/themes/s2017/imgs/s2017-logo-left-horizontal-color.png)
+
 At the SIGGRAPH 2017 Convention, in Los Angeles, I had represented Weta Digital and presented a 20 minute talk under the Pipe Dreams category:
 
 [SIGGRAPH 2017 > Talks > Pipe Dreams](http://s2017.siggraph.org/talks/sessions/pipe-dreams.html)
@@ -28,7 +30,6 @@ The talk was entitled [Large Scale VFX Pipelines](https://dl.acm.org/citation.cf
 
 > To ensure peak utilization of hardware resources and handle the increasingly dynamic demands placed on its render farm infrastructure, Weta Digital developed custom queuing, scheduling, job description, and submission systems. This talk presents the scalability issues encountered and details the strategy, process, and results in solving these problems.
 
-A video of the presentation is available here:
+A video of the presentation is available here: [Video Stream](https://dl.acm.org/ft_gateway.cfm?id=3085021&type=mp4&path=%2F3090000%2F3085021%2Ftalks-0002%2Emp4)
 
-* [Video Stream](https://dl.acm.org/ft_gateway.cfm?id=3085021&type=mp4&path=%2F3090000%2F3085021%2Ftalks-0002%2Emp4)
-* [Published abstract](https://dl.acm.org/ft_gateway.cfm?id=3085021)
+And the published abstract: [Published abstract](https://dl.acm.org/ft_gateway.cfm?id=3085021)

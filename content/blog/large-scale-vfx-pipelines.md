@@ -14,13 +14,13 @@ suf_meta_description = []
 suf_meta_keywords = []
 suf_thumbnail = []
 tags = ["code", "vfx", "presentation"]
-thumbnail = []
+thumbnail = ["/uploads/2018/07/05/s2017-logo-left-horizontal-color.png"]
 title = "Siggraph 2017 - Large Scale VFX Pipelines"
 type = "post"
 url = ""
 
 +++
-![](http://s2017.siggraph.org/sites/all/themes/s2017/imgs/s2017-logo-left-horizontal-color.png)
+![](/uploads/2018/07/05/s2017-logo-left-horizontal-color.png)
 
 At the SIGGRAPH 2017 Convention, in Los Angeles, I had represented Weta Digital and presented a 20 minute talk under the Pipe Dreams category:
 

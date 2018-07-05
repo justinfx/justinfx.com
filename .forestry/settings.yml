@@ -1,12 +1,22 @@
 ---
-upload_path: "/static/uploads/:year:/:month:/:day:"
-frontmatter_file_url_template: "/uploads/:year:/:month:/:day:"
-body_file_url_template: "/uploads/:year:/:month:/:day:"
 new_page_extension: md
 auto_deploy: false
 admin_path: 
 webhook_url: 
 sections:
-  blog:
-    default_front_matter_template: blog
+- path: content/blog
+  label: Blog
+  create: all
+  default_front_matter_template: blog
+- path: content/page
+  label: Page
+  create: all
+- path: content/wp-content
+  label: Wp content
+  create: all
+upload_dir: static/uploads
+public_path: "/uploads"
+front_matter_path: "/uploads"
+use_front_matter_path: false
+file_template: ":year:/:month:/:day:/:filename:"
 version: '0.19'

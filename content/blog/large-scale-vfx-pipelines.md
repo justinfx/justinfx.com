@@ -1,6 +1,6 @@
 +++
 author = ""
-categories = []
+categories = ["FX"]
 date = "2018-07-05T14:19:25+12:00"
 draft = true
 enclosure = []
@@ -13,7 +13,7 @@ suf_featured_image = []
 suf_meta_description = []
 suf_meta_keywords = []
 suf_thumbnail = []
-tags = ["code", "vfx", "presentation"]
+tags = ["vfx", "presentation", "siggraph"]
 thumbnail = ["/uploads/2018/07/05/s2017-logo-left-horizontal-color.png"]
 title = "Siggraph 2017 - Large Scale VFX Pipelines"
 type = "post"

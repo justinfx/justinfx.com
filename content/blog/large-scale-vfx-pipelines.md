@@ -19,7 +19,7 @@ type = "post"
 url = ""
 
 +++
-<img src="/uploads/2018/07/05/s2017-logo.png" style="width:500px;">
+<img src="/uploads/2018/07/05/s2017-logo.png" style="width:360px;">
 
 At the SIGGRAPH 2017 Convention, in Los Angeles, I had represented Weta Digital and presented a 20 minute talk under the Pipe Dreams category:
 

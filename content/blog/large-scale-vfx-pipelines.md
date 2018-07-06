@@ -33,6 +33,8 @@ _Abstract:_
 
 > To ensure peak utilization of hardware resources and handle the increasingly dynamic demands placed on its render farm infrastructure, Weta Digital developed custom queuing, scheduling, job description, and submission systems. This talk presents the scalability issues encountered and details the strategy, process, and results in solving these problems.
 
-A video of the presentation is available here: [Video Stream](https://dl.acm.org/ft_gateway.cfm?id=3085021&type=mp4&path=%2F3090000%2F3085021%2Ftalks-0002%2Emp4)
+A video of the presentation and the published abstract are available here:
 
-And the published abstract: [Published abstract](https://dl.acm.org/ft_gateway.cfm?id=3085021)
+\(Scroll down to the Pipe Dreams session and click Large Scale VFX Pipelines) 
+
+[https://www.siggraph.org/sites/default/files/SIGGRAPH-2017-Talks.html](https://www.siggraph.org/sites/default/files/SIGGRAPH-2017-Talks.html "https://www.siggraph.org/sites/default/files/SIGGRAPH-2017-Talks.html")

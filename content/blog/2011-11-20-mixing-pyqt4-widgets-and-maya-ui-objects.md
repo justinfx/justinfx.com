@@ -120,6 +120,8 @@ dialog = show()
 
 ***
 
+Older Maya < 2017 using Qt4 and PyQt4
+
 {{< highlight python >}}
 from PyQt4 import QtCore, QtGui
 

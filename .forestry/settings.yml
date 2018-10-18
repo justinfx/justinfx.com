@@ -5,8 +5,8 @@ admin_path:
 webhook_url: 
 sections:
 - type: directory
-  path: content/wp-content
-  label: Wp content
+  path: content/blog
+  label: Blog
   create: all
   match: "**/*"
 - type: directory
@@ -15,10 +15,15 @@ sections:
   create: all
   match: "**/*"
 - type: directory
-  path: content/blog
-  label: Blog
+  path: content/wp-content
+  label: Wp content
   create: all
   match: "**/*"
+- type: directory
+  path: data
+  label: Data
+  create: none
+  match: "**/*.{json,yaml,yml,toml}"
 upload_dir: static/uploads
 public_path: "/uploads"
 front_matter_path: "/uploads"

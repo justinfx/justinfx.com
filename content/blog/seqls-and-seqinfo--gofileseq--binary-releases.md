@@ -21,7 +21,7 @@ url = ""
 +++
 <img src="https://assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png" style="width:100px; float:left;">
 
-[gofileseq](https://github.com/justinfx/gofileseq "gofileseq") is a Go language library for parsing file sequence strings commonly used in VFX and animation applications. 
+[gofileseq](https://github.com/justinfx/gofileseq "gofileseq") is a Go language library for parsing file sequence strings commonly used in VFX and animation applications.
 
 <!--more-->
 
@@ -95,4 +95,4 @@ As of recent, the gofileseq project has adopted the use of the [goreleaser](http
 
 #### C++
 
-There is also a [C++ port](https://github.com/justinfx/gofileseq/tree/master/cpp-port "C++ port") of gofileseq within the repository, for those C++ devs that need to work with VFX-style file sequence patterns.  Doxygen API docs are now automatically built from the master branch: [justinfx.com/gofileseq/cpp](http://justinfx.com/gofileseq/cpp)
+There is also a [C++ port](https://github.com/justinfx/gofileseq/tree/master/cpp "C++ port") of gofileseq within the repository, for those C++ devs that need to work with VFX-style file sequence patterns.  Doxygen API docs are now automatically built from the master branch: [justinfx.com/gofileseq/cpp](http://justinfx.com/gofileseq/cpp)

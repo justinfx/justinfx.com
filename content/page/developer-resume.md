@@ -3,8 +3,6 @@ author = "Justin Israel"
 date = "2012-05-09"
 title = "Developer Resume"
 url = "/developer-resume/"
-[menu.main]
-weight = 2
 
 +++
 [careers.stackoverflow.com/justinisrael](http://careers.stackoverflow.com/justinisrael/)

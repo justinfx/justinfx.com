@@ -1,12 +1,11 @@
 +++
-title = "About"
 author = "Justin Israel"
-type = "page"
 date = "2009-11-12"
+title = "About"
 url = "/about/"
-
 [menu.main]
-	weight = 1
+weight = 1
+
 +++
 ### <img class="alignleft size-full wp-image-222" title="photo1-300x239" src="/wp-content/uploads/2009/11/photo1-300x2391.jpeg" alt="" width="300" height="239" />
   

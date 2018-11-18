@@ -1,13 +1,12 @@
 +++
-title = "Short Films"
 author = "Justin Israel"
-type = "page"
 date = "2010-03-26"
 meta_keywords = ["justin israel", "shorts", "short films", "videos"]
+title = "Short Films"
 url = "/short-films/"
-
 [menu.main]
-	weight = 5
+weight = 5
+
 +++
 These are a collection of short films I have made over the years&#8230;
 

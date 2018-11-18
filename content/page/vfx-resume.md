@@ -1,15 +1,13 @@
 +++
-title = "VFX Resume"
 author = "Justin Israel"
-type = "page"
 date = "2010-04-07"
 meta_keywords = ["justin israel", "vfx", "resume"]
+title = "VFX Resume"
 url = "/vfx-resume/"
-
 [menu.main]
-	weight = 3
-+++
+weight = 3
 
++++
 Direct Link: <a href="/public/Resume_ji.pdf" target="_blank">PDF</a>
 
 <iframe src='/public/resume/index.html' 

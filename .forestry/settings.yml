@@ -24,9 +24,9 @@ sections:
   label: Data
   create: none
   match: "**/*.{json,yaml,yml,toml}"
-upload_dir: static/uploads
-public_path: "/uploads"
-front_matter_path: "/uploads"
+upload_dir: public
+public_path: "/public"
+front_matter_path: "/public"
 use_front_matter_path: false
 file_template: ":year:/:month:/:day:/:filename:"
 version: 0.42.1

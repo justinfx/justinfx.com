@@ -24,7 +24,7 @@ sections:
   label: Data
   create: none
   match: "**/*.{json,yaml,yml,toml}"
-upload_dir: public
+upload_dir: static/public
 public_path: "/public"
 front_matter_path: "/public"
 use_front_matter_path: false

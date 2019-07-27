@@ -57,7 +57,7 @@ typedef void ImageInput;
 // imageinput.cpp
 ImageInput* ImageInput_Open(const char* filename, const ImageSpec _config) {
     std::string s_filename(filename);
-    return (ImageInput_) OIIO::ImageInput::open(
+    return (ImageInput*) OIIO::ImageInput::open(
         s_filename,
         static_cast<const OIIO::ImageSpec*>(config));
 }

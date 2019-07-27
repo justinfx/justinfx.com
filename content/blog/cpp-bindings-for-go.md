@@ -1,5 +1,5 @@
 ---
-date: 2016-05-14 15:53:48 +1200
+date: 2016-05-14T03:53:48.000+00:00
 title: C++ Bindings For A Go Library
 type: post
 slug: cpp-bindings-for-go
@@ -48,26 +48,26 @@ _ref:_ [_github.com/justinfx/openimageigo/cpp/oiio.h_](https://github.com/justin
 
 {{< highlight cpp >}}
 // oiio.h
-\#ifdef __cplusplus
+#ifdef __cplusplus
 extern "C" {
-\#endif
+#endif
 
 typedef void ImageInput;
 
 // imageinput.cpp
-ImageInput\* ImageInput_Open(const char\* filename, const ImageSpec _config) {
+ImageInput* ImageInput_Open(const char* filename, const ImageSpec _config) {
 std::string s_filename(filename);
 return (ImageInput_) OIIO::ImageInput::open(
 s_filename,
-static_cast<const OIIO::ImageSpec\*>(config));
+static_cast<const OIIO::ImageSpec*>(config));
 }
 
-const char\* ImageInput_format_name(ImageInput \*in) {
-return static_cast[OIIO::ImageInput\*](OIIO::ImageInput\*)(in)->format_name();
+const char* ImageInput_format_name(ImageInput *in) {
+return static_cast[OIIO::ImageInput*](OIIO::ImageInput*)(in)->format_name();
 }
 {{< /highlight >}}
 
-As you can see, we make an opaque `ImageInput\*` available to Go, and create a shim layer that is C compatible. `ImageInput_Open()` is a factory function that wraps the static C++ `ImageInput::open()` equivalent. We just cast between our pointer and theirs (OIIO's), in order to call functions and methods.
+As you can see, we make an opaque `ImageInput*` available to Go, and create a shim layer that is C compatible. `ImageInput_Open()` is a factory function that wraps the static C++ `ImageInput::open()` equivalent. We just cast between our pointer and theirs (OIIO's), in order to call functions and methods.
 
 But like I said, these are Go bindings on top of C/C++ libraries. What about exposing a C++ library on top of a pure Go library?
 
@@ -91,7 +91,7 @@ import "C"
 
 //export sum
 func sum(x, y int) int {
-return x + y
+    return x + y
 }
 
 func main() {
@@ -109,8 +109,8 @@ Now we have a shared library and a header file, to use in our C app
 
 {{< highlight c >}}
 // sum.c
-\#include <stdio.h>
-\#include "sum.h"
+#include <stdio.h>
+#include "sum.h"
 
 int main(void) {
 
@@ -144,27 +144,27 @@ The full implementation is located here: [github.com/justinfx/gofileseq/cpp](htt
 type FileSeqId uint64
 
 type fileSeqRef struct {
-\*fileseq.FileSequence
-refs uint32
+    *fileseq.FileSequence
+    refs uint32
 }
 
 type fileSeqMap struct {
-lock \*sync.RWMutex
-m    map\[FileSeqId\]\*fileSeqRef
-rand idMaker
+    lock *sync.RWMutex
+    m    map\[FileSeqId\]*fileSeqRef
+    rand idMaker
 }
 
 type idMaker interface {
-Uint64() uint64
+    Uint64() uint64
 }
 
-func (m \*frameSetMap) Incref(id FrameSetId) {
-// Inc refs
+func (m *frameSetMap) Incref(id FrameSetId) {
+    // Inc refs
 }
 
-func (m \*frameSetMap) Decref(id FrameSetId) {
-// Dec refs
-// If refs == 0, delete from map
+func (m *frameSetMap) Decref(id FrameSetId) {
+    // Dec refs
+    // If refs == 0, delete from map
 }
 {{< /highlight >}}
 
@@ -172,12 +172,12 @@ Now when C++ wants to create a `FileSequence`, they can call a `New` function wh
 
 {{< highlight go >}}
 //export FileSequence_New
-func FileSequence_New(frange \*C.char) (FileSeqId, Error) {
-fs, e := fileseq.NewFileSequence(C.GoString(frange))
-if e != nil {
-// err string is freed by caller
-return 0, C.CString(e.Error())
-}
+func FileSequence_New(frange *C.char) (FileSeqId, Error) {
+    fs, e := fileseq.NewFileSequence(C.GoString(frange))
+    if e != nil {
+        // err string is freed by caller
+        return 0, C.CString(e.Error())
+    }
 
     id := sFileSeqs.Add(fs)
     return id, nil
@@ -185,13 +185,13 @@ return 0, C.CString(e.Error())
 }
 
 //export FileSequence_Dirname
-func FileSequence_Dirname(id FileSeqId) \*C.char {
-fs, ok := sFileSeqs.Get(id)
-// caller must free string
-if !ok {
-return C.CString("")
-}
-return C.CString(fs.Dirname())
+func FileSequence_Dirname(id FileSeqId) *C.char {
+    fs, ok := sFileSeqs.Get(id)
+    // caller must free string
+    if !ok {
+        return C.CString("")
+    }
+    return C.CString(fs.Dirname())
 }
 {{< /highlight >}}
 
@@ -202,10 +202,10 @@ _ref:_ [_github.com/justinfx/gofileseq/cpp/private/fileseq_p.h_](https://github.
 {{< highlight cpp >}}
 class StringProxy {
 public:
-StringProxy(char\* managed) : m_data(managed), m_str() {
-if (managed != NULL) {
-m_str.assign(managed);
-}
+StringProxy(char* managed) : m_data(managed), m_str() {
+    if (managed != NULL) {
+        m_str.assign(managed);
+    }
 }
 
     ~StringProxy() {
@@ -225,11 +225,11 @@ This all ended up working fine! I created some benchmarks to compare fileseq bet
 const int n = 100000;
 
 for (int i=0; i < n; ++i) {
-fileseq::FileSequence fs("/path/to/file_name.1-100x2#.ext");
-str = fs.string();
-str = fs.frameRange();
-num = fs.start();
-num = fs.end();
+    fileseq::FileSequence fs("/path/to/file_name.1-100x2#.ext");
+    str = fs.string();
+    str = fs.frameRange();
+    num = fs.start();
+    num = fs.end();
 }
 {{< /highlight >}}
 
@@ -244,7 +244,7 @@ It bothered me a little that I did have to rely on a mutex-guarded static map, s
 i.e., something like this:
 
 {{< highlight cpp >}}
-fs := (\*FileSequence)unsafe.Pointer(
+fs := (*FileSequence)unsafe.Pointer(
 C.malloc(unsafe.Sizeof(FileSequence{})))
 {{< /highlight >}}
 

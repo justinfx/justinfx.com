@@ -56,14 +56,14 @@ typedef void ImageInput;
 
 // imageinput.cpp
 ImageInput* ImageInput_Open(const char* filename, const ImageSpec _config) {
-std::string s_filename(filename);
-return (ImageInput_) OIIO::ImageInput::open(
-s_filename,
-static_cast<const OIIO::ImageSpec*>(config));
+    std::string s_filename(filename);
+    return (ImageInput_) OIIO::ImageInput::open(
+        s_filename,
+        static_cast<const OIIO::ImageSpec*>(config));
 }
 
 const char* ImageInput_format_name(ImageInput *in) {
-return static_cast[OIIO::ImageInput*](OIIO::ImageInput*)(in)->format_name();
+    return static_cast[OIIO::ImageInput*](OIIO::ImageInput*)(in)->format_name();
 }
 {{< /highlight >}}
 
@@ -150,7 +150,7 @@ type fileSeqRef struct {
 
 type fileSeqMap struct {
     lock *sync.RWMutex
-    m    map\[FileSeqId\]*fileSeqRef
+    m    map[FileSeqId]*fileSeqRef
     rand idMaker
 }
 
@@ -195,7 +195,7 @@ func FileSequence_Dirname(id FileSeqId) *C.char {
 }
 {{< /highlight >}}
 
-You can see here that because this is C++ calling Go, we aren't able to free the C string from Go, as the string needs to outlive the Go call. We just make sure that C++ always frees `\*C.char` when it is returned. To make sure I always clean up the `char\*` in C++, I made a helper `StringProxy` class which wraps it and cleans it up in the destructor:
+You can see here that because this is C++ calling Go, we aren't able to free the C string from Go, as the string needs to outlive the Go call. We just make sure that C++ always frees `*C.char` when it is returned. To make sure I always clean up the `char*` in C++, I made a helper `StringProxy` class which wraps it and cleans it up in the destructor:
 
 _ref:_ [_github.com/justinfx/gofileseq/cpp/private/fileseq_p.h_](https://github.com/justinfx/gofileseq/blob/master/cpp/private/fileseq_p.h#L16)
 

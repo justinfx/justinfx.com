@@ -39,7 +39,7 @@ What I finally figured out was a mish-mash of information from the maya document
 While Maya uses newer versions, it seems the versions from the 2011 install still work. But here they are anyways incase you want the newer version for 2012:
 
   * Autodesk modified [qt 4.7.1](http://images.autodesk.com/adsk/files/Qt-4.7.1-Modified_for_Maya.zip)
-  * [sip 4.12.4](/wp-content/uploads/2011/01/sip-4.12.4.tar.gz)
+  * [sip 4.12.4](/uploads/2011/01/sip-4.12.4.tar.gz)
   * [pyqt 4.8.6](https://dl.dropbox.com/u/34613220/MyQt4/src/PyQt-mac-gpl-4.8.6.tar.gz)
 
 * * *
@@ -63,7 +63,7 @@ sudo make install{{< /highlight >}}
 
 ###### SIP: The maya docs recommend sip version 4.10
 
-  1. Download this specific SIP:   [sip-4.10.tar.gz](/wp-content/uploads/2011/01/sip-4.10.tar.gz)
+  1. Download this specific SIP:   [sip-4.10.tar.gz](/uploads/2011/01/sip-4.10.tar.gz)
   2. Extract: <pre class="theme:twilight top-margin:20 bottom-margin:20 toolbar-overlay:false striped:false nums:false lang:sh decode:true">tar zxvf sip-4.10.tar.gz
 cd sip-4.10</pre>
 

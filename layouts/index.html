@@ -6,7 +6,7 @@
 <div class="content container">
 <div class="posts">
 
-{{ range first 100 .Data.Pages }}
+{{ range first 100 .Site.Pages }}
   {{ if eq .Type "post" }}
     {{ .Render "summary" }}
   {{ end }}

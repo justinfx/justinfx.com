@@ -23,7 +23,7 @@ Because we rely heavily on the process of importing Illustrator .ai files into M
 We needed a way to detect self-intersecting nurbsCurves, so that we could fix them before working with them as nurbsSurfaces.
 
 <div id="attachment_169" style="width: 310px" class="wp-caption alignleft">
-  <a href="/wp-content/uploads/2010/08/curvesExample.png" rel="lightbox[163]"><img class="size-medium wp-image-169  " style="background-color: white;" title="nurbsCurve Example" src="/wp-content/uploads/2010/08/curvesExample-300x213.png" alt="" width="300" height="213" /></a>
+  <a href="/uploads/2010/08/curvesExample.png" rel="lightbox[163]"><img class="size-medium wp-image-169  " style="background-color: white;" title="nurbsCurve Example" src="/uploads/2010/08/curvesExample-300x213.png" alt="" width="300" height="213" /></a>
   
   <p class="wp-caption-text">
     Loop Curves (self-intersection)
@@ -55,7 +55,7 @@ Well then, why couldn&#8217;t I just use this method as my detection algorithm? 
 At this point I had accepted the solution for detecting self-intersection, and moved on to writing a maya UI for the tool. It would detect loops and optionally even report back the best estimate to the point where it actually occurred. But once I started writing another bigger tool that would use this script, I just knew it could be done faster with the power of math and without the poop of maya script command calls.
 
 <div id="attachment_170" style="width: 310px" class="wp-caption alignleft">
-  <a href="http://www.tsplines.com/technology/edu/CurveIntersection.pdf"><img class="size-medium wp-image-170" title="Bezier Clipping" src="/wp-content/uploads/2010/08/clipping-300x141.png" alt="" width="300" height="141" /></a>
+  <a href="http://www.tsplines.com/technology/edu/CurveIntersection.pdf"><img class="size-medium wp-image-170" title="Bezier Clipping" src="/uploads/2010/08/clipping-300x141.png" alt="" width="300" height="141" /></a>
   
   <p class="wp-caption-text">
     Bezier Clipping Method

@@ -17,7 +17,7 @@ I never thought I had known such a real sense of failure until today, when a sys
 <!--more-->
 
 <div id="attachment_47" style="width: 650px" class="wp-caption alignnone">
-  <a href="/wp-content/uploads/2010/01/IMG950087.jpg" rel="lightbox[46]"><img class="size-full wp-image-47" title="IMG950087" src="/wp-content/uploads/2010/01/IMG950087.jpg" alt="" width="640" height="480" /></a>
+  <a href="/uploads/2010/01/IMG950087.jpg" rel="lightbox[46]"><img class="size-full wp-image-47" title="IMG950087" src="/uploads/2010/01/IMG950087.jpg" alt="" width="640" height="480" /></a>
   
   <p class="wp-caption-text">
     The hardest system fail ever

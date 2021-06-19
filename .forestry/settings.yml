@@ -15,8 +15,8 @@ sections:
   create: all
   match: "**/*"
 - type: directory
-  path: content/wp-content
-  label: Wp content
+  path: static/uploads
+  label: static_uploads
   create: all
   match: "**/*"
 - type: directory
@@ -32,10 +32,10 @@ file_template: ":year:/:month:/:day:/:filename:"
 build:
   preview_env:
   - HUGO_ENV=staging
-  - HUGO_VERSION=0.42.1
+  - HUGO_VERSION=0.84.0
   preview_output_directory: public
   preview_docker_image: forestryio/hugo:latest
   mount_path: "/srv"
   instant_preview_command: hugo server -D -E -F --port 8080 --bind 0.0.0.0 --renderToDisk
     -d public
-version: 0.42.1
+version: 0.84.0

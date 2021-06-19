@@ -7,7 +7,7 @@ url = "/about/"
 weight = 1
 
 +++
-### <img class="alignleft size-full wp-image-222" title="photo1-300x239" src="/wp-content/uploads/2009/11/photo1-300x2391.jpeg" alt="" width="300" height="239" />
+### <img class="alignleft size-full wp-image-222" title="photo1-300x239" src="/uploads/2009/11/photo1-300x2391.jpeg" alt="" width="300" height="239" />
 
 Justin Israel
 

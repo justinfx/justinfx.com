@@ -42,6 +42,6 @@ Its currently an alpha release. I guess I need to really learn how to control th
 
 What I came up with&#8230;  
 
-<a href="/wp-content/uploads/2010/03/taskMonster2.jpg" rel="lightbox[71]"><img class="alignnone size-large wp-image-72" title="taskMonster2" src="/wp-content/uploads/2010/03/taskMonster2-1024x724.jpg" alt="" width="663" height="469" /></a>
+<a href="/uploads/2010/03/taskMonster2.jpg" rel="lightbox[71]"><img class="alignnone size-large wp-image-72" title="taskMonster2" src="/uploads/2010/03/taskMonster2-1024x724.jpg" alt="" width="663" height="469" /></a>
 
 {{< vimeo 143717524 >}}

@@ -9,7 +9,7 @@ url: /2011/12/05/apple-macbooks-and-unexplainable-lcd-flicker/
 meta_keywords:
   - macbook pro, macbook air, flicker, lcd, display, artifact, inversion, text, osx, lion
 thumbnail:
-  - http://www.justinfx.com/blog/wp-content/uploads/2011/12/bmacbook_flicker.png
+  - /uploads/2011/12/bmacbook_flicker.png
 categories:
   - Random Stuff
 tags:
@@ -19,7 +19,7 @@ tags:
   - troubleshooting
 ---
   
-<img src="/wp-content/uploads/2011/12/bmacbook_flicker.png" alt="" title="Macbook Pro flicker" width="490" height="268" class="alignnone size-full wp-image-395" />
+<img src="/uploads/2011/12/bmacbook_flicker.png" alt="" title="Macbook Pro flicker" width="490" height="268" class="alignnone size-full wp-image-395" />
     
 I had just received my [brand new MacBook Pro](http://www.bhphotovideo.com/c/product/756789-REG/Apple_MC721LL_A_15_4_MacBook_Pro_Notebook.html) a few days ago. Amazing machine. Probably the best laptop I have ever laid my hands upon. It was the early Feb 2011 model so I got a crazy good deal. But something caught my eye that I just had to investigate&#8230;
 

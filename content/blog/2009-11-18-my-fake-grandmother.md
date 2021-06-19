@@ -112,7 +112,7 @@ Are you slightly confused? Well maybe if you would listen to people instead of r
 Glad you finally figured this out.
 ```
 
-{{< lightbox "/wp-content/uploads/2009/11/miriam-300x201.jpg" "/wp-content/uploads/2009/11/miriam.jpg" >}}
+{{< lightbox "/uploads/2009/11/miriam-300x201.jpg" "/uploads/2009/11/miriam.jpg" >}}
 
 ***
 

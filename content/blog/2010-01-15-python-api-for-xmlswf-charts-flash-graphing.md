@@ -18,7 +18,7 @@ tags:
 ---
 I had a project where I was designing a statistics reporting site, to track production stats. I wanted to have really nice graphs that pulled from the database and were somewhat live and interactive. XML/SWF Charts is this awesome flash-based app that lets you embed graphs in your pages which receive their data from XML. There are tons of graph types and ways to customize the look.
 
-[<img class="alignnone size-full wp-image-59" title="graphs_example" src="/wp-content/uploads/2010/01/graphs_example.jpg" alt="" width="754" height="112" />](http://www.maani.us/xml_charts/index.php)
+[<img class="alignnone size-full wp-image-59" title="graphs_example" src="/uploads/2010/01/graphs_example.jpg" alt="" width="754" height="112" />](http://www.maani.us/xml_charts/index.php)
 
 <http://www.maani.us/xml_charts/index.php>
 
@@ -64,6 +64,6 @@ xml = str(chart)   # or assign the XML string somewhere
 
 You can download the swfcharts.py module and use it freely. If you find it helpful, post a comment or shoot me an email.
 
-#### Download [swfcharts.py](/wp-content/uploads/2010/01/swfcharts.py_.zip)
+#### Download [swfcharts.py](/uploads/2010/01/swfcharts.py_.zip)
 
-Pydoc located here for convenience:<span style="color: #ffcc00;"><br /> <a href='/wp-content/uploads/2010/01/swfcharts.html'>swfcharts python documentation</a></span>
+Pydoc located here for convenience:<span style="color: #ffcc00;"><br /> <a href='/uploads/2010/01/swfcharts.html'>swfcharts python documentation</a></span>

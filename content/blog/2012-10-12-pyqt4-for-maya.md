@@ -26,7 +26,7 @@ suf_featured_image: []
 enclosure: []
 
 ---
-## [<img class="alignnone size-full wp-image-525" title="PyQt4 for Maya" src="/wp-content/uploads/2012/10/1350054625_Master.jpeg" alt="" width="800" height="450" />](http://www.cmivfx.com/tutorials/view/498/PyQt4+UI+Development+for+Maya)
+## [<img class="alignnone size-full wp-image-525" title="PyQt4 for Maya" src="/uploads/2012/10/1350054625_Master.jpeg" alt="" width="800" height="450" />](http://www.cmivfx.com/tutorials/view/498/PyQt4+UI+Development+for+Maya)
 
 # PyQt4 UI Development for Maya
 

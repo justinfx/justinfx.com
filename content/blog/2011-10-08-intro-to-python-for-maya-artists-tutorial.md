@@ -12,23 +12,21 @@ excerpt: This course brings the talented artist into the fold of the technical-s
 slug: intro-to-python-for-maya-artists-tutorial
 url: "/2011/10/08/intro-to-python-for-maya-artists-tutorial/"
 suf_thumbnail:
-- http://www.justinfx.com/blog/wp-content/uploads/2011/10/1318089294_Python_Background_master.jpg
+- /uploads/2011/10/1318089294_Python_Background_master.jpg
 suf_meta_description:
 - Online video tutorial. Learn Python for Maya, an Intro course. Brought to you by
   Justin Israel and cmiVFX.com
 suf_meta_keywords:
 - maya, python, tutorial, cmivfx, scripting
 thumbnail:
-- http://www.justinfx.com/blog/wp-content/uploads/2011/10/1318089294_Python_Background_master.jpg
+- /uploads/2011/10/1318089294_Python_Background_master.jpg
 meta_keywords:
 - maya, python, tutorial, cmivfx, scripting
 meta_description:
 - Online video tutorial. Learn Python for Maya, an Intro course. Brought to you by
   Justin Israel and cmiVFX.com
-featured_image:
-- http://www.justinfx.com/blog/wp-content/uploads/2011/10/1318089294_Python_Background_master.jpg
 suf_featured_image:
-- http://www.justinfx.com/blog/wp-content/uploads/2011/10/1318089294_Python_Background_master.jpg
+- /uploads/2011/10/1318089294_Python_Background_master.jpg
 categories:
 - Code
 - FX
@@ -40,7 +38,7 @@ tags:
 enclosure: []
 
 ---
-[<img class="alignnone" alt="" src="/wp-content/uploads/2011/10/1318089294_Python_Background_master.jpg" width="60%" height="60%" />](http://cmivfx.com/store/320-Python+Introduction+Vol+01+-+Maya)
+[<img class="alignnone" alt="" src="/uploads/2011/10/1318089294_Python_Background_master.jpg" width="60%" height="60%" />](https://cmivfx.com/python-introduction-vol-01---maya)
 
 Just released my first online video tutorial, through [cmiVFX](http://www.cmivfx.com)
 

@@ -16,7 +16,7 @@ tags:
   - pyqt
   - python
 ---
-<img class="alignnone size-full wp-image-39" title="chan2fbx" src="/wp-content/uploads/2009/12/chan2fbx.jpg" alt="chan2fbx" width="201" height="104" />
+<img class="alignnone size-full wp-image-39" title="chan2fbx" src="/uploads/2009/12/chan2fbx.jpg" alt="chan2fbx" width="201" height="104" />
 
 I had received a mailing list email from cmiVFX, where Chris Maynard was challenging the community to write a tool that could convert a nuke camera .chan file to a functional FBX format. This was apparently meant to compliment the new 3d camera tracker in NukeX. So I decided to take on the challenge.
 
@@ -33,7 +33,7 @@ Chris released it today: <del><a title="http://www.fxmogul.com/" href="http://ww
 Currently there is a version for both OSX and Windows. I have been having some issues packaging the code under Linux, but I just need to really sit down and figure it out. The build is kinda larger than I hoped, but thats what I get for distributing PyQt <img src="http://justinfx.com/wp-includes/images/smilies/simple-smile.png" alt=":-)" class="wp-smiley" style="height: 1em; max-height: 1em;" />
 
 <div id="attachment_41" style="width: 590px" class="wp-caption alignnone">
-  <img class="size-full wp-image-41" title="chan2FBX_screen" src="/wp-content/uploads/2009/12/chan2FBX_screen.jpg" alt=".chan To FBX GUI (osx)" width="580" height="428" />
+  <img class="size-full wp-image-41" title="chan2FBX_screen" src="/uploads/2009/12/chan2FBX_screen.jpg" alt=".chan To FBX GUI (osx)" width="580" height="428" />
   
   <p class="wp-caption-text">
     .chan To FBX GUI (osx)

@@ -5,7 +5,7 @@ draft: false
 type: "post"
 
 slug: python-tutorials-released-free
-featured_image: /wp-content/uploads/2011/10/1318089294_Python_Background_master.jpg
+featured_image: /uploads/2011/10/1318089294_Python_Background_master.jpg
 categories:
   - Code
 tags:

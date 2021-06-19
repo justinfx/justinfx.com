@@ -29,7 +29,7 @@ suf_featured_image: []
 enclosure: []
 
 ---
-[<img class="alignnone" src="/wp-content/uploads/2011/11/maya_python_vol2.jpg" alt="" width="60%" height="60%" />](https://cmivfx.com/store/328-python-for-maya-vol-02)
+[<img class="alignnone" src="/uploads/2011/11/maya_python_vol2.jpg" alt="" width="60%" height="60%" />](https://cmivfx.com/store/328-python-for-maya-vol-02)
 
 Second video in the python for maya series, just released through [cmiVFX](http://www.cmivfx.com)!
 

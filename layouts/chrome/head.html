@@ -25,14 +25,14 @@
   <link rel="stylesheet" href="{{ .Site.BaseURL }}/css/font.source-sans-pro.css">
   <link rel="stylesheet" href="{{ .Site.BaseURL }}/css/fluidbox.min.css">
 
-  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
 
   <!-- Icons -->
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
   <link rel="icon" href="data:;base64,iVBORw0KGgo=">
 
   <!-- RSS -->
-  <link href="{{ .RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
+  <link href='{{ with .OutputFormats.Get "RSS" }}{{ .RelPermalink }}{{ end }}' rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
 
   <!-- JS -->
   <script src="{{ .Site.BaseURL }}/js/jquery.min.js"></script>

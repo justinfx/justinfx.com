@@ -1,6 +1,6 @@
 +++
 author = "Justin Israel"
-date = "2009-11-12"
+date = 2009-11-12T00:00:00Z
 title = "About"
 url = "/about/"
 [menu.main]
@@ -19,4 +19,4 @@ Currently Justin works as a Senior Software Engineer at [Weta Digital](wetafx.co
 
 Justin has worked as both an artist and a visual fx supervisor on films and television, as well as directing and practical lighting experience, in addition to his current focus in studio pipeline development, and is constantly looking for new challenges and opportunities to learn.
 
-Check out [IMDB](http://www.imdb.com/name/nm1920992/) for a list of past projects
+Check out [IMDB](http://www.imdb.com/name/nm1920992/) for a list of past projects.

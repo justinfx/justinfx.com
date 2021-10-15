@@ -37,78 +37,33 @@ According to this site, its normal to have a slight flicker in one box. And heav
 
 <table class="sample">
   <tr>
-    <th width="170" scope="col">
-      Device
-    </th>
-    
-    <th width="137" scope="col">
-      Display
-    </th>
-    
-    <th width="241" scope="col">
-      Scrolling
-    </th>
-    
-    <th width="233" scope="col">
-      Not Scrolling
-    </th>
+    <th width="170" scope="col"> Device </th>
+    <th width="137" scope="col"> Display </th>
+    <th width="241" scope="col"> Scrolling </th>
+    <th width="233" scope="col"> Not Scrolling </th>
   </tr>
-  
   <tr>
-    <td>
-      Macbook Pro (early 2011)
-    </td>
-    
-    <td>
-      15" 1440&#215;900
-    </td>
-    
-    <td>
-      Heavy multi-color flickering in all boxes
-    </td>
-    
-    <td>
-      At least 2 boxes always lightly flickering
-    </td>
+    <td> Macbook Pro (early 2011) </td>
+    <td> 15" 1440&#215;900 </td>
+    <td> Heavy multi-color flickering in all boxes </td>
+    <td> At least 2 boxes always lightly flickering </td>
   </tr>
-  
   <tr>
-    <td>
-      Mac Pro MacPro4,1 (2009)
-    </td>
-    
-    <td>
-      24" Cinema Display
-    </td>
-    
-    <td>
-      Light amount of flickering in all boxes
-    </td>
-    
-    <td>
-      No flicker
-    </td>
+    <td> Mac Pro MacPro4,1 (2009) </td>
+    <td> 24" Cinema Display </td>
+    <td> Light amount of flickering in all boxes </td>
+    <td> No flicker </td>
   </tr>
-  
   <tr>
-    <td>
-      Mac Pro MacPro5,1 (2010)
-    </td>
-    
-    <td>
-      27" LED Cinema Display
-    </td>
-    
-    <td>
-      No flicker
-    </td>
-    
-    <td>
-      Very light flicker in box 7a
-    </td>
-  </tr><caption> 
-  
-  <a href="http://www.lagom.nl/lcd-test/inversion.php">Inversion (pixel-walk)</a> test results on LCD displays<br /> </caption>
+    <td> Mac Pro MacPro5,1 (2010) </td>
+    <td> 27" LED Cinema Display </td>
+    <td> No flicker </td>
+    <td> Very light flicker in box 7a </td>
+  </tr>
+  <caption> 
+  <a href="http://www.lagom.nl/lcd-test/inversion.php">Inversion (pixel-walk)</a> test results on LCD displays
+  <br /> 
+  </caption>
 </table>
 
 #### Apple Support

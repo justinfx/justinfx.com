@@ -16,7 +16,7 @@ Tory tends to represent our team as dog characters. I can be identified usuall
 
 Thank you, Tory!
 
-<div style='position: relative; padding-bottom: 101%; height: 0; overflow: hidden;'><iframe id='iframe' src='//flickrit.com/slideshowholderpicasa.php?height=100&size=big&setId=114971272077029635708/SouthParkGoingAwayBook&click=true&credit=2&theme=1&thumbnails=0&transition=0&layoutType=responsive&sort=0' scrolling='no' frameborder='0' style='width:100%; height:100%; position: absolute; top:0; left:0;' ></iframe></div>
+{{< slide dir="images/sp_book/" width=500px height=498px >}}
 
 <br>
 <br>

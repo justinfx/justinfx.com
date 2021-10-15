@@ -14,7 +14,7 @@ tags:
   - podcast
   - visual effects
 ---
-I recently did an interview with my friends on their show, Film Jam. Its a podcast dealing with the film industry from the perspective of 3 guys working their way up the ladder. Fantastic show up &#8217;till this point. Hopefully I don&#8217;t break the cycle <img src="http://justinfx.com/wp-includes/images/smilies/simple-smile.png" alt=":-)" class="wp-smiley" style="height: 1em; max-height: 1em;" />
+I recently did an interview with my friends on their show, Film Jam. Its a podcast dealing with the film industry from the perspective of 3 guys working their way up the ladder. Fantastic show up &#8217;till this point. Hopefully I don&#8217;t break the cycle <i class="fa fa-smile-o" aria-hidden="true"></i>
 
 Please make sure to leave a review about the show via iTunes!
 

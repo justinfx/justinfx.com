@@ -265,9 +265,7 @@ And "vimeo.html" looks like this:
 
 Now I have the ability to embed my vimeo media from within my markdown files, just by using the shortcode and passing the vimeo id as a parameter:
 
-{{< highlight html >}}
-&#123;&#123;&#60; vimeo 12067694 &#62;&#125;&#125;
-{{< /highlight >}}
+\{\{< vimeo 12067694 >}}
 
 ### Static files
 

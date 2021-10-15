@@ -32,14 +32,15 @@ Here is what I did &#8230;
 (btw you might have to modify the location of the plugin, since I happen to be using OSX)
 
   1. In your setup.py file, which is used for py2app, py2exe, or similar&#8230; add this to the DATA_FILES list, so that it looks as such:
-  
+
     {{< highlight python >}}
+    # This will put the phonon backend plugin into the 
+    # RESOURCES folder in the app.
     DATA_FILES = [('phonon_backend', [
       '/Developer/Applications/Qt/plugins/phonon_backend/libphonon_qt7.dylib'
     ])]
     {{< /highlight >}}
     
-    This will put the phonon backend plugin into the RESOURCES folder in the app.
   2. Package up your application via py2app / py2exe / etc.
   3. If you are on OSX, use macdeployqt on the app: `>>> macdeployqt myApp.app`
   4. Go into the app that was created (show package contents if you are on a mac), and move the phonon_backend directory FROM the Resources directory TO the PlugIns directory (which should be at the same level as Resources).

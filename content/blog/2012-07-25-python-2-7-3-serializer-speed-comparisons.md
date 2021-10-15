@@ -65,65 +65,67 @@ Test:
 from timeit import timeit
 from tabulate import tabulate
 
-setup = '''d = {
-\'words': """
-Lorem ipsum dolor sit amet, consectetur adipiscing
-elit. Mauris adipiscing adipiscing placerat.
-Vestibulum augue augue,
-pellentesque quis sollicitudin id, adipiscing.
-""",
-\'list': range(100),
-\'dict': dict((str(i),'a') for i in xrange(100)),
-\'int': 100,
-\'float': 100.123456
-}'''
+setup = '''
+  d = {
+    'words': """
+      Lorem ipsum dolor sit amet, consectetur adipiscing
+      elit. Mauris adipiscing adipiscing placerat.
+      Vestibulum augue augue,
+      pellentesque quis sollicitudin id, adipiscing.
+      """,
+    'list': range(100),
+    'dict': dict((str(i),'a') for i in xrange(100)),
+    'int': 100,
+    'float': 100.123456
+  }
+'''
 
 setup_pickle    = '%s ; import cPickle ; src = cPickle.dumps(d)' % setup
 setup_pickle2   = '%s ; import cPickle ; src = cPickle.dumps(d, 2)' % setup
 setup_json      = '%s ; import json; src = json.dumps(d)' % setup
 setup_msgpack   = '%s ; src = msgpack.dumps(d)' % setup
 
-tests = \[
-\# (title, setup, enc_test, dec_test)
-\('pickle (ascii)', 'import pickle; %s' % setup_pickle, 'pickle.dumps(d, 0)', 'pickle.loads(src)'),
-\('pickle (binary)', 'import pickle; %s' % setup_pickle2, 'pickle.dumps(d, 2)', 'pickle.loads(src)'),
-\('cPickle (ascii)', 'import cPickle; %s' % setup_pickle, 'cPickle.dumps(d, 0)', 'cPickle.loads(src)'),
-\('cPickle (binary)', 'import cPickle; %s' % setup_pickle2, 'cPickle.dumps(d, 2)', 'cPickle.loads(src)'),
-\('json', 'import json; %s' % setup_json, 'json.dumps(d)', 'json.loads(src)'),
-\('simplejson-3.3.1', 'import simplejson; %s' % setup_json, 'simplejson.dumps(d)', 'simplejson.loads(src)'),
-\('python-cjson-1.0.5', 'import cjson; %s' % setup_json, 'cjson.encode(d)', 'cjson.decode(src)'),
-\('ujson-1.33', 'import ujson; %s' % setup_json, 'ujson.dumps(d)', 'ujson.loads(src)'),
-\('yajl 0.3.5', 'import yajl; %s' % setup_json, 'yajl.dumps(d)', 'yajl.loads(src)'),
-\('msgpack-python-0.3.0', 'import msgpack; %s' % setup_msgpack, 'msgpack.dumps(d)', 'msgpack.loads(src)'),
-\]
+tests = [
+  # (title, setup, enc_test, dec_test)
+  ('pickle (ascii)', 'import pickle; %s' % setup_pickle, 'pickle.dumps(d, 0)', 'pickle.loads(src)'),
+  ('pickle (binary)', 'import pickle; %s' % setup_pickle2, 'pickle.dumps(d, 2)', 'pickle.loads(src)'),
+  ('cPickle (ascii)', 'import cPickle; %s' % setup_pickle, 'cPickle.dumps(d, 0)', 'cPickle.loads(src)'),
+  ('cPickle (binary)', 'import cPickle; %s' % setup_pickle2, 'cPickle.dumps(d, 2)', 'cPickle.loads(src)'),
+  ('json', 'import json; %s' % setup_json, 'json.dumps(d)', 'json.loads(src)'),
+  ('simplejson-3.3.1', 'import simplejson; %s' % setup_json, 'simplejson.dumps(d)', 'simplejson.loads(src)'),
+  ('python-cjson-1.0.5', 'import cjson; %s' % setup_json, 'cjson.encode(d)', 'cjson.decode(src)'),
+  ('ujson-1.33', 'import ujson; %s' % setup_json, 'ujson.dumps(d)', 'ujson.loads(src)'),
+  ('yajl 0.3.5', 'import yajl; %s' % setup_json, 'yajl.dumps(d)', 'yajl.loads(src)'),
+  ('msgpack-python-0.3.0', 'import msgpack; %s' % setup_msgpack, 'msgpack.dumps(d)', 'msgpack.loads(src)'),
+]
 
 loops = 15000
-enc_table = \[\]
-dec_table = \[\]
+enc_table = []
+dec_table = []
 
 print "Running tests (%d loops each)" % loops
 
 for title, mod, enc, dec in tests:
-print title
+    print title
 
     print "  [Encode]", enc 
     result = timeit(enc, mod, number=loops)
     enc_table.append([title, result])
-    
+
     print "  [Decode]", dec 
     result = timeit(dec, mod, number=loops)
     dec_table.append([title, result])
 
-enc_table.sort(key=lambda x: x\[1\])
-enc_table.insert(0, \['Package', 'Seconds'\])
+enc_table.sort(key=lambda x: x[1])
+enc_table.insert(0, ['Package', 'Seconds'])
 
-dec_table.sort(key=lambda x: x\[1\])
-dec_table.insert(0, \['Package', 'Seconds'\])
+dec_table.sort(key=lambda x: x[1])
+dec_table.insert(0, ['Package', 'Seconds'])
 
-print "\\nEncoding Test (%d loops)" % loops
+print "\nEncoding Test (%d loops)" % loops
 print tabulate(enc_table, headers="firstrow")
 
-print "\\nDecoding Test (%d loops)" % loops
+print "\nDecoding Test (%d loops)" % loops
 print tabulate(dec_table, headers="firstrow")
 {{< / highlight >}}
 

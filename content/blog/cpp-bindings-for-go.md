@@ -81,7 +81,7 @@ I had previously written a Go library called [gofileseq](https://github.com/just
 
 `gofileseq` library is a port of a python equivalent, [fileseq](https://github.com/sqlboy/fileseq), which I help to maintain. If the parsing rules need to be updated in the Python library, they should also be updated to match in the Go library, to maintain compatibility.
 
-I had been asked more than once by colleagues if a C++ version of fileseq was available. It wasn't, and I also didn't want to have to maintain a 3rd standalone port that should follow the same behavior as the other two. But since the introduction of the [Go ](https://golang.org/doc/go1.5#link)`[-buildmode](https://golang.org/doc/go1.5#link)` flag in 1.5, it has become possible to export functions from Go to C/C++
+I had been asked more than once by colleagues if a C++ version of fileseq was available. It wasn't, and I also didn't want to have to maintain a 3rd standalone port that should follow the same behavior as the other two. But since the introduction of the Go [-buildmode](https://golang.org/doc/go1.5#link) flag in 1.5, it has become possible to export functions from Go to C/C++
 
 {{< highlight go >}}
 // sum.go
@@ -134,11 +134,12 @@ Some of those rules are:
 1. You can pass Go pointers to C, but C should not hang on to them beyond the scope of the call.
 2. You can not pass memory to C that contains pointers. That is, a struct which has pointer fields.
 
-These pose an issue if you want to be able to have your C++ library create instances of objects in Go and hang on to them longer than the Go function call. In the case of `gofileseq`, the main two objects are `[FileSequence](https://godoc.org/github.com/justinfx/gofileseq#FileSequence)` and `[FrameSet](https://godoc.org/github.com/justinfx/gofileseq#FrameSet)`. These are constructed from strings, perform parsing, and maintain private state. So a user would want to construct them and keep them around until they are done calling methods on them. But according to the cgo rules, I can't give a pointer to C++ for it to hang on to indefinitely, and I can't create a C struct in a shim to populate, because there are more internal pointers involved in a `FileSequence`. Basically I saw this as a more complex type than just a struct with simple data fields.
+These pose an issue if you want to be able to have your C++ library create instances of objects in Go and hang on to them longer than the Go function call. In the case of `gofileseq`, the main two objects are [FileSequence](https://godoc.org/github.com/justinfx/gofileseq#FileSequence) and [FrameSet](https://godoc.org/github.com/justinfx/gofileseq#FrameSet). These are constructed from strings, perform parsing, and maintain private state. So a user would want to construct them and keep them around until they are done calling methods on them. But according to the cgo rules, I can't give a pointer to C++ for it to hang on to indefinitely, and I can't create a C struct in a shim to populate, because there are more internal pointers involved in a `FileSequence`. Basically I saw this as a more complex type than just a struct with simple data fields.
 
 How do I construct these instances for C++? I created package-private maps using generated `uint64` keys, and the instances as values. Actually, I wrap the instances up in a struct that also tracks reference counts. This allows C++ to manage the lifetime of the objects.
 
 The full implementation is located here: [github.com/justinfx/gofileseq/cpp](https://github.com/justinfx/gofileseq/tree/master/cpp)
+
 
 {{< highlight go >}}
 type FileSeqId uint64

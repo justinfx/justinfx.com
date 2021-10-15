@@ -48,7 +48,7 @@ One thing that will make python programmers feel more at home is the type infer
 
 The `:=` operator lets you initialize a new variable and makes the compiler figure out what type it should be, based on the return type of the right hand side.
 
-Pointers are still kind of strange for python programmers, but Go is a lot more flexible about using them. You don’t always have to explicitly dereference them like `(\*myPointer).myFunction()`. It just does it for you when you access member functions and attributes:  myPointer.myFunction().
+Pointers are still kind of strange for python programmers, but Go is a lot more flexible about using them. You don’t always have to explicitly dereference them like `(*myPointer).myFunction()`. It just does it for you when you access member functions and attributes:  myPointer.myFunction().
 
 Having no type inheritance is also a bit different as well. Instead of creating base abstract classes, and subclassing them, you only have structs… no classes. But you share functionality by using interfaces. An interface is just a definition of methods. If any object implements those methods, its consider that type of interface. This is something I have yet to really get into, since my current first project is more of a cmd program, rather than a pkg library. I’m sure I could be using interfaces already, but it hasn’t quite felt natural enough to incorporate as of yet.
 
@@ -60,7 +60,7 @@ I’ve been writing a message server so far in python, using the [Tornado web 
 
 It was quite fast to get the server to the point of doing global messages, but now I had to think about implementing the support for channel subscriptions. My first instinct was to go grab ZeroMQ and its bindings again, or to use Redis for the messaging, but then I was thinking “Shouldn’t I be able to do all this with Go’s concurrency?”. One thing that really helped me out was how fast everyone responds on the [golang-nuts discussion group](http://groups.google.com/group/golang-nuts). It was quickly pointed out by more than one person that I should definitely be able to accomplish the internal message routing purely in Go. And they were right. I just set up a “dispatcher” function and run it in a loop as a goroutine, and then pass messages in and out of it. The dispatcher manages its data structure, and no other part of the code accesses it directly.
 
-So far, this Go server is turning out great, and I’m excited by the fact that its compiled and faster. I don’t have to distribute my source code now <img src="http://justinfx.com/wp-includes/images/smilies/simple-smile.png" alt=":-)" class="wp-smiley" style="height: 1em; max-height: 1em;" />
+So far, this Go server is turning out great, and I’m excited by the fact that its compiled and faster. I don’t have to distribute my source code now <i class="fa fa-smile-o" aria-hidden="true"></i>
 
 ### Performance
 
@@ -68,87 +68,41 @@ So far, this Go server is turning out great, and I’m excited by the fact that 
 
 Go comes with built in testing and benchmarking functionality. What I built was a client test that connects to a running server and rapid fires messages. It times how long it takes for a 150 byte message to be sent out, flow through the server, and come back to that client as been delivered. The gotest utility that is used to run the test code will run the test, and if it ran too fast to calculate timings, it will repeat the test over and over with larger iterations. When I first got my Go server working to where a client would send a message and it would just get broadcasted right back out to everyone, I ran a benchmark. Here are the results of my tests…
 
+{{< rawhtml >}}
 <table border="0" width="500px" cellspacing="0" cellpadding="0">
 <tr>
-<th scope="col" align="left" width="200">
-TEST
-</th>
-
-    <th scope="col" width="150">
-      TIME PER MSG
-    </th>
-    
-    <th scope="col" width="150">
-      NET RESULT
-    </th>
-
+    <th scope="col" align="left" width="200">TEST</th>
+    <th scope="col" width="150">TIME PER MSG</th>
+    <th scope="col" width="150">NET RESULT</th>
 </tr>
 
 <tr>
-<td width="200">
-Python (Tornado, …)
-</td>
-
-    <td width="150">
-      835314 ns/op
-    </td>
-    
-    <td width="150">
-      &#8211;
-    </td>
-
+    <td width="200">Python (Tornado, …)</td>
+    <td width="150">835314 ns/op</td> 
+    <td width="150">&#8211;</td>
 </tr>
-
 <tr>
-<td width="200">
-Go (barebones messaging)
-</td>
-
-    <td width="150">
-      107091 ns/op
-    </td>
-    
-    <td width="150">
-      7.8x faster
-    </td>
-
+    <td width="200"> Go (barebones messaging) </td>
+    <td width="150"> 107091 ns/op </td>
+    <td width="150"> 7.8x faster </td>
 </tr>
-
 <tr>
-<td width="200">
-Go (1-to-1 python port)
-</td>
-
-    <td width="150">
-      159823 ns/op
-    </td>
-    
-    <td width="150">
-      5.2x faster
-    </td>
-
+    <td width="200"> Go (1-to-1 python port) </td>
+    <td width="150"> 159823 ns/op </td>
+    <td width="150"> 5.2x faster </td>
 </tr>
-
 <tr>
-<td width="200">
-Go (weekly.12-01-2011)
-</td>
-
-    <td width="150">
-      76230 ns/op
-    </td>
-    
-    <td width="150">
-      11x faster
-    </td>
-
+    <td width="200"> Go (weekly.12-01-2011) </td>
+    <td width="150"> 76230 ns/op </td>
+    <td width="150"> 11x faster </td>
 </tr>
 </table>
+{{< /rawhtml >}}
 
 The second Go test was after I finished implementing the same 1-to-1 feature set of the python version. I had thought the numbers would be dramatically impacted after adding the overhead of all the internal message routing, but the Go server still came out almost 5x faster than the python version. And this is from my first attempt at writing a Go program! I bet once I get a lot more solid with the language I can optimize this code a lot more.
 
 ### Conclusion
 
-I’m pretty hooked on the language. I feel its the perfect option for a python programmer that wants some speed increases and simple concurrency, without having to learn something as intense as C++. Go is supposed to get faster and faster as they improve things like the goroutines, channels, and the garbage collector, so its a great time to jump in and start learning. Its really helped me understand more formal concepts that will probably make learning C++ even easier once I decide to go back to learning it <img src="http://justinfx.com/wp-includes/images/smilies/simple-smile.png" alt=":-)" class="wp-smiley" style="height: 1em; max-height: 1em;" />
+I’m pretty hooked on the language. I feel its the perfect option for a python programmer that wants some speed increases and simple concurrency, without having to learn something as intense as C++. Go is supposed to get faster and faster as they improve things like the goroutines, channels, and the garbage collector, so its a great time to jump in and start learning. Its really helped me understand more formal concepts that will probably make learning C++ even easier once I decide to go back to learning it <i class="fa fa-smile-o" aria-hidden="true"></i>
 
  

@@ -65,8 +65,8 @@ _test_boost_qobj_sharedptr_ : Creating `boost::shared_ptrs` from QObject instanc
 
 #### The Test Results
 
-# <pre class="">Testing w/ 5000 objects        Qt4       Qt5
-
+```
+Testing w/ 5000 objects        Qt4       Qt5
 test_raw_pointer:              1 ms      1 ms
 test_raw_qobject:              4 ms      3 ms
 test_ptr_qsharedpointer:       3 ms      3 ms
@@ -76,8 +76,7 @@ test_qpointer:                 8 ms      7 ms
 test_boost_sharedptr:          5 ms      3 ms
 test_boost_qobj_sharedptr:     6 ms      4 ms
 
-# Testing w/ 50000 objects
-
+Testing w/ 50000 objects
 test_raw_pointer:             12 ms     10 ms
 test_raw_qobject:             41 ms     35 ms
 test_ptr_qsharedpointer:      32 ms     35 ms
@@ -87,8 +86,7 @@ test_qpointer:               103 ms     65 ms
 test_boost_sharedptr:         32 ms     31 ms
 test_boost_qobj_sharedptr:    69 ms     61 ms
 
-# Testing w/ 500000 objects
-
+Testing w/ 500000 objects
 test_raw_pointer:            109 ms    107 ms
 test_raw_qobject:            379 ms    329 ms
 test_ptr_qsharedpointer:     352 ms    354 ms
@@ -98,8 +96,7 @@ test_qpointer:              1109 ms    725 ms
 test_boost_sharedptr:        350 ms    346 ms
 test_boost_qobj_sharedptr:   680 ms    611 ms
 
-# Testing w/ 2000000 objects
-
+Testing w/ 2000000 objects
 test_raw_pointer:            417 ms    401 ms
 test_raw_qobject:           1502 ms   1201 ms
 test_ptr_qsharedpointer:    1933 ms   1383 ms
@@ -107,7 +104,8 @@ test_qobj_qsharedpointer:   3207 ms   2604 ms
 test_qobj_qweakpointer:     3387 ms   -
 test_qpointer:              5599 ms   2832 ms
 test_boost_sharedptr:       1370 ms   1350 ms
-test_boost_qobj_sharedptr:  2864 ms   2453 ms</pre>
+test_boost_qobj_sharedptr:  2864 ms   2453 ms
+```
 
 {{< lightbox "/uploads/2015/06/qt4_pointers-300x157.png" "/uploads/2015/06/qt4_pointers.png" >}}
 

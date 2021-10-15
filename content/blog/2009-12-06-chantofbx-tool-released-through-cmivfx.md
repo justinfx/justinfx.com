@@ -30,7 +30,7 @@ Chris released it today: <del><a title="http://www.fxmogul.com/" href="http://ww
 
 * Update: This is no longer hosted through cmivfx, and has been posted on github, labeled &#8220;AtomSplitter&#8221;: <https://github.com/justinfx/AtomSplitter>
 
-Currently there is a version for both OSX and Windows. I have been having some issues packaging the code under Linux, but I just need to really sit down and figure it out. The build is kinda larger than I hoped, but thats what I get for distributing PyQt <img src="http://justinfx.com/wp-includes/images/smilies/simple-smile.png" alt=":-)" class="wp-smiley" style="height: 1em; max-height: 1em;" />
+Currently there is a version for both OSX and Windows. I have been having some issues packaging the code under Linux, but I just need to really sit down and figure it out. The build is kinda larger than I hoped, but thats what I get for distributing PyQt <i class="fa fa-smile-o" aria-hidden="true"></i>
 
 <div id="attachment_41" style="width: 590px" class="wp-caption alignnone">
   <img class="size-full wp-image-41" title="chan2FBX_screen" src="/uploads/2009/12/chan2FBX_screen.jpg" alt=".chan To FBX GUI (osx)" width="580" height="428" />

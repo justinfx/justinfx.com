@@ -36,7 +36,7 @@ cover = "/uploads/2014/09/tile2.png"
 [[menu.main]]
 name = "Developer Resume"
 weight = 2
-url = "https://stackoverflow.com/cv/justinisrael"
+url = "https://www.linkedin.com/in/justinisrael/"
 
 [markup.goldmark.renderer]
 unsafe = true

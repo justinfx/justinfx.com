@@ -38,7 +38,7 @@ Notes:
   
 This was shot during my first year of film school, on the Panasonic DVX100a, right when it had been released. It was also my first 24p project. The budget of the film was about $300 and was shot in a single weekend, and edited/fx in a couple days. The sound design/score is original.
 
-<http://www.imdb.com/title/tt0898930/>
+<https://www.imdb.com/title/tt0898930/>
 
 * * *
 

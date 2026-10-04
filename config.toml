@@ -1,5 +1,5 @@
 baseurl = "http://justinfx.com"
-languageCode = "en-us"
+locale = "en-us"
 title = "JustinFX.com"
 disqusShortname = "justinfx"
 GoogleAnalytics = "G-0FB13KEJ8V"

@@ -1,6 +1,6 @@
 theme = "congo"
 
-baseURL = "http://justinfx.com"
+baseURL = "https://justinfx.com"
 defaultContentLanguage = "en"
 enableRobotsTXT = true
 summaryLength = 70

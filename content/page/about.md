@@ -7,7 +7,7 @@ url = "/about/"
 weight = 1
 
 +++
-### <img class="alignleft size-full wp-image-222" title="photo1-300x239" src="/uploads/2009/11/photo1-300x2391.jpeg" alt="" width="300" height="239" />
+### <img class="alignleft size-full wp-image-222" title="justin-300" src="/uploads/2026/10/justin-300.jpg" alt="" width="300" height="144" />
 
 Justin Israel
 
@@ -15,7 +15,7 @@ Justin Israel
 
 Justin is a California-born and New Zealand based software developer / pipeline engineer who graduated from [Cal State Long Beach](https://www.csulb.edu/) (CSULB) with a B.A. degree in Film and Video production. He started his Visual FX career at Stan Winston Digital as a digital artist and then developed strong pipeline/programming skills at [Sony Pictures Imageworks](https://www.imageworks.com/) while working on Spiderman 3, I Am Legend, and The Watchmen. He has also spent 4+ years as a Senior Pipeline Developer on the award winning television series South Park, designing tools for Maya, Nuke, and general pipeline. And just under a year as a compositor at the boutique studio, [Custom Film Effects](https://www.imdb.com/search/title/?companies=co0067412).
 
-Currently Justin works as a Senior Software Engineer at Unity / [Weta Digital](https://www.wetafx.co.nz/), in New Zealand, focusing on core pipeline development. His passion for live-action visual effects and film leads Justin to gain fundamental knowledge in all facets possible. He is experienced in Python, Go, C++, and pipeline development, as well as paint, rotoscoping, and compositing. His work includes feature films such as Commander & Chief, The Compass, Bride Wars, Tropic Thunder, I Am Legend, Spiderman 3, The Watchmen, Fantastic Four and more.
+Currently Justin works as a Staff Engineer at [Wētā FX](https://www.wetafx.co.nz/), in New Zealand, where he has grown from Pipeline Engineer to Senior Software Engineer to Staff Engineer over more than a decade. His focus has shifted in recent years from core pipeline development to building AI platform infrastructure, including MCP gateways, LLM gateways, and coding agent tooling. His passion for live-action visual effects and film leads Justin to gain fundamental knowledge in all facets possible. He is experienced in Python, Go, C++, Cython, and pipeline development, as well as paint, rotoscoping, and compositing. His work includes feature films such as Commander & Chief, The Compass, Bride Wars, Tropic Thunder, I Am Legend, Spiderman 3, The Watchmen, Fantastic Four and more.
 
 Justin has worked as both an artist and a visual fx supervisor on films and television, as well as directing and practical lighting experience, in addition to his current focus in studio pipeline development, and is constantly looking for new challenges and opportunities to learn.
 

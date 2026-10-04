@@ -68,3 +68,7 @@ header nav .icon svg {
   height: 0.85em;
   margin-bottom: -0.06em;
 }
+
+.prose hr {
+  margin-block: 2rem;
+}

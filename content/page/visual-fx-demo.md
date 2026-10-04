@@ -2,10 +2,9 @@
 author = "Justin Israel"
 date = "2009-11-22"
 meta_keywords = ["justin israel", "demo", "vfx", "demo reel"]
+showDate = false
 title = "Visual FX Demo"
 url = "/visual-fx-demo/"
-[menu.main]
-weight = 4
 
 +++
 Justin Israel

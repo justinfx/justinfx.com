@@ -1,0 +1,27 @@
+locale = "en-us"
+label = "English"
+direction = "ltr"
+weight = 1
+
+title = "JustinFX.com"
+copyright = "Justin Israel. All rights reserved."
+
+[params]
+  dateFormat = "Jan 2, 2006"
+  description = "Coding, FX, And Just Random Stuff"
+  mainSections = ["post"]
+
+[params.author]
+  name = "Justin Israel"
+  image = "img/author.jpg"
+  headline = "Staff Software/Pipeline Engineer"
+  bio = "Staff software engineer with 20+ years in VFX pipeline development, working in Go and Python. Currently building AI platform infrastructure — MCP gateways, LLM gateways, and coding agent tooling — at Wētā FX in New Zealand."
+  links = [
+    { email = "mailto:justinisrael@gmail.com" },
+    { github = "https://github.com/justinfx" },
+    { linkedin = "https://www.linkedin.com/in/justinisrael/" },
+    { stack-overflow = "https://stackoverflow.com/users/496445/jdi" },
+    { youtube = "https://www.youtube.com/c/JustinIsrael" },
+    { facebook = "https://www.facebook.com/justinisrael" },
+    { vimeo = "https://vimeo.com/justinisrael" },
+  ]

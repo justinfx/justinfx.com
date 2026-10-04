@@ -1,10 +1,9 @@
 +++
 author = "Justin Israel"
 date = 2009-11-12T00:00:00Z
+showDate = false
 title = "About"
 url = "/about/"
-[menu.main]
-weight = 1
 
 +++
 ### <img class="alignleft size-full wp-image-222" title="justin-300" src="/uploads/2026/10/justin-300.jpg" alt="" width="300" height="144" />

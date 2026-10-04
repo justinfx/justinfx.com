@@ -96,6 +96,20 @@
   a {
     color: #1155cc;
   }
+  @media (max-width: 600px) {
+    body { padding: 20px 16px 32px 16px; }
+    .name { font-size: 24pt; }
+    .title { font-size: 14pt; }
+    .contact-table, .contact-table tbody, .contact-table tr, .contact-table td,
+    .skills-table, .skills-table tbody, .skills-table tr, .skills-table td {
+      display: block;
+      width: 100%;
+    }
+    .contact-table .right { text-align: left; margin-top: 8px; }
+    .skills-table td.label { width: auto; padding-bottom: 0; }
+    .skills-table td { overflow-wrap: anywhere; }
+    .contact-table a { overflow-wrap: anywhere; }
+  }
 </style>
 </head>
 <body>

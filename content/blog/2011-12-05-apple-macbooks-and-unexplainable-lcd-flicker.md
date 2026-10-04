@@ -8,7 +8,7 @@ slug: apple-macbooks-and-unexplainable-lcd-flicker
 url: /2011/12/05/apple-macbooks-and-unexplainable-lcd-flicker/
 meta_keywords:
   - macbook pro, macbook air, flicker, lcd, display, artifact, inversion, text, osx, lion
-thumbnail:
+wp_thumbnail:
   - /uploads/2011/12/bmacbook_flicker.png
 categories:
   - Random Stuff

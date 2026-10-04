@@ -18,7 +18,7 @@ suf_meta_description:
   Justin Israel and cmiVFX.com
 suf_meta_keywords:
 - maya, python, tutorial, cmivfx, scripting
-thumbnail:
+wp_thumbnail:
 - /uploads/2011/10/1318089294_Python_Background_master.jpg
 meta_keywords:
 - maya, python, tutorial, cmivfx, scripting

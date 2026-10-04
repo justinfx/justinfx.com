@@ -1,0 +1,33 @@
+theme = "congo"
+
+baseURL = "http://justinfx.com"
+defaultContentLanguage = "en"
+enableRobotsTXT = true
+summaryLength = 70
+
+[pagination]
+  pagerSize = 10
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+[permalinks]
+  blog = "/:year/:month/:day/:slug/"
+
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+
+[privacy]
+  [privacy.vimeo]
+    enableDNT = true
+  [privacy.x]
+    enableDNT = true
+  [privacy.youTube]
+    privacyEnhanced = true
+
+[services]
+  [services.googleAnalytics]
+    id = "G-0FB13KEJ8V"
+  [services.x]
+    disableInlineCSS = true

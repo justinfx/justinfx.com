@@ -2,10 +2,9 @@
 author = "Justin Israel"
 date = "2010-03-26"
 meta_keywords = ["justin israel", "shorts", "short films", "videos"]
+showDate = false
 title = "Short Films"
 url = "/short-films/"
-[menu.main]
-weight = 5
 
 +++
 These are a collection of short films I have made over the years&#8230;

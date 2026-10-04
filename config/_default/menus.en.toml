@@ -1,0 +1,33 @@
+[[main]]
+  name = "Posts"
+  pageRef = "blog"
+  weight = 10
+
+[[main]]
+  name = "About"
+  pageRef = "about"
+  weight = 20
+
+[[main]]
+  name = "Experience"
+  url = "https://www.linkedin.com/in/justinisrael/"
+  weight = 30
+  [main.params]
+    icon = "linkedin"
+    target = "_blank"
+    rel = "noopener noreferrer"
+
+[[main]]
+  name = "VFX Resume"
+  pageRef = "vfx-resume"
+  weight = 40
+
+[[main]]
+  name = "Visual FX Demo"
+  pageRef = "visual-fx-demo"
+  weight = 50
+
+[[main]]
+  name = "Short Films"
+  pageRef = "short-films"
+  weight = 60

@@ -1,0 +1,27 @@
+.prose a,
+h1 {
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 639px) {
+  article header h1.text-4xl {
+    font-size: 1.75rem;
+  }
+}
+
+.prose iframe,
+.prose img,
+.prose .wp-caption {
+  max-width: 100%;
+}
+
+.prose img {
+  height: auto;
+}
+
+.prose iframe[src*="youtube"],
+.prose iframe[src*="vimeo"] {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+}

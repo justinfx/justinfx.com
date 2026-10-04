@@ -11,7 +11,7 @@ meta_description:
 - A review of the programming language, Go, from the perspective of a python programmer.
 meta_keywords:
 - Go, language, programming, python, server
-thumbnail:
+wp_thumbnail:
 - http://www.whatsontianjin.com/ent_images/bbe2304a8d3e8bc8e365_1.JPG
 categories:
 - Code

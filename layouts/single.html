@@ -44,7 +44,7 @@
       {{ partial "author.html" . }}
       {{ partial "sharing-links.html" . }}
       {{ partial "article-pagination.html" . }}
-      {{ if .Params.showComments | default (.Site.Params.article.showComments | default false) }}
+      {{ if and (eq .Section "blog") (.Params.showComments | default (.Site.Params.article.showComments | default false)) }}
         {{ if templates.Exists "_partials/comments.html" }}
           <div class="pt-3">
             <hr class="border-dotted border-neutral-300 dark:border-neutral-600" />

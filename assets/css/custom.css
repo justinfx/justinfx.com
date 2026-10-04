@@ -43,3 +43,28 @@ h1 {
     letter-spacing: -0.01em;
   }
 }
+
+@media (min-width: 640px) {
+  header nav.flex {
+    align-items: baseline;
+  }
+}
+
+header a[rel="me"] {
+  color: rgb(var(--color-primary-600));
+}
+
+.dark header a[rel="me"] {
+  color: rgb(var(--color-primary-400));
+}
+
+header nav .icon {
+  padding: 0 0.4em 0 0;
+  vertical-align: baseline;
+}
+
+header nav .icon svg {
+  width: 0.85em;
+  height: 0.85em;
+  margin-bottom: -0.06em;
+}

@@ -6,7 +6,7 @@ title = "About"
 url = "/about/"
 
 +++
-### <img class="alignleft size-full wp-image-222" title="justin-300" src="/uploads/2026/10/justin-300.jpg" alt="" width="300" height="144" />
+<img src="/uploads/2026/10/justin-wide.jpg" alt="Justin Israel" width="900" height="438" style="width: 300px; height: auto;" />
 
 Justin Israel
 

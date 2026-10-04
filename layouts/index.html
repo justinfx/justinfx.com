@@ -4,14 +4,29 @@
 {{ template "chrome/sidebar.html" . }}
 
 <div class="content container">
-<div class="posts">
 
-{{ range first 100 .Site.Pages }}
-  {{ if eq .Type "post" }}
-    {{ .Render "summary" }}
-  {{ end }}
+<div class="hero">
+  <img class="hero-photo" src="{{ .Site.BaseURL }}/uploads/2026/10/justin-300.jpg" alt="Justin Israel">
+  <div class="hero-text">
+    <h1>Justin Israel</h1>
+    <p class="hero-title">Staff Software/Pipeline Engineer</p>
+    <p class="hero-summary">Staff software engineer with 20+ years in VFX pipeline development, working in Go and Python. Currently building AI platform infrastructure &mdash; MCP gateways, LLM gateways, and coding agent tooling &mdash; at Wētā FX in New Zealand.</p>
+    <p class="hero-links">
+      <a href="{{ .Site.BaseURL }}/about/">About</a>
+      <a href="https://www.linkedin.com/in/justinisrael/">Resume</a>
+      <a href="https://github.com/justinfx">GitHub</a>
+    </p>
+  </div>
+</div>
+
+<h2 class="posts-heading">Recent Posts <a class="view-all" href="{{ .Site.BaseURL }}/blog">View all posts &raquo;</a></h2>
+
+<div class="posts">
+{{ range first 5 (where .Site.Pages "Type" "post") }}
+  {{ .Render "summary" }}
 {{ end }}
 </div>
+
 </div>
 
 </body>

@@ -1,0 +1,57 @@
+/*
+ * Site-specific overrides and additions, layered on top of Poole/Hyde.
+ */
+
+.hero {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #eee;
+}
+
+.hero-photo {
+  width: 7rem;
+  height: 7rem;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.hero-text h1 {
+  margin: 0 0 0.15rem 0;
+}
+
+.hero-title {
+  color: #ac4142;
+  margin: 0 0 0.6rem 0;
+  font-weight: 300;
+}
+
+.hero-summary {
+  margin: 0 0 0.6rem 0;
+}
+
+.hero-links a {
+  margin-right: 0.75rem;
+}
+
+@media (max-width: 30em) {
+  .hero {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+.posts-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.posts-heading .view-all {
+  font-size: 0.6em;
+  font-weight: normal;
+}

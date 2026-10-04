@@ -19,7 +19,7 @@ type = "post"
 url = ""
 
 +++
-<img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" style="width:100px; float:left;" >
+<img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub" style="width:100px; float:left; margin:0 1.25rem 0.5rem 0;" >
 
 [gofileseq](https://github.com/justinfx/gofileseq "gofileseq") is a Go language library for parsing file sequence strings commonly used in VFX and animation applications.
 

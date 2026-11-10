@@ -85,3 +85,9 @@ header nav .icon svg {
 .site-logo { display: block; height: 1.75rem; color: inherit; }
 .site-logo svg { height: 100%; width: auto; display: block; }
 @media (min-width: 640px) { .site-logo { height: 2rem; } }
+
+@media (min-width: 640px) and (max-width: 1279px) {
+  header nav.flex { justify-content: space-between; align-items: center; }
+  header nav.flex > #menu-button { display: block; }
+  header nav.flex > ul.list-none { display: none; }
+}

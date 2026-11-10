@@ -7,12 +7,11 @@ draft = false
 categories = ["Code"]
 tags = ["go", "golang", "gui", "benchmark"]
 excerpt = "I had coding agents build the same data-heavy app with Fyne, Cogent Core, Wails, GoTTH and MIQT, then measured what a user would actually notice."
+summary = "I had coding agents build the same data-heavy app with Fyne, Cogent Core, Wails, GoTTH and MIQT, then measured what a user would actually notice."
 featureAlt = "Five plates on a dark table, each holding a small app window plated like a fine dining course."
 +++
 
 I've been keeping an eye on the Go GUI options for a long time. Most of my GUI background is Qt, in both Python and C++, and I've written some decently sized apps with it at Wētā FX. So when I first started using Go, what I really wanted was just another Qt. Back then that came with some pretty major bootstrap costs. Over the years I dabbled with other options, like an older Fyne, [imgui](https://github.com/ocornut/imgui), [nuklear](https://github.com/Immediate-Mode-UI/Nuklear) and [iup-go](https://github.com/gen2brain/iup-go). Some of them looked like crap out of the box, others came with heavy cgo dependencies, and imgui and nuklear are immediate mode, which I never felt as comfortable with. The one I ended up liking the most was iup-go. Like Qt, it's retained mode, which is what I'm most comfortable with. But none of them ever fully solved every area for me.
-
-<!--more-->
 
 More recently a colleague told me he thinks all of our GUIs should just be web apps. I get why: a web app only needs a browser, with nothing to install or launch locally. We have people with all levels of technical background, on both macOS and Linux, and with a web app neither the platform nor their environment matters. Some of our tools are perfectly happy being full web apps. But a lot of what we build still needs to act as the user on their own machine. We have a lot of NFS shared filesystems that often need to respect user and group permissions. We might need to launch a particular image viewer in a particular environment to look at a sequence of images, or read headers and metadata from media as that user, or deal with custom auth where files have to be read as a given user. A web app on a server somewhere runs as the server, not as you. So what do you do with the apps that still need that kind of access?
 

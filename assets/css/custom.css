@@ -75,3 +75,9 @@ header nav .icon svg {
 
 /* Wide tables scroll inside the text column on small screens instead of being cut off. */
 .prose table { display: block; max-width: 100%; overflow-x: auto; }
+
+/* Post lists: on phones, put a post's thumbnail above its text instead of squeezing the text beside it. */
+@media (max-width: 639px) {
+  article.mt-6.flex.flex-row { flex-direction: column; }
+  article.mt-6.flex.flex-row > .flex-none { padding-bottom: 0.75rem; }
+}

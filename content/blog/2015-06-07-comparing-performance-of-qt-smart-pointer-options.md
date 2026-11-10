@@ -107,9 +107,9 @@ test_boost_sharedptr:       1370 ms   1350 ms
 test_boost_qobj_sharedptr:  2864 ms   2453 ms
 ```
 
-{{< lightbox "/uploads/2015/06/qt4_pointers-300x157.png" "/uploads/2015/06/qt4_pointers.png" >}}
+{{< zoom thumb="/uploads/2015/06/qt4_pointers-300x157.png" src="/uploads/2015/06/qt4_pointers.png" >}}
 
-{{< lightbox "/uploads/2015/06/qt5_pointers-300x154.png" "/uploads/2015/06/qt5_pointers.png" >}}
+{{< zoom thumb="/uploads/2015/06/qt5_pointers-300x154.png" src="/uploads/2015/06/qt5_pointers.png" >}}
 
 The test shows the overhead of simply going from a simple struct to a QObject, and then the further impact of introducing various smart pointers on QObjects, and also on non-QObjects where permitted.
 

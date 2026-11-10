@@ -72,3 +72,6 @@ header nav .icon svg {
 .prose hr {
   margin-block: 2rem;
 }
+
+/* Wide tables scroll inside the text column on small screens instead of being cut off. */
+.prose table { display: block; max-width: 100%; overflow-x: auto; }

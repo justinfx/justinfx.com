@@ -1,0 +1,44 @@
+{{- /* Inline an SVG from static/ so currentColor follows the theme. Click to view it full-window.
+Usage: {{< svg "uploads/2026/11/x.svg" "caption" >}} */ -}}
+{{- $id := printf "svgzoom-%d" .Ordinal -}}
+<figure class="not-prose my-6">
+  <div role="button" tabindex="0" aria-label="Enlarge chart" style="cursor:zoom-in"
+       onclick="var d=document.getElementById('{{ $id }}');d.firstElementChild.innerHTML=this.innerHTML;d.showModal()"
+       onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click()}">
+{{ readFile (printf "static/%s" (.Get 0)) | safeHTML }}
+  </div>
+  {{ with .Get 1 }}<figcaption class="mt-2 text-sm text-neutral-500 dark:text-neutral-400">{{ . | markdownify }} <span style="opacity:.7">(click to enlarge)</span></figcaption>{{ end }}
+  <dialog id="{{ $id }}" class="svgzoom" onclick="this.close()">
+    <div style="width:min(calc(98vw - 64px),1400px)"></div>
+  </dialog>
+</figure>
+<style>
+dialog.svgzoom{max-width:98vw;max-height:96vh;padding:24px;border:0;border-radius:8px;background:#fff;color:#171717;cursor:zoom-out;overflow:auto}
+.dark dialog.svgzoom{background:#262626;color:#e5e5e5}
+dialog.svgzoom::backdrop{background:rgba(0,0,0,.85)}
+dialog.svgzoom svg{width:100%!important;max-width:none!important;height:auto}
+</style>
+<script>
+if (!window.__svgTip) { window.__svgTip = true;
+document.addEventListener('DOMContentLoaded', function () {
+  // Show a mark's <title> as an instant tooltip (hover or tap) on inline charts.
+  var tip = document.createElement('div');
+  tip.style.cssText = 'position:fixed;z-index:60;pointer-events:none;padding:4px 8px;border-radius:4px;font:12px system-ui,sans-serif;background:#171717;color:#f5f5f5;box-shadow:0 2px 6px rgba(0,0,0,.3);display:none';
+  document.body.appendChild(tip);
+  function find(t) { while (t && t.tagName !== 'svg') { var k = t.querySelector && t.querySelector(':scope > title'); if (k) return k.textContent; t = t.parentNode; } return null; }
+  function show(e) {
+    var txt = find(e.target);
+    if (!txt) { tip.style.display = 'none'; return; }
+    tip.textContent = txt; tip.style.display = 'block';
+    var x = e.clientX + 12, y = e.clientY + 12, w = tip.offsetWidth;
+    if (x + w > innerWidth - 8) x = e.clientX - w - 12;
+    tip.style.left = x + 'px'; tip.style.top = y + 'px';
+  }
+  document.querySelectorAll('figure svg, dialog.svgzoom').forEach(function (el) {
+    el.addEventListener('mousemove', show);
+    el.addEventListener('mouseleave', function () { tip.style.display = 'none'; });
+  });
+  document.addEventListener('scroll', function () { tip.style.display = 'none'; }, { passive: true });
+});
+}
+</script>

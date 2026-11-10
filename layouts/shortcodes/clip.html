@@ -1,0 +1,29 @@
+{{- /*
+Looping, muted video that readers can pause.
+Usage: {{< clip src="file.mp4" caption="..." >}}
+- Plays (muted, looping) only while at least half on screen, unless the reader prefers reduced motion (then it waits for play).
+- Native controls let the reader pause, play and scrub.
+*/ -}}
+{{- $src := .Get "src" -}}
+{{- with .Page.Resources.GetMatch $src }}{{ $src = .RelPermalink }}{{ end -}}
+<figure class="not-prose my-6">
+  <video src="{{ $src }}" loop muted playsinline controls preload="metadata" data-clip style="width:100%;border-radius:6px"></video>
+  {{ with .Get "caption" }}<figcaption class="mt-2 text-sm text-neutral-500 dark:text-neutral-400">{{ . | markdownify }}</figcaption>{{ end }}
+</figure>
+<script>
+if (!window.__clipInit) { window.__clipInit = true;
+document.addEventListener('DOMContentLoaded', function () {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var vids = document.querySelectorAll('video[data-clip]');
+  if (!('IntersectionObserver' in window)) { vids.forEach(function (v) { v.play().catch(function () {}); }); return; }
+  // Play while on screen, pause when scrolled away. Readers can still pause with the controls.
+  var io = new IntersectionObserver(function (es) {
+    es.forEach(function (e) {
+      if (e.isIntersecting) e.target.play().catch(function () {});
+      else e.target.pause();
+    });
+  }, { threshold: 0.25 });
+  vids.forEach(function (v) { io.observe(v); });
+});
+}
+</script>

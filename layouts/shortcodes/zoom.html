@@ -1,0 +1,22 @@
+{{- /*
+Click-to-zoom image from the page bundle (no dependencies).
+Usage: {{< zoom src="file.webp" alt="..." caption="..." >}}
+Optional thumb="small.png": show that inline (at its own size) and open src on click.
+Click the image to open it full size in a dialog; click again or press Esc to close.
+*/ -}}
+{{- $src := .Get "src" -}}
+{{- $img := .Page.Resources.GetMatch $src -}}
+{{- $url := $src -}}
+{{- with $img }}{{ $url = .RelPermalink }}{{ end -}}
+{{- $id := printf "zoom-%d" .Ordinal -}}
+{{- $thumb := .Get "thumb" -}}
+<figure class="not-prose my-6">
+  <button type="button" onclick="document.getElementById('{{ $id }}').showModal()" style="all:unset;cursor:zoom-in;display:block">
+    {{ if $thumb }}<img src="{{ $thumb }}" alt="{{ .Get "alt" }}" loading="lazy" style="max-width:100%;height:auto">{{ else }}<img src="{{ $url }}" alt="{{ .Get "alt" }}" loading="lazy" style="width:100%;height:auto;border-radius:6px">{{ end }}
+  </button>
+  {{ with .Get "caption" }}<figcaption class="mt-2 text-sm text-neutral-500 dark:text-neutral-400">{{ . | markdownify }} <span style="opacity:.7">(click to enlarge)</span></figcaption>{{ end }}
+  <dialog id="{{ $id }}" onclick="this.close()" style="max-width:96vw;max-height:96vh;padding:0;border:0;background:transparent;cursor:zoom-out">
+    <img src="{{ $url }}" alt="{{ .Get "alt" }}" style="max-width:96vw;max-height:96vh;width:auto;height:auto;display:block">
+  </dialog>
+</figure>
+<style>dialog[id^="zoom-"]::backdrop{background:rgba(0,0,0,.85)}</style>

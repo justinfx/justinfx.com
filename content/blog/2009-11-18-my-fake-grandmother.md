@@ -112,7 +112,7 @@ Are you slightly confused? Well maybe if you would listen to people instead of r
 Glad you finally figured this out.
 ```
 
-{{< lightbox "/uploads/2009/11/miriam-300x201.jpg" "/uploads/2009/11/miriam.jpg" >}}
+{{< zoom thumb="/uploads/2009/11/miriam-300x201.jpg" src="/uploads/2009/11/miriam.jpg" >}}
 
 ***
 

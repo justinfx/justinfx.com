@@ -81,3 +81,7 @@ header nav .icon svg {
   article.mt-6.flex.flex-row { flex-direction: column; }
   article.mt-6.flex.flex-row > .flex-none { padding-bottom: 0.75rem; }
 }
+
+.site-logo { display: block; height: 1.75rem; color: inherit; }
+.site-logo svg { height: 100%; width: auto; display: block; }
+@media (min-width: 640px) { .site-logo { height: 2rem; } }

@@ -1,0 +1,5 @@
+{{- with resources.Get "img/justinfx-logo.svg" }}
+  <a href="{{ "" | relLangURL }}" class="site-logo" aria-label="{{ site.Title }}">
+    {{ .Content | safeHTML }}
+  </a>
+{{- end }}

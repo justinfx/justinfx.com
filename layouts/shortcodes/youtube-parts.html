@@ -1,0 +1,18 @@
+{{- /*
+One YouTube player that plays several videos back to back (e.g. a film split into parts).
+Usage: {{< youtube-parts "PART1_ID" "PART2_ID" ... >}}
+Uses the privacy-enhanced youtube-nocookie.com domain.
+*/ -}}
+{{- $ids := .Params -}}
+{{- $first := index $ids 0 -}}
+{{- $rest := after 1 $ids -}}{{/* YouTube plays the playlist list, so it must include the first part too */}}
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe
+    src="https://www.youtube-nocookie.com/embed/{{ $first }}{{ with $rest }}?playlist={{ delimit $ids "," }}{{ end }}"
+    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    referrerpolicy="strict-origin-when-cross-origin"
+    allowfullscreen
+    loading="lazy"
+    title="YouTube video player"></iframe>
+</div>

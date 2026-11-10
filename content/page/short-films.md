@@ -13,7 +13,7 @@ These are a collection of short films I have made over the years&#8230;
 
 ### Out of Touch (2006)
 
-{{< vimeo 12067694 >}}
+{{< youtube-parts "xbTwGXNpmP0" "KQSb-zJ3vJ4" >}}
 
 **Synopsis**:
   
@@ -27,7 +27,7 @@ Shot in my final year of film school, this short was my first true HD project. W
 
 ### Lucid (2004)
 
-{{< vimeo 12067558 >}}
+{{< youtube A9OkXbyWe_Y >}}
 
 Synopsis:
   
@@ -43,7 +43,7 @@ This was shot during my first year of film school, on the Panasonic DVX100a, rig
 
 ### Flapjacks (2005)
 
-{{< vimeo 12067776 >}}
+{{< youtube QiSsQFb-cKk >}}
 
 **Tag Line**:
   
@@ -59,7 +59,7 @@ This film was challenging not only because of the limited time frame, but also b
 
 ### Reverie of the Other (2004)
 
-{{< vimeo 12067910 >}}
+{{< youtube FHHJGWvdmaY >}}
 
 **Synopsis:**
   

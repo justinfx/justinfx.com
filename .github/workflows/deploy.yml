@@ -1,0 +1,36 @@
+# Build the Hugo site and push the output to justinfx/justinfx.github.io,
+# which serves justinfx.com through GitHub Pages.
+name: Deploy
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          fetch-depth: 0
+
+      - uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: "0.167.0"
+          extended: true
+
+      - run: hugo --minify --gc
+
+      - uses: peaceiris/actions-gh-pages@v4
+        with:
+          deploy_key: ${{ secrets.PAGES_DEPLOY_KEY }}
+          external_repository: justinfx/justinfx.github.io
+          publish_branch: master
+          publish_dir: ./public
+          full_commit_message: "render: ${{ github.event.head_commit.message }}"

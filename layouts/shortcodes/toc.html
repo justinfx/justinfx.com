@@ -1,6 +1,5 @@
-{{- /* Inline, collapsible table of contents of the page's top-level (h2) sections.
-Usage: {{< toc >}}  (optional: open="true" to start expanded) */ -}}
-<details class="not-prose my-6 rounded-md border border-neutral-300 dark:border-neutral-700 px-4 py-2" {{ if eq (.Get "open") "true" }}open{{ end }}>
-  <summary class="cursor-pointer font-semibold">Contents</summary>
+{{- /* Inline table of contents of the page's top-level (h2) sections. Usage: {{< toc >}} */ -}}
+<nav class="not-prose my-6 rounded-md border border-neutral-300 dark:border-neutral-700 px-4 py-3" aria-label="Contents">
+  <div class="font-semibold">Contents</div>
   <div class="mt-2 text-sm">{{ .Page.Fragments.ToHTML 2 2 false }}</div>
-</details>
+</nav>

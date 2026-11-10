@@ -26,6 +26,8 @@ jobs:
           extended: true
 
       - run: hugo --minify --gc
+        env:
+          TZ: Pacific/Auckland  # match local renders (date attributes include the zone name)
 
       - uses: peaceiris/actions-gh-pages@v4
         with:

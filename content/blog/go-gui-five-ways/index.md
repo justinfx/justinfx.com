@@ -59,7 +59,7 @@ The data doesn't come from the framework. Every app talks to the same small Go m
 
 Each app was built by an AI coding agent (Claude Code, using Sonnet), working alone from a brief written just for its framework. The briefs were generated from the one spec, with a check that nothing about one framework leaked into another's brief. The agents weren't told how the results would be judged.
 
-I'm sure an expert in each framework would have written a better app. But I think that makes it a more honest comparison of what you get on a first serious pass, which is pretty much where I'd be starting from too. Where an app was missing something, I tried to work out whether that was the framework or the agent before blaming either one.
+I'm sure an expert in each framework would have written a better app. But I think that makes it a more honest comparison of what you get on a first serious pass, which is pretty much where I'd be starting from too. It's still one build per framework, and agents have likely seen far more Svelte and htmx than Cogent Core or MIQT, so small differences in code and style scores are probably noise. Where an app was missing something, I tried to work out whether that was the framework or the agent before blaming either one.
 
 After the builds, I did fix a handful of bugs the agents left behind, mostly found when I ran the apps on Linux. Those fixes are recorded in the repo next to each app.
 
@@ -102,7 +102,7 @@ If two apps land in the same band, I treat them as tied.
 
 Some results raised a "but is that the framework's fault?" question, so I added a few variants:
 
-- **-fitcap:** each app swaps the shared pager for a data layer that suits its toolkit, with the same limit of 2 requests in flight.
+- **-fitcap** (a fitted data layer): each app swaps the shared pager for a data layer that suits its toolkit, with the same limit of 2 requests in flight.
 - **gotth-glaze:** the GoTTH app in a [glaze](https://github.com/crgimenes/glaze) desktop shell that builds with `CGO_ENABLED=0`.
 - **miqt-gotth:** the GoTTH web UI inside [Qt WebEngine](https://doc.qt.io/qt-6/qtwebengine-index.html), through MIQT.
 
@@ -112,7 +112,7 @@ I also made a few mistakes in the harness along the way. The worst was a scroll 
 
 ## The Whole Picture First
 
-Before getting into each question, here's everything at once. Each factor was scored 1 to 5 against the same rubric, grouped by the question it belongs to. Darker means stronger.
+Before getting into each question, here's everything at once. Each factor was scored 1 to 5 by a separate Opus judge agent, which didn't build any of the apps, against the same [rubric](https://github.com/justinfx/go-gui-experiments/blob/main/SPEC.md#appendix-b-judge-rubric), using the code, screenshots and measurements. Style was judged blind from screenshots. I overrode a few performance scores after trying the apps by hand (Wails and the `-fitcap` builds of Wails and GoTTH), and every change and its reason is [in the repo](https://github.com/justinfx/go-gui-experiments/blob/main/results/judge2/changes.md). The scores are grouped by the question they belong to. Darker means stronger.
 
 {{< svg "uploads/2026/11/heatmap-base.svg" >}}
 
@@ -154,11 +154,11 @@ The scripted desktop run, median of 5 runs:
 | Search (ms) | **66** | **66** | 100 | 183 | 70 |
 | Peak memory (MB) | 1412 | **513** | 824 | 730 | 702 |
 
-A couple of terms. A frame gap is how late a frame was against a steady 60 fps. Blank rows are the placeholder rows a table shows while a page of data is still on its way from the pager. Bold marks the best value in each row, but it isn't a ranking: anything in the same band feels the same to a user.
+A few terms. Ready is the time from launch until the window is up with its first page of data. A frame gap is how long the UI thread was too busy to run anything: every 16 ms the harness queues a no-op on it and records how late it ran. For the Go-drawn and Qt apps that goes through the toolkit's main thread, and for the WebView apps it's a JavaScript timer, so the two kinds of numbers aren't measured quite the same way. Blank rows are the placeholder rows a table shows while a page of data is still on its way from the pager. Bold marks the best value in each row, but it isn't a ranking: anything in the same band feels the same to a user.
 
-Start-up, sort and search are responsive or instant everywhere. What a user would actually feel is scrolling and switching views. Fyne and Cogent scroll smoothly. Wails and GoTTH sit just under the stutter line. MIQT stutters visibly in both the table and the cards, and GoTTH and MIQT take close to a second to switch to the card view.
+Start-up, sort and search are responsive or instant everywhere. What a user would actually feel is scrolling and switching views. Fyne and Cogent scroll smoothly. Wails and GoTTH sit just under the stutter line. MIQT stutters visibly in both the table and the cards, and GoTTH and MIQT take close to a second to switch to the card view. GoTTH's blank rows and slow switch are partly by design: its spec asked for a windowed infinite scroll that loads around where you are, rather than a fully virtualized list.
 
-{{< svg "uploads/2026/11/bands-desktop.svg" "The same desktop timings placed in the perception bands, on a log scale. Every action lands in instant or responsive for every app. The only ones near the edge of a noticeable wait are GoTTH and MIQT switching to the card view. Hover a mark for its value." >}}
+{{< svg "uploads/2026/11/bands-desktop.svg" "The same desktop timings placed in the perception bands, on a log scale. Every action lands in instant or responsive for every app, with GoTTH and MIQT near the edge of a noticeable wait when switching to the card view. Scrolling is what separates them: only MIQT crosses the stutter line. Hover a mark for its value." >}}
 
 Fyne peaks at about 1.4 GB, while the others land between 0.5 and 0.8 GB. On a normal workstation nobody would notice, but it would matter on a machine without much RAM.
 
@@ -172,9 +172,13 @@ Is that stutter Qt, or is it how our app feeds rows to Qt? To separate the two, 
 | Table scroll, worst gap: -fitcap (ms) | 26 | 19 | 140 | 321 | **16** |
 | Blank-row steps: base / -fitcap | 0 / 0 | 24 / 0 | 64 / 1 | 155 / 0 | 115 / 2 |
 
-MIQT goes from visible stutter to the smoothest scroll of the lot, on the same Qt. So the stutter came from how our app fed rows to Qt, not from Qt itself. With the fitted data layer, MIQT's large-data score goes from 2 to 4. It isn't a 5 because switching to the card view still takes about a second. Fyne and Cogent stay in the same band.
+MIQT goes from visible stutter to the smoothest scroll of the lot, on the same Qt. So the stutter came from how our app fed rows to Qt, not from Qt itself.
 
-The WebView apps went the other way. Wails and GoTTH lose their blank rows, but their worst gaps grow, and GoTTH's gaps of over 300 ms keep repeating. On paper that's the worst in the table (more on how it felt below). Yet the same `-fitcap` builds are smooth in Chrome: 23 ms for Wails and 68 ms for GoTTH. Same HTML, different engine. To check that, I ran the same Wails web builds in Chrome and in a WebKit browser, three runs each. Chrome's worst gaps were 20 to 42 ms; WebKit's were 141 to 304 ms. So the engine showing your HTML on the desktop (WKWebView on macOS) clearly matters, though I haven't tracked down what WebKit is doing differently.
+The fitted layer does three things the base app didn't. It cancels requests for pages the view has already scrolled past, it prefetches ahead in the scroll direction based on how fast you're scrolling, and it tells Qt about new data with one batched update for the rows on screen, instead of an update per row. None of that is specific to MIQT. It would apply to any Qt model sitting on a slow backend. The code is in [`adapter_store_desktop.go`](https://github.com/justinfx/go-gui-experiments/blob/main/apps/miqt-fitcap/adapter_store_desktop.go).
+
+With the fitted data layer, MIQT's large-data score goes from 2 to 4. It isn't a 5 because switching to the card view still takes about a second. Fyne and Cogent stay in the same band.
+
+The WebView apps went the other way. Wails and GoTTH lose their blank rows, but their worst gaps grow, and GoTTH's gaps of over 300 ms keep repeating. On paper that's the worst in the table (more on how it felt below). Yet the same fitted builds are smooth in Chrome: 23 ms for Wails and 68 ms for GoTTH. Same HTML, different engine. To check that, I ran the same Wails web builds in Chrome and in a WebKit browser, three runs each. Chrome's worst gaps were 20 to 42 ms; WebKit's were 141 to 304 ms. So the engine showing your HTML on the desktop (WKWebView on macOS) clearly matters, though I haven't tracked down what WebKit is doing differently. These are all macOS numbers, and on Linux the engine would be WebKitGTK, which I didn't time.
 
 {{< svg "uploads/2026/11/angle-data-miqt.svg" "Base MIQT and miqt-fitcap, with the large-data spoke highlighted. Same Qt app, only the data layer changed, and that one spoke moves from 2 to 4. Every other score is the same app." >}}
 
@@ -182,13 +186,13 @@ The WebView apps went the other way. Wails and GoTTH lose their blank rows, but 
 
 I had to ask myself this. The scroll test moves 25 rows every 16 ms, which is about 1,500 rows a second. That's a hard fling or a fast scrollbar drag through a million rows, not someone gently using the mouse wheel. It's a stress test, and I didn't want to call something a problem just because a machine could measure it.
 
-So I manually tested Wails, which measured gaps of about 91 ms, and its `-fitcap` variant at about 140 ms. I have a mouse with a free-spinning wheel, which is about as aggressive as scrolling gets. Gentle scrolling was smooth in both. Flicking the wheel as hard as it would go still felt acceptable, with an occasional flicker. Dragging the scrollbar far showed blank rows while distant pages loaded, which seems normal given the data has to arrive from somewhere. The important part for me was that the controls themselves never lagged. Only the data caught up. And I honestly couldn't tell the two apart.
+So I manually tested Wails, which measured gaps of about 91 ms, and its fitted variant at about 140 ms. I have a mouse with a free-spinning wheel, which is about as aggressive as scrolling gets. Gentle scrolling was smooth in both. Flicking the wheel as hard as it would go still felt acceptable, with an occasional flicker. Dragging the scrollbar far showed blank rows while distant pages loaded, which seems normal given the data has to arrive from somewhere. The important part for me was that the controls themselves never lagged. Only the data caught up. And I honestly couldn't tell the two apart.
 
-My take is that gaps in the 100 to 200 ms range are real and measurable, and some people could notice them, but to me they didn't stand out. Base MIQT, with gaps around 250 ms that keep repeating, really lagged when I spun the wheel fast or dragged the scrollbar, and the scrollbar itself fell behind, not just the data. But the GoTTH `-fitcap` variant, with repeated gaps around 320 ms on paper, only showed the most minor lag in my hands, and dragging was a lot more responsive than MIQT. What the gap numbers don't capture is whether the controls keep up. In the WebView apps they did, so a late frame read as data catching up. In base MIQT they didn't, and that's what felt broken.
+My take is that gaps in the 100 to 200 ms range are real and measurable, and some people could notice them, but to me they didn't stand out. Base MIQT, with gaps around 250 ms that keep repeating, really lagged when I spun the wheel fast or dragged the scrollbar, and the scrollbar itself fell behind, not just the data. But the fitted GoTTH variant, with repeated gaps around 320 ms on paper, only showed the most minor lag in my hands, and dragging was a lot more responsive than MIQT. What the gap numbers don't capture is whether the controls keep up. In the WebView apps they did, so a late frame read as data catching up. In base MIQT they didn't, and that's what felt broken. That fits how the two work. A browser engine scrolls and draws its scrollbar off the main thread, so a busy JavaScript thread shows up as late data. In Qt the UI thread also paints and handles input, so when it's busy, everything waits. Those hands-on checks are why Wails keeps a 5 for large data despite its blank-row steps. I didn't do one for base GoTTH.
 
 Here's the same scripted scroll recorded on both MIQT builds: 200 steps of 25 rows from row 500,000, the exact run the numbers above came from. The fitted data layer finishes in about 3 seconds. The base app needs over 8 seconds for the same steps, because its UI thread keeps falling behind, and it shows blank rows most of the way.
 
-{{< clip src="miqt-scroll.mp4" caption="The harness's fast scroll, about 1,500 rows a second, on the same Qt app with two data layers. The right side stops when its run is done." >}}
+{{< clip src="miqt-scroll.mp4" caption="The harness's fast scroll, about 1,500 rows a second, on the same Qt app with two data layers. Base on the left, fitted on the right, which stops when its run is done." >}}
 
 ### If you have a lot of data
 
@@ -216,7 +220,7 @@ On the desktop, everything can. The web is where it splits. Fyne and Cogent run 
 
 ### What does the binary need at runtime?
 
-This matters most on Linux. Here's what each Linux binary asks the dynamic linker for (from `objdump -p` on the x86-64 builds):
+This matters most on Linux. Here's what each Linux binary asks the dynamic linker for (from `objdump -p` on the x86-64 builds). That only shows what's linked at build time, not what a library loads later with `dlopen`, so treat it as a floor:
 
 | App | Libraries the binary links |
 |---|---|
@@ -227,7 +231,7 @@ This matters most on Linux. Here's what each Linux binary asks the dynamic linke
 | Wails | webkitgtk-6.0, GTK 4, libsoup 3, GLib, JavaScriptCore, libX11, libc |
 | MIQT | Qt6Widgets, Qt6Gui, Qt6Core, libstdc++, libc |
 
-Fyne and Cogent only need the basic X11, Wayland or GL libraries that any desktop install already has.
+Fyne and Cogent link only the basic X11, Wayland or GL libraries that any desktop install already has, and in the Ubuntu container they ran without any extra packages.
 
 The WebView stacks need WebKitGTK, and the version matters. webview_go, which GoTTH uses as its desktop shell, links `webkit2gtk-4.0`, which Ubuntu 24.04 doesn't ship anymore, so a stock build of it simply doesn't start there. Wails v3 defaults to GTK 4 and `webkitgtk-6.0`, with a build tag to go back to GTK 3. Either way, you're now tracking which WebKitGTK your users' distro has.
 
@@ -297,7 +301,7 @@ These are single runs in Chrome, so I only trust the big differences. Wails and 
 
 *Fyne draws its own widgets, so the WASM build looks almost identical to the desktop one. Two small differences: a missing-glyph box where the sort arrow should be in the ID header, and "unknown user", because code running in the browser can't see the host.*
 
-That was the opposite of my starting assumption. I thought one of the Go-native toolkits might have a good web story by now. They do run in the browser, which is pretty impressive, but the first load is a real cost.
+I thought one of the Go-native toolkits might have a good web story by now, and it was better than I expected. They really do run in the browser, which is pretty impressive, but the first load is a real cost.
 
 ### What "native" gets you on the desktop
 
@@ -320,11 +324,11 @@ And on Linux, which is where I'd be running these (Ubuntu 24.04 container, X11 a
 
 Wails is its GTK 3 build; the default GTK 4 build couldn't start in the container. MIQT's notifications need a tray watcher, which stock GNOME doesn't have. And GoTTH is just the web UI, so its column really describes its desktop shell (more below).
 
-The flip side shows up in custom drawing. The spec asked for three custom table cells: a stock-level bar, a status badge and a star rating. The HTML stacks did them in about 100 lines of markup and CSS. MIQT's Qt paint delegates took 300. Fyne and Cogent, which build everything from canvas shapes, took over 500 lines of Go each.
+The flip side shows up in custom drawing. The spec asked for three custom table cells: a stock-level bar, a status badge and a star rating. The HTML stacks did them in about 100 lines of markup and Tailwind classes, on top of their component library. MIQT's Qt paint delegates took 300. Fyne and Cogent, which build everything from canvas shapes, took over 500 lines of Go each.
 
 {{< zoom src="cells-strip.webp" alt="The same product card in GoTTH, Wails, MIQT, Cogent Core and Fyne, each with a status badge, a five-star rating and a stock bar, labeled with the lines of code each took for its custom cells: 90, 100, 300, 550 and 581." caption="The same card in each app, with the status badge, star rating and stock bar. Next to each is how many lines its custom cells took." >}}
 
-On looks, I had the screenshots judged blind. Wails and GoTTH share the shadcn look and came out on top. Fyne and MIQT were clean but plain. Cogent came last, with clipped columns and unboxed form fields in the table view.
+On looks, I had the screenshots judged blind. Wails and GoTTH share the shadcn look and came out on top. That isn't quite like-for-like: the spec held every app to its default theme, and for those two the default included a component library. Fyne and MIQT were clean but plain. Cogent came last, with clipped columns and unboxed form fields in the table view.
 
 {{< svg "uploads/2026/11/angle-web-focus.svg" "Cogent and MIQT, with the web reach and native widgets spokes highlighted. They pull apart: Cogent reaches the most targets from one codebase and feels the least native, while MIQT is the most native and has no web build at all." >}}
 
@@ -357,11 +361,13 @@ If your app has to act as the user, the line that matters isn't web versus nativ
 
 ## Wrapping Up
 
-It wasn't really a single result that changed my mind. What surprised me was how many small details play into whether one of these turns out well. If you're adding a view layer onto existing business logic, it would be easy to get poor performance out of MIQT at first and blame Qt, when it was really how the data was fed to it. Or to find that the same HTML behaves differently depending on which WebView engine is showing it.
+There wasn't a single standout result that made one of these my choice for everything. Each one had different strengths depending on the angle. What surprised me was how many small details play into whether one of these turns out well. If you're adding a view layer onto existing business logic, it would be easy to get poor performance out of MIQT at first and blame Qt, when it was really how the data was fed to it. Or to find that the same HTML behaves differently depending on which WebView engine is showing it.
 
-A few of my assumptions held up and a few didn't. Fyne did a bit better than I thought it would, so it must have come a long way since I last looked at it. I expected Wails to do well, and it did, but I was surprised how competitive the GoTTH stack was. And I wasn't very surprised that the WASM routes had some gaps.
+As for my starting assumptions, the Go-native toolkits had a better web story than I expected, even with the big first load. Fyne did a bit better than I thought it would, so it must have come a long way since I last looked at it. I expected Wails to do well, and it did, but I was surprised how competitive the GoTTH stack was.
 
-For my own needs, Wails seems like the strongest pull, assuming WebKitGTK is something we can expect to find on the host. It came out with some of the simplest and strongest results, and the performance was still good. More generally, it seems quite reasonable to build with a web frontend approach like Wails or GoTTH, and then decide per application whether it's presented as a local native app or served remotely.
+As for my colleague's point, I can see how there's an easier path to a fully served web app if it's already a web UI over a local Go process, like Wails or GoTTH, and the other way around. But I don't think you can say every app can always be a remotely served web app. My stance is still the best tool for the job, and knowing the strengths of the different options is ideal for that.
+
+For my own needs right now, Wails seems like the strongest pull, assuming WebKitGTK is something we can expect to find on the host. I haven't timed it on WebKitGTK, and the engine turned out to be the biggest variable I found. But it came out with some of the strongest results, and the performance was still good.
 
 And given how much I dislike writing web frontends, having a coding agent do that part frees me up to have more options. Coding agents are pretty good at web frontends anyway, so I don't have to be.
 

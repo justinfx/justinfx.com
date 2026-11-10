@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-30 0 820 340" role="img" aria-label="Cogent and MIQT; the Web reach and Native widgets spokes are highlighted." style="max-width:100%;height:auto;font-family:system-ui,sans-serif">
+<polygon points="190.0,164.0 204.1,169.9 210.0,184.0 204.1,198.1 190.0,204.0 175.9,198.1 170.0,184.0 175.9,169.9" fill="none" stroke="currentColor" stroke-opacity="0.12" stroke-width="1"/>
+<polygon points="190.0,144.0 218.3,155.7 230.0,184.0 218.3,212.3 190.0,224.0 161.7,212.3 150.0,184.0 161.7,155.7" fill="none" stroke="currentColor" stroke-opacity="0.12" stroke-width="1"/>
+<polygon points="190.0,124.0 232.4,141.6 250.0,184.0 232.4,226.4 190.0,244.0 147.6,226.4 130.0,184.0 147.6,141.6" fill="none" stroke="currentColor" stroke-opacity="0.12" stroke-width="1"/>
+<polygon points="190.0,104.0 246.6,127.4 270.0,184.0 246.6,240.6 190.0,264.0 133.4,240.6 110.0,184.0 133.4,127.4" fill="none" stroke="currentColor" stroke-opacity="0.12" stroke-width="1"/>
+<polygon points="190.0,84.0 260.7,113.3 290.0,184.0 260.7,254.7 190.0,284.0 119.3,254.7 90.0,184.0 119.3,113.3" fill="none" stroke="currentColor" stroke-opacity="0.28" stroke-width="1"/>
+<line x1="190.0" y1="184.0" x2="190.0" y2="84.0" stroke="currentColor" stroke-opacity="0.12"/>
+<text x="190.0" y="74.0" text-anchor="middle" font-size="11" fill="currentColor" fill-opacity="0.45" font-weight="400">Large data</text>
+<line x1="190.0" y1="184.0" x2="260.7" y2="113.3" stroke="currentColor" stroke-opacity="0.12"/>
+<text x="270.6" y="107.4" text-anchor="start" font-size="11" fill="currentColor" fill-opacity="0.45" font-weight="400">cgo core</text>
+<line x1="190.0" y1="184.0" x2="290.0" y2="184.0" stroke="currentColor" stroke-opacity="0.12"/>
+<text x="304.0" y="188.0" text-anchor="start" font-size="11" fill="currentColor" fill-opacity="0.45" font-weight="400">Runtime deps</text>
+<line x1="190.0" y1="184.0" x2="260.7" y2="254.7" stroke="#eb6834" stroke-width="2" stroke-opacity="0.8"/>
+<text x="270.6" y="268.6" text-anchor="start" font-size="11" fill="currentColor" fill-opacity="1" font-weight="600">Web reach</text>
+<line x1="190.0" y1="184.0" x2="190.0" y2="284.0" stroke="#eb6834" stroke-width="2" stroke-opacity="0.8"/>
+<text x="190.0" y="302.0" text-anchor="middle" font-size="11" fill="currentColor" fill-opacity="1" font-weight="600">Native widgets</text>
+<line x1="190.0" y1="184.0" x2="119.3" y2="254.7" stroke="currentColor" stroke-opacity="0.12"/>
+<text x="109.4" y="268.6" text-anchor="end" font-size="11" fill="currentColor" fill-opacity="0.45" font-weight="400">Style</text>
+<line x1="190.0" y1="184.0" x2="90.0" y2="184.0" stroke="currentColor" stroke-opacity="0.12"/>
+<text x="76.0" y="188.0" text-anchor="end" font-size="11" fill="currentColor" fill-opacity="0.45" font-weight="400">Build loop</text>
+<line x1="190.0" y1="184.0" x2="119.3" y2="113.3" stroke="currentColor" stroke-opacity="0.12"/>
+<text x="109.4" y="107.4" text-anchor="end" font-size="11" fill="currentColor" fill-opacity="0.45" font-weight="400">Toolchain</text>
+<polygon points="190.0,84.0 246.6,127.4 290.0,184.0 246.6,240.6 190.0,224.0 161.7,212.3 110.0,184.0 133.4,127.4" fill="#2a78d6" fill-opacity="0.10" stroke="none"/>
+<line x1="190.0" y1="84.0" x2="246.6" y2="127.4" stroke="#2a78d6" stroke-width="2" stroke-linecap="round"/>
+<line x1="246.6" y1="127.4" x2="290.0" y2="184.0" stroke="#2a78d6" stroke-width="2" stroke-linecap="round"/>
+<line x1="290.0" y1="184.0" x2="246.6" y2="240.6" stroke="#2a78d6" stroke-width="2" stroke-linecap="round"/>
+<line x1="246.6" y1="240.6" x2="190.0" y2="224.0" stroke="#2a78d6" stroke-width="2" stroke-linecap="round"/>
+<line x1="190.0" y1="224.0" x2="161.7" y2="212.3" stroke="#2a78d6" stroke-width="2" stroke-linecap="round"/>
+<line x1="161.7" y1="212.3" x2="110.0" y2="184.0" stroke="#2a78d6" stroke-width="2" stroke-linecap="round"/>
+<line x1="110.0" y1="184.0" x2="133.4" y2="127.4" stroke="#2a78d6" stroke-width="2" stroke-linecap="round"/>
+<line x1="133.4" y1="127.4" x2="190.0" y2="84.0" stroke="#2a78d6" stroke-width="2" stroke-linecap="round"/>
+<circle cx="190.0" cy="84.0" r="4" fill="#2a78d6" stroke="var(--surface, #fcfcfb)" stroke-width="2"><title>cogent: Large data 5 of 5</title></circle>
+<circle cx="246.6" cy="127.4" r="4" fill="#2a78d6" stroke="var(--surface, #fcfcfb)" stroke-width="2"><title>cogent: cgo core 4 of 5</title></circle>
+<circle cx="290.0" cy="184.0" r="4" fill="#2a78d6" stroke="var(--surface, #fcfcfb)" stroke-width="2"><title>cogent: Runtime deps 5 of 5</title></circle>
+<circle cx="246.6" cy="240.6" r="4" fill="#2a78d6" stroke="var(--surface, #fcfcfb)" stroke-width="2"><title>cogent: Web reach 4 of 5</title></circle>
+<circle cx="190.0" cy="224.0" r="4" fill="#2a78d6" stroke="var(--surface, #fcfcfb)" stroke-width="2"><title>cogent: Native widgets 2 of 5</title></circle>
+<circle cx="161.7" cy="212.3" r="4" fill="#2a78d6" stroke="var(--surface, #fcfcfb)" stroke-width="2"><title>cogent: Style 2 of 5</title></circle>
+<circle cx="110.0" cy="184.0" r="4" fill="#2a78d6" stroke="var(--surface, #fcfcfb)" stroke-width="2"><title>cogent: Build loop 4 of 5</title></circle>
+<circle cx="133.4" cy="127.4" r="4" fill="#2a78d6" stroke="var(--surface, #fcfcfb)" stroke-width="2"><title>cogent: Toolchain 4 of 5</title></circle>
+<text x="190.0" y="50.0" text-anchor="middle" font-size="14" font-weight="600" fill="currentColor">cogent</text>
+<polygon points="570.0,164.0 584.1,169.9 590.0,184.0 584.1,198.1 570.0,204.0 555.9,198.1 550.0,184.0 555.9,169.9" fill="none" stroke="currentColor" stroke-opacity="0.12" stroke-width="1"/>
+<polygon points="570.0,144.0 598.3,155.7 610.0,184.0 598.3,212.3 570.0,224.0 541.7,212.3 530.0,184.0 541.7,155.7" fill="none" stroke="currentColor" stroke-opacity="0.12" stroke-width="1"/>
+<polygon points="570.0,124.0 612.4,141.6 630.0,184.0 612.4,226.4 570.0,244.0 527.6,226.4 510.0,184.0 527.6,141.6" fill="none" stroke="currentColor" stroke-opacity="0.12" stroke-width="1"/>
+<polygon points="570.0,104.0 626.6,127.4 650.0,184.0 626.6,240.6 570.0,264.0 513.4,240.6 490.0,184.0 513.4,127.4" fill="none" stroke="currentColor" stroke-opacity="0.12" stroke-width="1"/>
+<polygon points="570.0,84.0 640.7,113.3 670.0,184.0 640.7,254.7 570.0,284.0 499.3,254.7 470.0,184.0 499.3,113.3" fill="none" stroke="currentColor" stroke-opacity="0.28" stroke-width="1"/>
+<line x1="570.0" y1="184.0" x2="570.0" y2="84.0" stroke="currentColor" stroke-opacity="0.12"/>
+<text x="570.0" y="74.0" text-anchor="middle" font-size="11" fill="currentColor" fill-opacity="0.45" font-weight="400">Large data</text>
+<line x1="570.0" y1="184.0" x2="640.7" y2="113.3" stroke="currentColor" stroke-opacity="0.12"/>
+<text x="650.6" y="107.4" text-anchor="start" font-size="11" fill="currentColor" fill-opacity="0.45" font-weight="400">cgo core</text>
+<line x1="570.0" y1="184.0" x2="670.0" y2="184.0" stroke="currentColor" stroke-opacity="0.12"/>
+<text x="684.0" y="188.0" text-anchor="start" font-size="11" fill="currentColor" fill-opacity="0.45" font-weight="400">Runtime deps</text>
+<line x1="570.0" y1="184.0" x2="640.7" y2="254.7" stroke="#eb6834" stroke-width="2" stroke-opacity="0.8"/>
+<text x="650.6" y="268.6" text-anchor="start" font-size="11" fill="currentColor" fill-opacity="1" font-weight="600">Web reach</text>
+<line x1="570.0" y1="184.0" x2="570.0" y2="284.0" stroke="#eb6834" stroke-width="2" stroke-opacity="0.8"/>
+<text x="570.0" y="302.0" text-anchor="middle" font-size="11" fill="currentColor" fill-opacity="1" font-weight="600">Native widgets</text>
+<line x1="570.0" y1="184.0" x2="499.3" y2="254.7" stroke="currentColor" stroke-opacity="0.12"/>
+<text x="489.4" y="268.6" text-anchor="end" font-size="11" fill="currentColor" fill-opacity="0.45" font-weight="400">Style</text>
+<line x1="570.0" y1="184.0" x2="470.0" y2="184.0" stroke="currentColor" stroke-opacity="0.12"/>
+<text x="456.0" y="188.0" text-anchor="end" font-size="11" fill="currentColor" fill-opacity="0.45" font-weight="400">Build loop</text>
+<line x1="570.0" y1="184.0" x2="499.3" y2="113.3" stroke="currentColor" stroke-opacity="0.12"/>
+<text x="489.4" y="107.4" text-anchor="end" font-size="11" fill="currentColor" fill-opacity="0.45" font-weight="400">Toolchain</text>
+<polygon points="570.0,144.0 612.4,141.6 630.0,184.0 570.0,184.0 570.0,284.0 527.6,226.4 510.0,184.0 541.7,155.7" fill="#2a78d6" fill-opacity="0.10" stroke="none"/>
+<line x1="570.0" y1="144.0" x2="612.4" y2="141.6" stroke="#2a78d6" stroke-width="2" stroke-linecap="round"/>
+<line x1="612.4" y1="141.6" x2="630.0" y2="184.0" stroke="#2a78d6" stroke-width="2" stroke-linecap="round"/>
+<line x1="630.0" y1="184.0" x2="570.0" y2="184.0" stroke="#2a78d6" stroke-width="2" stroke-linecap="round" stroke-dasharray="3 4" stroke-opacity="0.6"/>
+<line x1="570.0" y1="184.0" x2="570.0" y2="284.0" stroke="#2a78d6" stroke-width="2" stroke-linecap="round" stroke-dasharray="3 4" stroke-opacity="0.6"/>
+<line x1="570.0" y1="284.0" x2="527.6" y2="226.4" stroke="#2a78d6" stroke-width="2" stroke-linecap="round"/>
+<line x1="527.6" y1="226.4" x2="510.0" y2="184.0" stroke="#2a78d6" stroke-width="2" stroke-linecap="round"/>
+<line x1="510.0" y1="184.0" x2="541.7" y2="155.7" stroke="#2a78d6" stroke-width="2" stroke-linecap="round"/>
+<line x1="541.7" y1="155.7" x2="570.0" y2="144.0" stroke="#2a78d6" stroke-width="2" stroke-linecap="round"/>
+<circle cx="570.0" cy="144.0" r="4" fill="#2a78d6" stroke="var(--surface, #fcfcfb)" stroke-width="2"><title>miqt: Large data 2 of 5</title></circle>
+<circle cx="612.4" cy="141.6" r="4" fill="#2a78d6" stroke="var(--surface, #fcfcfb)" stroke-width="2"><title>miqt: cgo core 3 of 5</title></circle>
+<circle cx="630.0" cy="184.0" r="4" fill="#2a78d6" stroke="var(--surface, #fcfcfb)" stroke-width="2"><title>miqt: Runtime deps 3 of 5</title></circle>
+<text x="570.0" y="178.0" text-anchor="middle" font-size="10" fill="currentColor" fill-opacity="0.6">n/a</text>
+<circle cx="570.0" cy="284.0" r="4" fill="#2a78d6" stroke="var(--surface, #fcfcfb)" stroke-width="2"><title>miqt: Native widgets 5 of 5</title></circle>
+<circle cx="527.6" cy="226.4" r="4" fill="#2a78d6" stroke="var(--surface, #fcfcfb)" stroke-width="2"><title>miqt: Style 3 of 5</title></circle>
+<circle cx="510.0" cy="184.0" r="4" fill="#2a78d6" stroke="var(--surface, #fcfcfb)" stroke-width="2"><title>miqt: Build loop 3 of 5</title></circle>
+<circle cx="541.7" cy="155.7" r="4" fill="#2a78d6" stroke="var(--surface, #fcfcfb)" stroke-width="2"><title>miqt: Toolchain 2 of 5</title></circle>
+<text x="570.0" y="50.0" text-anchor="middle" font-size="14" font-weight="600" fill="currentColor">miqt</text>
+</svg>

@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 520" role="img" aria-label="Five ways to deliver a Go GUI, showing where the Go process runs. Native toolkits, WebView shells and a local server with a browser all run the Go process on the user's machine as the user. A remote server runs it as the server account. Go compiled to WASM runs on the user's machine but inside the browser sandbox, with no file system or process access." font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="13" fill="currentColor" stroke="currentColor">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="currentColor" stroke="none"/>
+    </marker>
+  </defs>
+
+  <!-- column headers -->
+  <g stroke="none" font-weight="600">
+    <text x="20" y="30">Route</text>
+    <text x="400" y="30" text-anchor="middle">The user's machine</text>
+    <text x="710" y="30" text-anchor="middle">Elsewhere</text>
+    <text x="870" y="30" text-anchor="middle">Go runs as</text>
+  </g>
+
+  <!-- machine boundaries -->
+  <rect x="230" y="44" width="340" height="460" rx="10" fill="none" stroke-width="1.5"/>
+  <rect x="630" y="44" width="160" height="460" rx="10" fill="none" stroke-width="1" stroke-dasharray="5 4"/>
+
+  <!-- row separators -->
+  <g stroke-width="0.5" opacity="0.35">
+    <line x1="10" y1="136" x2="950" y2="136"/>
+    <line x1="10" y1="228" x2="950" y2="228"/>
+    <line x1="10" y1="320" x2="950" y2="320"/>
+    <line x1="10" y1="412" x2="950" y2="412"/>
+  </g>
+
+  <!-- Row 1: native toolkit -->
+  <g>
+    <text x="20" y="84" stroke="none" font-weight="600">Native toolkit</text>
+    <text x="20" y="102" stroke="none" font-size="11.5" opacity="0.75">Fyne, Cogent, MIQT</text>
+    <rect x="260" y="64" width="280" height="56" rx="6" fill="none" stroke-width="1.5"/>
+    <text x="400" y="88" stroke="none" text-anchor="middle">Go process</text>
+    <text x="400" y="106" stroke="none" text-anchor="middle" font-size="11.5" opacity="0.75">draws its own window</text>
+    <text x="870" y="96" stroke="none" text-anchor="middle" font-weight="600" fill="#2f9e5b">you</text>
+  </g>
+
+  <!-- Row 2: WebView shell -->
+  <g>
+    <text x="20" y="176" stroke="none" font-weight="600">WebView shell</text>
+    <text x="20" y="194" stroke="none" font-size="11.5" opacity="0.75">Wails, GoTTH desktop, glaze</text>
+    <rect x="260" y="156" width="280" height="56" rx="6" fill="none" stroke-width="1.5"/>
+    <rect x="272" y="166" width="104" height="36" rx="4" fill="none" stroke-width="1"/>
+    <text x="324" y="189" stroke="none" text-anchor="middle" font-size="12">WebView</text>
+    <line x1="376" y1="184" x2="420" y2="184" stroke-width="1.2" marker-end="url(#arrow)" marker-start="url(#arrow)"/>
+    <text x="398" y="176" stroke="none" text-anchor="middle" font-size="10.5" opacity="0.75">calls</text>
+    <text x="474" y="189" stroke="none" text-anchor="middle">Go process</text>
+    <text x="870" y="188" stroke="none" text-anchor="middle" font-weight="600" fill="#2f9e5b">you</text>
+  </g>
+
+  <!-- Row 3: local server + browser -->
+  <g>
+    <text x="20" y="268" stroke="none" font-weight="600">Local server</text>
+    <text x="20" y="286" stroke="none" font-size="11.5" opacity="0.75">+ any browser</text>
+    <rect x="260" y="250" width="110" height="44" rx="6" fill="none" stroke-width="1.5"/>
+    <text x="315" y="277" stroke="none" text-anchor="middle">Browser</text>
+    <rect x="430" y="250" width="110" height="44" rx="6" fill="none" stroke-width="1.5"/>
+    <text x="485" y="277" stroke="none" text-anchor="middle">Go process</text>
+    <line x1="370" y1="272" x2="428" y2="272" stroke-width="1.2" marker-end="url(#arrow)"/>
+    <text x="399" y="264" stroke="none" text-anchor="middle" font-size="10.5" opacity="0.75">localhost</text>
+    <text x="870" y="280" stroke="none" text-anchor="middle" font-weight="600" fill="#2f9e5b">you</text>
+  </g>
+
+  <!-- Row 4: remote server -->
+  <g>
+    <text x="20" y="360" stroke="none" font-weight="600">Remote server</text>
+    <text x="20" y="378" stroke="none" font-size="11.5" opacity="0.75">Wails server mode, GoTTH web,</text>
+    <text x="20" y="394" stroke="none" font-size="11.5" opacity="0.75">Fyne/Cogent web-remote</text>
+    <rect x="260" y="342" width="110" height="44" rx="6" fill="none" stroke-width="1.5"/>
+    <text x="315" y="369" stroke="none" text-anchor="middle">Browser</text>
+    <rect x="655" y="342" width="110" height="44" rx="6" fill="none" stroke-width="1.5"/>
+    <text x="710" y="369" stroke="none" text-anchor="middle">Go process</text>
+    <line x1="370" y1="364" x2="653" y2="364" stroke-width="1.2" marker-end="url(#arrow)"/>
+    <text x="512" y="356" stroke="none" text-anchor="middle" font-size="10.5" opacity="0.75">HTTP over the network</text>
+    <text x="870" y="360" stroke="none" text-anchor="middle" font-weight="600" fill="#d1495b">the server</text>
+    <text x="870" y="378" stroke="none" text-anchor="middle" font-weight="600" fill="#d1495b">account</text>
+  </g>
+
+  <!-- Row 5: WASM -->
+  <g>
+    <text x="20" y="452" stroke="none" font-weight="600">Go in the browser</text>
+    <text x="20" y="470" stroke="none" font-size="11.5" opacity="0.75">Fyne / Cogent WASM</text>
+    <rect x="260" y="428" width="280" height="64" rx="6" fill="none" stroke-width="1.5"/>
+    <text x="272" y="446" stroke="none" font-size="11.5" opacity="0.75">Browser sandbox</text>
+    <rect x="400" y="450" width="120" height="32" rx="4" fill="none" stroke-width="1.2" stroke-dasharray="4 3"/>
+    <text x="460" y="471" stroke="none" text-anchor="middle">Go (WASM)</text>
+    <text x="870" y="456" stroke="none" text-anchor="middle" font-weight="600" fill="#c98a12">sandboxed:</text>
+    <text x="870" y="474" stroke="none" text-anchor="middle" font-size="11.5" fill="#c98a12">no files, no processes</text>
+  </g>
+</svg>

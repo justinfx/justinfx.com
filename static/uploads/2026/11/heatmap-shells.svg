@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 606 314" role="img" aria-label="Judge scores for three desktop shells around the same GoTTH web app, darker is stronger." style="max-width:100%;height:auto;font-family:system-ui,sans-serif">
+<text x="376.0" y="22" text-anchor="middle" font-size="13" font-weight="600" fill="currentColor">gotth</text>
+<text x="468.0" y="22" text-anchor="middle" font-size="13" font-weight="600" fill="currentColor">gotth-glaze</text>
+<text x="560.0" y="22" text-anchor="middle" font-size="13" font-weight="600" fill="currentColor">miqt-gotth</text>
+<text x="0" y="53.0" font-size="12" font-weight="600" fill="currentColor" fill-opacity="0.65">Lots of data</text>
+<text x="120" y="53.0" font-size="12" fill="currentColor">Performance</text>
+<rect x="331" y="35" width="90" height="28" rx="4" fill="#3987e5" stroke="#0b0b0b" stroke-opacity="0"><title>gotth: Performance 3 of 5</title></rect><text x="376.0" y="53.0" text-anchor="middle" font-size="13" font-weight="600" fill="#0b0b0b">3</text>
+<rect x="423" y="35" width="90" height="28" rx="4" fill="#3987e5" stroke="#0b0b0b" stroke-opacity="0"><title>gotth-glaze: Performance 3 of 5</title></rect><text x="468.0" y="53.0" text-anchor="middle" font-size="13" font-weight="600" fill="#0b0b0b">3</text>
+<rect x="515" y="35" width="90" height="28" rx="4" fill="#86b6ef" stroke="#0b0b0b" stroke-opacity="0"><title>miqt-gotth: Performance 2 of 5</title></rect><text x="560.0" y="53.0" text-anchor="middle" font-size="13" font-weight="600" fill="#0b0b0b">2</text>
+<text x="0" y="93.0" font-size="12" font-weight="600" fill="currentColor" fill-opacity="0.65">cgo</text>
+<text x="120" y="93.0" font-size="12" fill="currentColor">Runtime requirements</text>
+<rect x="331" y="75" width="90" height="28" rx="4" fill="#3987e5" stroke="#0b0b0b" stroke-opacity="0"><title>gotth: Runtime requirements 3 of 5</title></rect><text x="376.0" y="93.0" text-anchor="middle" font-size="13" font-weight="600" fill="#0b0b0b">3</text>
+<rect x="423" y="75" width="90" height="28" rx="4" fill="#1c5cab" stroke="#0b0b0b" stroke-opacity="0"><title>gotth-glaze: Runtime requirements 4 of 5</title></rect><text x="468.0" y="93.0" text-anchor="middle" font-size="13" font-weight="600" fill="#ffffff">4</text>
+<rect x="515" y="75" width="90" height="28" rx="4" fill="#cde2fb" stroke="#0b0b0b" stroke-opacity="0.15"><title>miqt-gotth: Runtime requirements 1 of 5</title></rect><text x="560.0" y="93.0" text-anchor="middle" font-size="13" font-weight="600" fill="#0b0b0b">1</text>
+<text x="0" y="133.0" font-size="12" font-weight="600" fill="currentColor" fill-opacity="0.65">Web and native</text>
+<text x="120" y="133.0" font-size="12" fill="currentColor">Native integration</text>
+<rect x="331" y="115" width="90" height="28" rx="4" fill="#3987e5" stroke="#0b0b0b" stroke-opacity="0"><title>gotth: Native integration 3 of 5</title></rect><text x="376.0" y="133.0" text-anchor="middle" font-size="13" font-weight="600" fill="#0b0b0b">3</text>
+<rect x="423" y="115" width="90" height="28" rx="4" fill="#3987e5" stroke="#0b0b0b" stroke-opacity="0"><title>gotth-glaze: Native integration 3 of 5</title></rect><text x="468.0" y="133.0" text-anchor="middle" font-size="13" font-weight="600" fill="#0b0b0b">3</text>
+<rect x="515" y="115" width="90" height="28" rx="4" fill="#1c5cab" stroke="#0b0b0b" stroke-opacity="0"><title>miqt-gotth: Native integration 4 of 5</title></rect><text x="560.0" y="133.0" text-anchor="middle" font-size="13" font-weight="600" fill="#ffffff">4</text>
+<text x="120" y="163.0" font-size="12" fill="currentColor">Linux function</text>
+<rect x="331" y="145" width="90" height="28" rx="4" fill="#3987e5" stroke="#0b0b0b" stroke-opacity="0"><title>gotth: Linux function 3 of 5</title></rect><text x="376.0" y="163.0" text-anchor="middle" font-size="13" font-weight="600" fill="#0b0b0b">3</text>
+<rect x="423" y="145" width="90" height="28" rx="4" fill="#3987e5" stroke="#0b0b0b" stroke-opacity="0"><title>gotth-glaze: Linux function 3 of 5</title></rect><text x="468.0" y="163.0" text-anchor="middle" font-size="13" font-weight="600" fill="#0b0b0b">3</text>
+<rect x="515" y="145" width="90" height="28" rx="4" fill="#86b6ef" stroke="#0b0b0b" stroke-opacity="0"><title>miqt-gotth: Linux function 2 of 5</title></rect><text x="560.0" y="163.0" text-anchor="middle" font-size="13" font-weight="600" fill="#0b0b0b">2</text>
+<text x="0" y="203.0" font-size="12" font-weight="600" fill="currentColor" fill-opacity="0.65">Build and code</text>
+<text x="120" y="203.0" font-size="12" fill="currentColor">Build loop</text>
+<rect x="331" y="185" width="90" height="28" rx="4" fill="#3987e5" stroke="#0b0b0b" stroke-opacity="0"><title>gotth: Build loop 3 of 5</title></rect><text x="376.0" y="203.0" text-anchor="middle" font-size="13" font-weight="600" fill="#0b0b0b">3</text>
+<rect x="423" y="185" width="90" height="28" rx="4" fill="#1c5cab" stroke="#0b0b0b" stroke-opacity="0"><title>gotth-glaze: Build loop 4 of 5</title></rect><text x="468.0" y="203.0" text-anchor="middle" font-size="13" font-weight="600" fill="#ffffff">4</text>
+<rect x="515" y="185" width="90" height="28" rx="4" fill="#86b6ef" stroke="#0b0b0b" stroke-opacity="0"><title>miqt-gotth: Build loop 2 of 5</title></rect><text x="560.0" y="203.0" text-anchor="middle" font-size="13" font-weight="600" fill="#0b0b0b">2</text>
+<text x="120" y="233.0" font-size="12" fill="currentColor">Toolchain</text>
+<rect x="331" y="215" width="90" height="28" rx="4" fill="#3987e5" stroke="#0b0b0b" stroke-opacity="0"><title>gotth: Toolchain 3 of 5</title></rect><text x="376.0" y="233.0" text-anchor="middle" font-size="13" font-weight="600" fill="#0b0b0b">3</text>
+<rect x="423" y="215" width="90" height="28" rx="4" fill="#1c5cab" stroke="#0b0b0b" stroke-opacity="0"><title>gotth-glaze: Toolchain 4 of 5</title></rect><text x="468.0" y="233.0" text-anchor="middle" font-size="13" font-weight="600" fill="#ffffff">4</text>
+<rect x="515" y="215" width="90" height="28" rx="4" fill="#86b6ef" stroke="#0b0b0b" stroke-opacity="0"><title>miqt-gotth: Toolchain 2 of 5</title></rect><text x="560.0" y="233.0" text-anchor="middle" font-size="13" font-weight="600" fill="#0b0b0b">2</text>
+<text x="120" y="263.0" font-size="12" fill="currentColor">Cross builds</text>
+<rect x="331" y="245" width="90" height="28" rx="4" fill="#1c5cab" stroke="#0b0b0b" stroke-opacity="0"><title>gotth: Cross builds 4 of 5</title></rect><text x="376.0" y="263.0" text-anchor="middle" font-size="13" font-weight="600" fill="#ffffff">4</text>
+<rect x="423" y="245" width="90" height="28" rx="4" fill="#0d366b" stroke="#0b0b0b" stroke-opacity="0"><title>gotth-glaze: Cross builds 5 of 5</title></rect><text x="468.0" y="263.0" text-anchor="middle" font-size="13" font-weight="600" fill="#ffffff">5</text>
+<rect x="515" y="245" width="90" height="28" rx="4" fill="#cde2fb" stroke="#0b0b0b" stroke-opacity="0.15"><title>miqt-gotth: Cross builds 1 of 5</title></rect><text x="560.0" y="263.0" text-anchor="middle" font-size="13" font-weight="600" fill="#0b0b0b">1</text>
+<rect x="330" y="290" width="30" height="16" rx="3" fill="#cde2fb"/><text x="345" y="302" text-anchor="middle" font-size="10" fill="#0b0b0b">1</text>
+<rect x="364" y="290" width="30" height="16" rx="3" fill="#86b6ef"/><text x="379" y="302" text-anchor="middle" font-size="10" fill="#0b0b0b">2</text>
+<rect x="398" y="290" width="30" height="16" rx="3" fill="#3987e5"/><text x="413" y="302" text-anchor="middle" font-size="10" fill="#0b0b0b">3</text>
+<rect x="432" y="290" width="30" height="16" rx="3" fill="#1c5cab"/><text x="447" y="302" text-anchor="middle" font-size="10" fill="#ffffff">4</text>
+<rect x="466" y="290" width="30" height="16" rx="3" fill="#0d366b"/><text x="481" y="302" text-anchor="middle" font-size="10" fill="#ffffff">5</text>
+<text x="506" y="302" font-size="11" fill="currentColor" fill-opacity="0.7">score, 1 (weak) to 5 (strong)</text>
+</svg>

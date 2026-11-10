@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 790 224" role="img" aria-label="Section rows from the overview heatmap." style="max-width:100%;height:auto;font-family:system-ui,sans-serif">
+<text x="376.0" y="22" text-anchor="middle" font-size="13" font-weight="600" fill="currentColor">fyne</text>
+<text x="468.0" y="22" text-anchor="middle" font-size="13" font-weight="600" fill="currentColor">cogent</text>
+<text x="560.0" y="22" text-anchor="middle" font-size="13" font-weight="600" fill="currentColor">wails</text>
+<text x="652.0" y="22" text-anchor="middle" font-size="13" font-weight="600" fill="currentColor">gotth</text>
+<text x="744.0" y="22" text-anchor="middle" font-size="13" font-weight="600" fill="currentColor">miqt</text>
+<text x="0" y="53.0" font-size="12" font-weight="600" fill="currentColor" fill-opacity="0.65">Web and native</text>
+<text x="120" y="53.0" font-size="12" fill="currentColor">Desktop plus web reach</text>
+<rect x="331" y="35" width="90" height="28" rx="4" fill="#3987e5" stroke="#0b0b0b" stroke-opacity="0"><title>fyne: Desktop plus web reach 3 of 5</title></rect><text x="376.0" y="53.0" text-anchor="middle" font-size="13" font-weight="600" fill="#0b0b0b">3</text>
+<rect x="423" y="35" width="90" height="28" rx="4" fill="#1c5cab" stroke="#0b0b0b" stroke-opacity="0"><title>cogent: Desktop plus web reach 4 of 5</title></rect><text x="468.0" y="53.0" text-anchor="middle" font-size="13" font-weight="600" fill="#ffffff">4</text>
+<rect x="515" y="35" width="90" height="28" rx="4" fill="#1c5cab" stroke="#0b0b0b" stroke-opacity="0"><title>wails: Desktop plus web reach 4 of 5</title></rect><text x="560.0" y="53.0" text-anchor="middle" font-size="13" font-weight="600" fill="#ffffff">4</text>
+<rect x="607" y="35" width="90" height="28" rx="4" fill="#1c5cab" stroke="#0b0b0b" stroke-opacity="0"><title>gotth: Desktop plus web reach 4 of 5</title></rect><text x="652.0" y="53.0" text-anchor="middle" font-size="13" font-weight="600" fill="#ffffff">4</text>
+<rect x="699" y="35" width="90" height="28" rx="4" fill="currentColor" fill-opacity="0.07"/><text x="744.0" y="53.0" text-anchor="middle" font-size="12" fill="currentColor" fill-opacity="0.6">n/a</text>
+<text x="120" y="83.0" font-size="12" fill="currentColor">Native desktop widgets</text>
+<rect x="331" y="65" width="90" height="28" rx="4" fill="#3987e5" stroke="#0b0b0b" stroke-opacity="0"><title>fyne: Native desktop widgets 3 of 5</title></rect><text x="376.0" y="83.0" text-anchor="middle" font-size="13" font-weight="600" fill="#0b0b0b">3</text>
+<rect x="423" y="65" width="90" height="28" rx="4" fill="#86b6ef" stroke="#0b0b0b" stroke-opacity="0"><title>cogent: Native desktop widgets 2 of 5</title></rect><text x="468.0" y="83.0" text-anchor="middle" font-size="13" font-weight="600" fill="#0b0b0b">2</text>
+<rect x="515" y="65" width="90" height="28" rx="4" fill="#1c5cab" stroke="#0b0b0b" stroke-opacity="0"><title>wails: Native desktop widgets 4 of 5</title></rect><text x="560.0" y="83.0" text-anchor="middle" font-size="13" font-weight="600" fill="#ffffff">4</text>
+<rect x="607" y="65" width="90" height="28" rx="4" fill="#3987e5" stroke="#0b0b0b" stroke-opacity="0"><title>gotth: Native desktop widgets 3 of 5</title></rect><text x="652.0" y="83.0" text-anchor="middle" font-size="13" font-weight="600" fill="#0b0b0b">3</text>
+<rect x="699" y="65" width="90" height="28" rx="4" fill="#0d366b" stroke="#0b0b0b" stroke-opacity="0"><title>miqt: Native desktop widgets 5 of 5</title></rect><text x="744.0" y="83.0" text-anchor="middle" font-size="13" font-weight="600" fill="#ffffff">5</text>
+<text x="120" y="113.0" font-size="12" fill="currentColor">Native host access</text>
+<rect x="331" y="95" width="90" height="28" rx="4" fill="#1c5cab" stroke="#0b0b0b" stroke-opacity="0"><title>fyne: Native host access 4 of 5</title></rect><text x="376.0" y="113.0" text-anchor="middle" font-size="13" font-weight="600" fill="#ffffff">4</text>
+<rect x="423" y="95" width="90" height="28" rx="4" fill="#1c5cab" stroke="#0b0b0b" stroke-opacity="0"><title>cogent: Native host access 4 of 5</title></rect><text x="468.0" y="113.0" text-anchor="middle" font-size="13" font-weight="600" fill="#ffffff">4</text>
+<rect x="515" y="95" width="90" height="28" rx="4" fill="#1c5cab" stroke="#0b0b0b" stroke-opacity="0"><title>wails: Native host access 4 of 5</title></rect><text x="560.0" y="113.0" text-anchor="middle" font-size="13" font-weight="600" fill="#ffffff">4</text>
+<rect x="607" y="95" width="90" height="28" rx="4" fill="#1c5cab" stroke="#0b0b0b" stroke-opacity="0"><title>gotth: Native host access 4 of 5</title></rect><text x="652.0" y="113.0" text-anchor="middle" font-size="13" font-weight="600" fill="#ffffff">4</text>
+<rect x="699" y="95" width="90" height="28" rx="4" fill="#1c5cab" stroke="#0b0b0b" stroke-opacity="0"><title>miqt: Native host access 4 of 5</title></rect><text x="744.0" y="113.0" text-anchor="middle" font-size="13" font-weight="600" fill="#ffffff">4</text>
+<text x="120" y="143.0" font-size="12" fill="currentColor">Style (blind)</text>
+<rect x="331" y="125" width="90" height="28" rx="4" fill="#3987e5" stroke="#0b0b0b" stroke-opacity="0"><title>fyne: Style (blind) 3 of 5</title></rect><text x="376.0" y="143.0" text-anchor="middle" font-size="13" font-weight="600" fill="#0b0b0b">3</text>
+<rect x="423" y="125" width="90" height="28" rx="4" fill="#86b6ef" stroke="#0b0b0b" stroke-opacity="0"><title>cogent: Style (blind) 2 of 5</title></rect><text x="468.0" y="143.0" text-anchor="middle" font-size="13" font-weight="600" fill="#0b0b0b">2</text>
+<rect x="515" y="125" width="90" height="28" rx="4" fill="#1c5cab" stroke="#0b0b0b" stroke-opacity="0"><title>wails: Style (blind) 4 of 5</title></rect><text x="560.0" y="143.0" text-anchor="middle" font-size="13" font-weight="600" fill="#ffffff">4</text>
+<rect x="607" y="125" width="90" height="28" rx="4" fill="#1c5cab" stroke="#0b0b0b" stroke-opacity="0"><title>gotth: Style (blind) 4 of 5</title></rect><text x="652.0" y="143.0" text-anchor="middle" font-size="13" font-weight="600" fill="#ffffff">4</text>
+<rect x="699" y="125" width="90" height="28" rx="4" fill="#3987e5" stroke="#0b0b0b" stroke-opacity="0"><title>miqt: Style (blind) 3 of 5</title></rect><text x="744.0" y="143.0" text-anchor="middle" font-size="13" font-weight="600" fill="#0b0b0b">3</text>
+<text x="120" y="173.0" font-size="12" fill="currentColor">Custom rendering</text>
+<rect x="331" y="155" width="90" height="28" rx="4" fill="#3987e5" stroke="#0b0b0b" stroke-opacity="0"><title>fyne: Custom rendering 3 of 5</title></rect><text x="376.0" y="173.0" text-anchor="middle" font-size="13" font-weight="600" fill="#0b0b0b">3</text>
+<rect x="423" y="155" width="90" height="28" rx="4" fill="#1c5cab" stroke="#0b0b0b" stroke-opacity="0"><title>cogent: Custom rendering 4 of 5</title></rect><text x="468.0" y="173.0" text-anchor="middle" font-size="13" font-weight="600" fill="#ffffff">4</text>
+<rect x="515" y="155" width="90" height="28" rx="4" fill="#0d366b" stroke="#0b0b0b" stroke-opacity="0"><title>wails: Custom rendering 5 of 5</title></rect><text x="560.0" y="173.0" text-anchor="middle" font-size="13" font-weight="600" fill="#ffffff">5</text>
+<rect x="607" y="155" width="90" height="28" rx="4" fill="#1c5cab" stroke="#0b0b0b" stroke-opacity="0"><title>gotth: Custom rendering 4 of 5</title></rect><text x="652.0" y="173.0" text-anchor="middle" font-size="13" font-weight="600" fill="#ffffff">4</text>
+<rect x="699" y="155" width="90" height="28" rx="4" fill="#3987e5" stroke="#0b0b0b" stroke-opacity="0"><title>miqt: Custom rendering 3 of 5</title></rect><text x="744.0" y="173.0" text-anchor="middle" font-size="13" font-weight="600" fill="#0b0b0b">3</text>
+<rect x="330" y="200" width="30" height="16" rx="3" fill="#cde2fb"/><text x="345" y="212" text-anchor="middle" font-size="10" fill="#0b0b0b">1</text>
+<rect x="364" y="200" width="30" height="16" rx="3" fill="#86b6ef"/><text x="379" y="212" text-anchor="middle" font-size="10" fill="#0b0b0b">2</text>
+<rect x="398" y="200" width="30" height="16" rx="3" fill="#3987e5"/><text x="413" y="212" text-anchor="middle" font-size="10" fill="#0b0b0b">3</text>
+<rect x="432" y="200" width="30" height="16" rx="3" fill="#1c5cab"/><text x="447" y="212" text-anchor="middle" font-size="10" fill="#ffffff">4</text>
+<rect x="466" y="200" width="30" height="16" rx="3" fill="#0d366b"/><text x="481" y="212" text-anchor="middle" font-size="10" fill="#ffffff">5</text>
+<text x="506" y="212" font-size="11" fill="currentColor" fill-opacity="0.7">score, 1 (weak) to 5 (strong)</text>
+</svg>

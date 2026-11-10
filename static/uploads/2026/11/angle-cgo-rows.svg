@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 790 134" role="img" aria-label="Section rows from the overview heatmap." style="max-width:100%;height:auto;font-family:system-ui,sans-serif">
+<text x="376.0" y="22" text-anchor="middle" font-size="13" font-weight="600" fill="currentColor">fyne</text>
+<text x="468.0" y="22" text-anchor="middle" font-size="13" font-weight="600" fill="currentColor">cogent</text>
+<text x="560.0" y="22" text-anchor="middle" font-size="13" font-weight="600" fill="currentColor">wails</text>
+<text x="652.0" y="22" text-anchor="middle" font-size="13" font-weight="600" fill="currentColor">gotth</text>
+<text x="744.0" y="22" text-anchor="middle" font-size="13" font-weight="600" fill="currentColor">miqt</text>
+<text x="0" y="53.0" font-size="12" font-weight="600" fill="currentColor" fill-opacity="0.65">cgo</text>
+<text x="120" y="53.0" font-size="12" fill="currentColor">cgo-core tolerance</text>
+<rect x="331" y="35" width="90" height="28" rx="4" fill="#1c5cab" stroke="#0b0b0b" stroke-opacity="0"><title>fyne: cgo-core tolerance 4 of 5</title></rect><text x="376.0" y="53.0" text-anchor="middle" font-size="13" font-weight="600" fill="#ffffff">4</text>
+<rect x="423" y="35" width="90" height="28" rx="4" fill="#1c5cab" stroke="#0b0b0b" stroke-opacity="0"><title>cogent: cgo-core tolerance 4 of 5</title></rect><text x="468.0" y="53.0" text-anchor="middle" font-size="13" font-weight="600" fill="#ffffff">4</text>
+<rect x="515" y="35" width="90" height="28" rx="4" fill="#0d366b" stroke="#0b0b0b" stroke-opacity="0"><title>wails: cgo-core tolerance 5 of 5</title></rect><text x="560.0" y="53.0" text-anchor="middle" font-size="13" font-weight="600" fill="#ffffff">5</text>
+<rect x="607" y="35" width="90" height="28" rx="4" fill="#0d366b" stroke="#0b0b0b" stroke-opacity="0"><title>gotth: cgo-core tolerance 5 of 5</title></rect><text x="652.0" y="53.0" text-anchor="middle" font-size="13" font-weight="600" fill="#ffffff">5</text>
+<rect x="699" y="35" width="90" height="28" rx="4" fill="#3987e5" stroke="#0b0b0b" stroke-opacity="0"><title>miqt: cgo-core tolerance 3 of 5</title></rect><text x="744.0" y="53.0" text-anchor="middle" font-size="13" font-weight="600" fill="#0b0b0b">3</text>
+<text x="120" y="83.0" font-size="12" fill="currentColor">Runtime requirements</text>
+<rect x="331" y="65" width="90" height="28" rx="4" fill="#0d366b" stroke="#0b0b0b" stroke-opacity="0"><title>fyne: Runtime requirements 5 of 5</title></rect><text x="376.0" y="83.0" text-anchor="middle" font-size="13" font-weight="600" fill="#ffffff">5</text>
+<rect x="423" y="65" width="90" height="28" rx="4" fill="#0d366b" stroke="#0b0b0b" stroke-opacity="0"><title>cogent: Runtime requirements 5 of 5</title></rect><text x="468.0" y="83.0" text-anchor="middle" font-size="13" font-weight="600" fill="#ffffff">5</text>
+<rect x="515" y="65" width="90" height="28" rx="4" fill="#1c5cab" stroke="#0b0b0b" stroke-opacity="0"><title>wails: Runtime requirements 4 of 5</title></rect><text x="560.0" y="83.0" text-anchor="middle" font-size="13" font-weight="600" fill="#ffffff">4</text>
+<rect x="607" y="65" width="90" height="28" rx="4" fill="#3987e5" stroke="#0b0b0b" stroke-opacity="0"><title>gotth: Runtime requirements 3 of 5</title></rect><text x="652.0" y="83.0" text-anchor="middle" font-size="13" font-weight="600" fill="#0b0b0b">3</text>
+<rect x="699" y="65" width="90" height="28" rx="4" fill="#3987e5" stroke="#0b0b0b" stroke-opacity="0"><title>miqt: Runtime requirements 3 of 5</title></rect><text x="744.0" y="83.0" text-anchor="middle" font-size="13" font-weight="600" fill="#0b0b0b">3</text>
+<rect x="330" y="110" width="30" height="16" rx="3" fill="#cde2fb"/><text x="345" y="122" text-anchor="middle" font-size="10" fill="#0b0b0b">1</text>
+<rect x="364" y="110" width="30" height="16" rx="3" fill="#86b6ef"/><text x="379" y="122" text-anchor="middle" font-size="10" fill="#0b0b0b">2</text>
+<rect x="398" y="110" width="30" height="16" rx="3" fill="#3987e5"/><text x="413" y="122" text-anchor="middle" font-size="10" fill="#0b0b0b">3</text>
+<rect x="432" y="110" width="30" height="16" rx="3" fill="#1c5cab"/><text x="447" y="122" text-anchor="middle" font-size="10" fill="#ffffff">4</text>
+<rect x="466" y="110" width="30" height="16" rx="3" fill="#0d366b"/><text x="481" y="122" text-anchor="middle" font-size="10" fill="#ffffff">5</text>
+<text x="506" y="122" font-size="11" fill="currentColor" fill-opacity="0.7">score, 1 (weak) to 5 (strong)</text>
+</svg>

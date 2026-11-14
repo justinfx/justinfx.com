@@ -373,3 +373,7 @@ And given how much I dislike writing web frontends, having a coding agent do tha
 
 The code, the harness and all the raw results are on [GitHub](https://github.com/justinfx/go-gui-experiments).
 
+
+---
+
+**Update, November 14, 2026:** Readers have suggested other options since this was published. I'm putting each one through the same spec and harness, and posting the results as [addenda on the project wiki](https://github.com/justinfx/go-gui-experiments/wiki/Addenda).
